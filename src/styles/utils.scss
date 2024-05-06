@@ -1,0 +1,42 @@
+:root {
+    --factor: 1px;
+  }
+  @media (max-width: 1440px) {
+    :root {
+      --factor: 0.95px;
+    }
+  }
+  @media (min-width: 2000px) {
+    :root {
+      --factor: 1px;
+    }
+  }
+  @function w($value, $idealViewportWidth: 1650, $factor: 1, $clamp: true) {
+    $calculated: calc(
+      $value * var(--window-width) / ($idealViewportWidth * $factor) * 1px
+    );
+    @return user-if(
+      $clamp,
+      clampValue(calc($value * var(--factor)), $calculated),
+      $calculated
+    );
+  }
+  
+  @function sp($value) {
+    @return w($value);
+  }
+  
+  @function user-if($condition, $true-statement, $false-statement) {
+    $output: $false-statement;
+  
+    @if ($condition) {
+      $output: $true-statement;
+    }
+  
+    @return $output;
+  }
+  
+  @function clampValue($value, $calculated) {
+    @return clamp($value/2, $calculated, $value * 1);
+  }
+  

@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./utils.scss";
+
+:root {
+  --bodyContentColor: #212e44;
+  --accordionItemBg: white;
+  --accordionItemDescColor: #282936;
+}
+a{
+    color : inherit;
+    text-decoration: none;
+    font-weight: inherit;
+}
+.section {
+  max-width: 1440px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: w(16);
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: w(16);
+  font-weight: 400;
+  color: var(--bodyContentColor);
+  background: #e2e2e9;
+  box-sizing: content-box;
+  justify-content: center;
+  width: 100%;
+  display: block!important;
+}
