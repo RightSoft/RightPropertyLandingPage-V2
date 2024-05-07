@@ -4,8 +4,8 @@ import ActionButton from "../buttons/action-button";
 export default function LevelUp() {
     return <div className="relative h-[47.125rem] w-full">
         <video className="object-cover pl-[1.4375rem] pr-[0.9375rem] w-full h-full absolute z-10" src="/rp-landing-last.mp4" autoPlay muted loop ></video>
-        <div className="pl-[1.4375rem] pr-[0.9375rem] w-full h-full absolute z-20 opacity-40">
-            <div className="bg-black  w-full h-full">
+        <div className="pl-[1.4375rem] pr-[0.9375rem] w-full h-full absolute z-20 opacity-70">
+            <div className="bg-[#1B1B1B]  w-full h-full">
 
             </div>
         </div>

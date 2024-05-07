@@ -16,6 +16,14 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
         'with insight'
     ]
 
+    const startScaleY = 0.3;
+    const startY = 0;
+    const startOpacity = 0.0;
+    const duration = 0.4
+    const wait = 3000 // in ms
+
+
+
     useEffect(() => {
         const id = setTimeout(() => {
             let tmpIndex = activeIndex;
@@ -24,7 +32,7 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
                 tmpIndex = 0;
             }
             setActiveIndex(tmpIndex);
-        }, 4000);
+        }, wait);
         return () => {
             clearTimeout(id)
         }
@@ -37,59 +45,19 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
         </div>
         <div className="text-keywordColor leading-[3.65rem]">
             <AnimatePresence mode="wait">
-                {activeIndex == 0 && <motion.div
-                    key='item-0'
-                    initial={{ opacity: 0, y: 500 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, x: 500 }}
-                    className="">
-                    {keywords[0]}
-                </motion.div>}
-                {activeIndex == 1 && <motion.div
-                    key='item-1'
-                    initial={{ opacity: 0, y: 500 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, x: 500 }}
-                    className="">
-                    {keywords[1]}
-                </motion.div>}
-
-                {activeIndex == 2 && <motion.div
-                    key='item-2'
-                    initial={{ opacity: 0, y: 500 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, x: 500 }}
-                    className="">
-                    {keywords[2]}
-                </motion.div>}
-
-                {activeIndex == 3 && <motion.div
-                    key='item-3'
-
-                    initial={{ opacity: 0, y: 500 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, x: 500 }}
-                    className="">
-                    {keywords[3]}
-                </motion.div>}
-
-                {activeIndex == 4 && <motion.div
-                    key='item-4'
-                    initial={{ opacity: 0, y: 500 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, x: 500 }}
-                    className="">
-                    {keywords[4]}
-                </motion.div>}
-
-                {activeIndex == 5 && <motion.div
-                    key='item-5'
-                    initial={{ opacity: 0, y: 500 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, x: 500 }}
-                    className="">
-                    {keywords[5]}
-                </motion.div>}
+                {Array.from({ length: 6 }, (_, index) => (
+                    activeIndex === index && (
+                        <motion.div
+                            key={`item-${index}`}
+                            initial={{ opacity: startOpacity, y: startY, scaleY:startScaleY }}
+                            animate={{ opacity: 1, y: 0, scaleY:1.0 }}
+                            exit={{ opacity: startOpacity, y: startY, scaleY:startScaleY }}
+                            transition={{duration:duration}}
+                            className="">
+                            {keywords[index]}
+                        </motion.div>
+                    )
+                ))}
             </AnimatePresence>
         </div>
     </div>

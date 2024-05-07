@@ -10,7 +10,7 @@ export default function FeaturesSection() {
     useSectionView({ inView: isInView, key: 'features' })
 
     return <div ref={ref} id="features" className="section pt-[3.75rem] pb-[2.375rem] px-2.5">
-        <SellKeywords className="mb-[1.875rem] mx-auto " />
+        <SellKeywords className="mt-[2rem] mb-[6rem] mx-auto " />
         <Features />
     </div>
 }

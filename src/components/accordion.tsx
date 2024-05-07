@@ -29,11 +29,11 @@ export default function Accordion({ i, expanded, setExpanded, header, content, c
                         animate="open"
                         exit="collapsed"
                         variants={{
-                            open: { opacity: 1, height: "auto" },
+                            open: { opacity: 1, height: "130px" },
                             collapsed: { opacity: 0, height: 0 }
                         }}
-                        transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-                        className="-translate-y-5 pl-[1.25rem] pr-[1.125rem]"
+                        transition={{ duration: 0.4, delay:0.25, ease: "easeOut" }}
+                        className="pl-[1.25rem] pr-[1.125rem]"
                     >
                         {content}
                     </motion.section>
