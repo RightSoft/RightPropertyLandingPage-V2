@@ -23,6 +23,7 @@ html {
   font-size: w(16);
 }
 body {
+  scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
   font-size: w(16);
   font-weight: 400;
@@ -32,4 +33,5 @@ body {
   justify-content: center;
   width: 100%;
   display: block!important;
+  overflow-x: hidden;
 }

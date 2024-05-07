@@ -32,65 +32,65 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
 
     const cnClass = cn("w-[52.7375rem] text-center text-[2.625rem] leading-[3.2rem] font-bold", className)
     return <div className={cnClass}>
-        <div className="text-[#734ECB]">
+        <div className="">
             We help to sell your properties
         </div>
-        <AnimatePresence mode="wait">
-            {activeIndex == 0 && <motion.div
-                key='item-0'
-                initial={{ opacity: 0, y: 500 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, x: 500 }}
-                className="text-[#F47027] leading-[3.65rem]">
-                {keywords[0]}
-            </motion.div>}
-            {activeIndex == 1 && <motion.div
-                key='item-1'
-                initial={{ opacity: 0, y: 500 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, x: 500 }}
-                className="text-[#F47027] leading-[3.65rem]">
-                {keywords[1]}
-            </motion.div>}
+        <div className="text-keywordColor leading-[3.65rem]">
+            <AnimatePresence mode="wait">
+                {activeIndex == 0 && <motion.div
+                    key='item-0'
+                    initial={{ opacity: 0, y: 500 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, x: 500 }}
+                    className="">
+                    {keywords[0]}
+                </motion.div>}
+                {activeIndex == 1 && <motion.div
+                    key='item-1'
+                    initial={{ opacity: 0, y: 500 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, x: 500 }}
+                    className="">
+                    {keywords[1]}
+                </motion.div>}
 
-            {activeIndex == 2 && <motion.div
-                key='item-2'
-                initial={{ opacity: 0, y: 500 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, x: 500 }}
-                className="text-[#F47027] leading-[3.65rem]">
-                {keywords[2]}
-            </motion.div>}
+                {activeIndex == 2 && <motion.div
+                    key='item-2'
+                    initial={{ opacity: 0, y: 500 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, x: 500 }}
+                    className="">
+                    {keywords[2]}
+                </motion.div>}
 
-            {activeIndex == 3 && <motion.div
-                key='item-3'
+                {activeIndex == 3 && <motion.div
+                    key='item-3'
 
-                initial={{ opacity: 0, y: 500 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, x: 500 }}
-                className="text-[#F47027] leading-[3.65rem]">
-                {keywords[3]}
-            </motion.div>}
+                    initial={{ opacity: 0, y: 500 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, x: 500 }}
+                    className="">
+                    {keywords[3]}
+                </motion.div>}
 
-            {activeIndex == 4 && <motion.div
-                key='item-4'
-                initial={{ opacity: 0, y: 500 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, x: 500 }}
-                className="text-[#F47027] leading-[3.65rem]">
-                {keywords[4]}
-            </motion.div>}
+                {activeIndex == 4 && <motion.div
+                    key='item-4'
+                    initial={{ opacity: 0, y: 500 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, x: 500 }}
+                    className="">
+                    {keywords[4]}
+                </motion.div>}
 
-            {activeIndex == 5 && <motion.div
-                key='item-5'
-                initial={{ opacity: 0, y: 500 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, x: 500 }}
-                className="text-[#F47027] leading-[3.65rem]">
-                {keywords[5]}
-            </motion.div>}
-
-
-        </AnimatePresence>
+                {activeIndex == 5 && <motion.div
+                    key='item-5'
+                    initial={{ opacity: 0, y: 500 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, x: 500 }}
+                    className="">
+                    {keywords[5]}
+                </motion.div>}
+            </AnimatePresence>
+        </div>
     </div>
 }
