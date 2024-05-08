@@ -1,4 +1,4 @@
-export default function RpLogo({ width = 136 }: { width?: number }) {
+export default function RpLogo({ width = 110 }: { width?: number }) {
     return <svg
     className="cursor-pointer"
         onClick={() => {

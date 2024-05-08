@@ -16,7 +16,7 @@ export default function Accordion({ i, expanded, setExpanded, header, content, c
     return (
         <div className={cnClass} onClick={() => setExpanded(i)}>
             <motion.div
-                className="flex items-center min-h-[7.5rem] "
+                className="flex items-center min-h-[7.5rem] cursor-pointer"
                 initial={false}
             >
                 {header}

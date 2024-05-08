@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Accordion from "../accordion"
 import CustomizableIcon from "../icons/customizable-icon"
 import DeviceIntegrationIcon from "../icons/device-integration-icon"
@@ -9,6 +9,21 @@ import FeaturesImages from "./features-images"
 
 export default function Features() {
     const [active, setActive] = useState<number>(0);
+
+    useEffect(() => {
+        const id = setTimeout(() => {
+            let tmpIndex = active;
+            tmpIndex++;
+            if (tmpIndex >= (accordionItems.length)) {
+                tmpIndex = 0;
+            }
+            setActive(tmpIndex);
+        }, 10000);
+        return () => {
+            clearTimeout(id)
+        }
+    }, [active])
+
     const accordionItems = [
         {
             className: "items-center rounded-tl-[20px] rounded-bl-[4px] ",
@@ -87,15 +102,16 @@ export default function Features() {
     return <div className="flex w-full rounded-tl-[20px] rounded-bl-[20px] rounded-tr-[20px] rounded-br-[20px]" style={{
         boxShadow: "0px 8px 20px 0px rgba(0, 0, 0, 0.15)"
     }}>
-        <div className="flex-[3.3_1_0%] font-medium text-[1.125rem] leading-[1.82875rem]">
+        <div className="flex-[1_1_0%] font-medium text-[1.125rem] leading-[1.82875rem]">
             <div className="flex flex-col gap-[0.125rem]">
                 {accordionItems.map((item, i) => {
                     return <Accordion className={item.className} key={i} i={i} expanded={active} setExpanded={(i) => { setActive(i) }} header={item.header} content={item.content} />
                 })}
             </div>
         </div>
-        <div className="flex-[6.7_1_0%] bg-[#EFE8E4] overflow-hidden rounded-tr-[20px] rounded-br-[20px]">
+        <div className="flex-[2.46401_1_0%] bg-[#EFE8E4] overflow-hidden rounded-tr-[20px] rounded-br-[20px]">
             <FeaturesImages activeIndex={active} />
         </div>
     </div>
 }
+

@@ -20,7 +20,7 @@ function App() {
       <>
         <Toaster />
         <Header />
-        <div className='pt-[8.375rem]'>
+        <div className='pt-[7.575rem]'>
           <LevelUpSection />
           <FeaturesSection />
           <div className='flex justify-center'>

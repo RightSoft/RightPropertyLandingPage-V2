@@ -10,12 +10,12 @@ import img1 from '../../assets/images/slide_image_1.webp';
 import img2 from '../../assets/images/slide_image_2.webp';
 
 const SlideImage = ({ src }: { src: string }) => {
-    return <img src={src} className='w-full object-cover h-auto max-h-[16.875rem] rounded-[20px]' />
+    return <img src={src} className='w-full object-cover h-auto max-h-[22.875rem] rounded-[20px]' />
 }
 export default function Slide() {
     return <Swiper
         spaceBetween={22}
-        slidesPerView={3.5}
+        slidesPerView={2.85}
         loop={true}
         autoplay={{
             delay: 3000,

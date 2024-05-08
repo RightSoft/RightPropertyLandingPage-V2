@@ -37,7 +37,7 @@ export default function Footer() {
         <div>
             <ul className="flex flex-col gap-[1.875rem] text-[#83869D] text-end text[1.25rem] leading-[1.52375rem] mb-[5.3068rem]">
                 <li>
-                    <AnchorLink href="features">Features & Benefits</AnchorLink>
+                    <AnchorLink href="features">Features</AnchorLink>
                 </li>
                 <li>
                     <AnchorLink href="onboarding">Onboarding</AnchorLink>

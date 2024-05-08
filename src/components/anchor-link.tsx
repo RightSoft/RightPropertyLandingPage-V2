@@ -11,7 +11,7 @@ export default function AnchorLink({ href, children }: AnchorLinkProps) {
             e.preventDefault();
             if (section === null) return;
             var elementPosition = section.getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.scrollY - 134;
+            var offsetPosition = elementPosition + window.scrollY - 121;
             window.scrollTo({
                 top: offsetPosition,
                 behavior: "smooth"

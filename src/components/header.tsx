@@ -7,7 +7,7 @@ export default function Header() {
     const textClass = (key: string) => {
         return activeSection == key ? 'font-bold text-[#5EC6D3]' : ''
     }
-    return <div className="w-full h-[8.375rem] bg-[#F8F8F9] fixed z-50 ">
+    return <div className="w-full h-[7.575rem] bg-[#F8F8F9] fixed z-50 drop-shadow-md">
         <div className="section flex justify-between pl-[5.625rem] pr-[1.6875rem] items-center h-full">
             <RpLogo />
             <ul className='flex items-center gap-[1.875rem] text-[1.25rem] leading-[1.52375rem] '>
