@@ -5,15 +5,15 @@ interface PricingCardSmallProps {
 }
 export default function PricingCardSmall({ title, features, price }: PricingCardSmallProps) {
     return <div
-        className="w-[21rem] h-[32.75rem] bg-white rounded-[32px] py-8 px-[1rem] flex flex-col items-center gap-8"
+        className="w-[21rem] h-[32.75rem] bg-white rounded-[32px] py-8 px-[1rem] flex flex-col items-center gap-8 mobile:w-[11.025rem] mobile:h-[12.80rem] mobile:py-[1rem] mobile:px-[0.85rem] mobile:gap-[0.3rem] mobile:rounded-[16px]"
         style={{
             boxShadow: ' 0px 6.4px 16px 0px rgba(0, 0, 0, 0.15)'
         }}>
-        <div className="text-[1.6rem] -tracking-[0.04em] font-bold text-[#14141A] leading-[1.95rem] text-center">
+        <div className="text-[1.6rem] -tracking-[0.04em] font-bold text-[#14141A] mobile:text-rpBlue leading-[1.95rem] text-center mobile:text-[0.8rem] mobile:leading-[1.21em]">
             {title}
         </div>
-        <div className="w-full text-center text-[1rem] leading-[1.21875rem]   border-b-[0.8px] border-t-[0.8px] border-[#D4D5D9] grow pt-8">
-            <div className="flex flex-col gap-6">
+        <div className="w-full text-center text-[1rem] leading-[1.21875rem]   mobile:text-rpBlue border-b-[0.8px] border-t-[0.8px] border-[#D4D5D9] grow pt-8 mobile:text-8 mobile:gap-[0.425rem] mobile:pt-4">
+            <div className="flex flex-col gap-6 mobile:gap-[0.39375rem]">
                 {features.map((feature, index) => {
                     return <div key={index}>
                         {feature}
@@ -21,17 +21,17 @@ export default function PricingCardSmall({ title, features, price }: PricingCard
                 })}
             </div>
         </div>
-        {price && <div>
-            <span className="text-[2rem] leading-[2.43rem]">
+        {price && <div >
+            <span className="text-[2rem] leading-[2.43rem] mobile:text-[1rem] mobile:leading-[1.21em] mobile:text-rpBlue">
                 £ <b>{price}</b>
             </span>
             {" "}
-            <span className="leading-[1.21875rem] text-[1rem]">
+            <span className="leading-[1.21875rem] text-[1rem] mobile:text-8">
                 / Month
             </span>
         </div>}
         {
-            !price && <div className="text-[1.2rem] -tracking-[0.04em]  text-[#FF3F79] leading-[1.4625rem] text-center font-bold ">
+            !price && <div className="text-[1.2rem] -tracking-[0.04em]  text-[#FF3F79] leading-[1.4625rem] text-center font-bold mobile:text-12">
                 Get in touch<br />
                 for  pricing
             </div>

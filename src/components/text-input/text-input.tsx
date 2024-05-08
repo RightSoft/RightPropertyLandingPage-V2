@@ -7,7 +7,7 @@ export default function TextInput({ label, onChange, value }: { label: string, o
             <input
                 onChange={onChange}
                 value={value}
-                className="bg-[#F7F7F7] rounded-[20px] w-full h-[3.75rem] pl-4 focus-visible:outline-none"
+                className="bg-[#F7F7F7] rounded-[20px] mobile:rounded-[10px] w-full h-[3.75rem] mobile:h-[2.8125rem] pl-4 focus-visible:outline-none"
                 style={{
                     boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.15)'
                 }}

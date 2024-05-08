@@ -38,7 +38,7 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
         }
     }, [activeIndex])
 
-    const cnClass = cn("w-[52.7375rem] text-center text-[2.625rem] leading-[3.2rem] font-bold", className)
+    const cnClass = cn("w-[52.7375rem] text-center text-[2.625rem] leading-[3.2rem] font-bold","mobile:text-[1.75rem] mobile:leading-[2.1331rem] mobile:w-full", className)
     return <div className={cnClass}>
         <div className="">
             We help to sell your properties
