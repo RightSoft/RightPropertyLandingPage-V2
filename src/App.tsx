@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles/index.scss'
 import BookADemoSection from './components/book-a-demo-section/book-a-demo-section'
-import PricingSection from './components/pricing-section/pricing-section'
+// import PricingSection from './components/pricing-section/pricing-section'
 import Footer from './components/footer/footer'
 import ActiveSectionProvider from './context/section-context/section-context'
 import AnchorLink from './components/anchor-link'
