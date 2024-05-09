@@ -13,7 +13,7 @@ export default function SlideSection() {
                 A <b>beautiful</b> interface <b>stunning</b> your clients
                 <span className="mobile:hidden">
                     <br />
-                    A <b>focused</b> technology<b>empowering</b> your business.
+                    A <b>focused</b> technology <b>empowering</b> your business.
                 </span>
             </div>
             <div className="text-[1.125rem] leading-[1.371rem] mobile:text-12 w-[57.4375rem] mobile:w-[22.06rem]">
