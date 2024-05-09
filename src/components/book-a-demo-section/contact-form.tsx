@@ -70,7 +70,7 @@ export default function ContactForm() {
         toast.success('Received Information Successfully!');
 
     };
-    return <div className="w-[37.5rem] mobile:w-[22.0625rem] flex items-center flex-col">
+    return <div className="w-[37.5rem] mobile:w-[19.5625rem] flex items-center flex-col">
         <div className="flex flex-col items-center gap-3 w-full">
             <TextInput label={"Name"} onChange={(e) => {
                 setName(e.target.value)

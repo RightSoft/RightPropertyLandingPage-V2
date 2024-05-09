@@ -29,7 +29,7 @@ export default function OnboardSlide({ className }: { className?: string }) {
             icon: <OnboardThirdStepIcon className='w-[6rem]' />
         },
     ]
-    return <div className={`${className}`}>
+    return <div className={`${className} w-full overflow-hidden`}>
         <Swiper
             spaceBetween={-165}
             slidesPerView={1}

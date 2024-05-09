@@ -2,31 +2,30 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { featureItems } from '../feature-data';
 import FeatureSlideItem from './feature-slide-item';
-import { Pagination } from 'swiper/modules';
+import { FreeMode } from 'swiper/modules';
 import 'swiper/css/pagination';
 
 
 export default function FeaturesSlide({ className }: { className?: string }) {
-    return <div className={`${className} pt-[3rem]`}>
+    return <div className={`${className} swiper-container swiper-container-free-mode`}>
         <Swiper
-            spaceBetween={22}
+            spaceBetween={10}
             slidesPerView={1}
             loop={true}
-            pagination={{
-                clickable: true,
-              }}
-            // autoplay={{
-            //     delay: 3000,
-            //     disableOnInteraction: false,
-            // }}
-            modules={[Autoplay,Pagination]}
+            freeMode={true}
+            speed={8000}
+            autoplay={{
+                delay: 1,
+                disableOnInteraction: false,
+            }}
+            modules={[Autoplay, FreeMode]}
 
             onSlideChange={() => { }}
             onSwiper={(swiper) => console.log(swiper)}
         >
             {
                 featureItems.map((featureItem, index) => {
-                    return <SwiperSlide key={`${index}_featureslide`}><FeatureSlideItem featureItem={featureItem} isImageTop={index % 2 != 0} /></SwiperSlide>
+                    return <SwiperSlide key={`${index}_featureslide`}><FeatureSlideItem featureItem={featureItem} isImageTop={true} /></SwiperSlide>
                 })
             }
         </Swiper>

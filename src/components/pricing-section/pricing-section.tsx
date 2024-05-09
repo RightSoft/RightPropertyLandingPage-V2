@@ -28,11 +28,11 @@ export default function PricingSection() {
             We're committed to providing <b>clear, upfront pricing</b> so you can plan your budget without any guesswork. Unlike our competitors, we display our rates <b>openly</b>, ensuring you receive fair treatment regardless of your company's size.
             <br />
         </SectionDescription>
-        <div ref={ref} className="mobile:text-rpBlue mobile:w-full mobile:justify-center mobile:items-center flex gap-[0.875rem] section pb-[3.437rem] mobile:pb-[1.71875rem] mobile:flex-col  mobile:gap-2.5">
-            <div className="bg-[#CFFAEA] mobile:w-full mobile:flex mobile:justify-center py-[1.75rem] px-5 mobile:px-0 rounded-[32px] mobile:rounded-[10px]">
+        <div ref={ref} className=" mobile:w-full mobile:justify-center mobile:items-center flex gap-[0.875rem] section pb-[3.437rem] mobile:pb-[1.71875rem] mobile:flex-col  mobile:gap-2.5">
+            <div className="mobile:w-full mobile:flex mobile:justify-center py-[1.75rem] mobile:pb-0 px-5 mobile:px-0 rounded-[32px] mobile:rounded-[10px]">
                 <PricingCardWide />
             </div>
-            <div className="bg-[#FFE0EB] py-[1.75rem] mobile:justify-center px-5 rounded-[32px] mobile:px-0 mobile:rounded-[10px] flex gap-[1.125rem] w-[47.68625rem] mobile:w-full mobile:gap-[0.56rem]">
+            <div className="py-[1.75rem] mobile:justify-center px-5 rounded-[32px] mobile:px-0 mobile:rounded-[10px] flex gap-[1.125rem] w-[47.68625rem] mobile:w-full mobile:flex-col mobile:items-center mobile:gap-5">
                 <PricingCard title={"Web Only"} features={webFeatures} price={150} />
                 <PricingCard title={"Marketing Suite"} features={marketingFeatures} price={300} />
             </div>

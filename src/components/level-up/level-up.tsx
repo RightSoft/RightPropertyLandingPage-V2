@@ -10,12 +10,12 @@ export default function LevelUp() {
             </div>
         </div>
 
-        <div className="h-full mobile:h-auto w-full flex flex-col justify-end mobile:justify-start pl-[4.25rem] mobile:pl-2.5 mobile:py-10 text-white mobile:text-[#40424E]  relative z-20">
+        <div className="h-full mobile:h-auto w-full flex flex-col justify-end mobile:justify-start pl-[4.25rem] mobile:pl-2.5 mobile:pt-10 text-white mobile:text-[#40424E]  relative z-20">
             <h1 className="text-[3rem] leading-[3.6568rem] mobile:text-[2.25rem] mobile:leading-[2.7425rem] mb-3 font-bold">
                 Level Up Your<br />
                 Real Estate Marketing
             </h1>
-            <p className="w-[44.76rem] text-[1.5rem] leading-[1.82875rem] mobile:text-xs mobile:leading-[0.9143rem] mobile:w-[22.1875rem]">
+            <p className="w-[44.76rem] text-[1.5rem] leading-[1.82875rem] mobile:text-xs mobile:leading-[0.9143rem] mobile:w-full ">
                 <b>Right Property</b> is a <b>digital marketing suite</b> tailored for real estate developers. We offer tools to <b>create, manage, and display</b> your development on various devices to <b>enhance marketing and sales</b> efforts.
             </p>
             <br />

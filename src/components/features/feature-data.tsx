@@ -17,7 +17,7 @@ export const featureItems: FeatureItem[] = [
         icon: <DeviceIntegrationIcon />,
         image: deviceIntegrationSrc,
         desktopClass: "max-h-[40.625rem]",
-        mobileIcon: <DeviceIntegrationIcon className="w-[3.125rem]"/>,
+        mobileIcon: <DeviceIntegrationIcon className="w-10 m-[0.3125rem]"/>,
     },
     {
         title: "Fast and Easy Setup",
@@ -26,7 +26,7 @@ export const featureItems: FeatureItem[] = [
         image: setupSrc,
         desktopClass: "max-w-[59.375rem]",
         mobileClass: "max-w-[19.5rem]",
-        mobileIcon: <SetupIcon  className="w-[3.125rem]"/>,
+        mobileIcon: <SetupIcon  className="w-10 m-[0.3125rem]"/>,
     },
     {
         title: "Fully Customizable",
@@ -34,7 +34,7 @@ export const featureItems: FeatureItem[] = [
         icon: <CustomizableIcon />,
         image: customizableSrc,
         desktopClass: "w-full",
-        mobileIcon: <CustomizableIcon  className="w-[3.125rem]"/>,
+        mobileIcon: <CustomizableIcon  className="w-10 m-[0.3125rem]"/>,
     },
     {
         title: "One Click Website Generation",
@@ -43,7 +43,7 @@ export const featureItems: FeatureItem[] = [
         image: oneClickWebsiteSrc,
         desktopClass: "max-w-[50.1875rem]",
         mobileClass: "max-w-[18.5rem]",
-        mobileIcon: <OneClickGenerationIcon  className="w-[3.125rem]"/>,
+        mobileIcon: <OneClickGenerationIcon  className="w-10 m-[0.3125rem]"/>,
     },
     {
         title: "Lead Management & Analytics",
@@ -52,6 +52,6 @@ export const featureItems: FeatureItem[] = [
         image: leadManagementSrc,
         desktopClass: "max-w-[50.1875rem]",
         mobileClass: "max-w-[18.5rem]",
-        mobileIcon: <LeadManagementIcon  className="w-[3.125rem]"/>,
+        mobileIcon: <LeadManagementIcon  className="w-10 m-[0.3125rem]"/>,
     }
 ]
