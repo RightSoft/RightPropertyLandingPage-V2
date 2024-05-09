@@ -38,7 +38,7 @@ function App() {
           <SlideSection />
           <OnboardSection />
           <BookADemoSection />
-          <PricingSection />
+          {/* <PricingSection /> */}
           <Footer />
         </div>
         <WindowSizeProvider />
