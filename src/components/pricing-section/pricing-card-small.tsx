@@ -11,7 +11,7 @@ export default function PricingCardSmall({ title, features, price }: PricingCard
         <div className="text-[1.6rem] -tracking-[0.04em] font-bold text-[#14141A] mobile:text-rpBlue leading-[1.95rem] text-center mobile:text-[0.84rem] mobile:leading-[1.21em]">
             {title}
         </div>
-        <div className="w-full text-center text-[1rem] leading-[1.21875em]   mobile:text-rpBlue border-b-[0.8px] border-t-[0.8px] border-[#D4D5D9] grow pt-8 mobile:text-[0.625rem] mobile:gap-[0.425rem] mobile:pt-4">
+        <div className="w-full text-center text-[1rem] leading-[1.21875em]    border-b-[0.8px] border-t-[0.8px] border-[#D4D5D9] grow pt-8 mobile:text-[0.625rem] mobile:gap-[0.425rem] mobile:pt-4">
             <div className="flex flex-col gap-6 mobile:gap-[0.39375rem]">
                 {features.map((feature, index) => {
                     return <div key={index}>
