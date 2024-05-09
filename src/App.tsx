@@ -15,9 +15,11 @@ import Footer from './components/footer/footer'
 import ActiveSectionProvider from './context/section-context/section-context'
 import AnchorLink from './components/anchor-link'
 import WindowSizeProvider from './components/window-size-provider'
+import ReactGA from "react-ga4";
 
 
 function App() {
+  ReactGA.initialize("G-D169WBQW9L");
 
   return (
     <ActiveSectionProvider>
