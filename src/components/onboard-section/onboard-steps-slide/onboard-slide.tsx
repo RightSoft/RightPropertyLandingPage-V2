@@ -14,19 +14,19 @@ export default function OnboardSlide({ className }: { className?: string }) {
             index: 1,
             title: "Gather Your Assets",
             description: "We need all your existing visual assets from still renders, to brochures, videos to illustrations.",
-            icon: <OnboardFirstStepIcon className='w-[96px]' />
+            icon: <OnboardFirstStepIcon className='w-[6rem]' />
         },
         {
             index: 2,
             title: "Your Plot Details",
             description: "We need all plot details from floor plans to dimensions.",
-            icon: <OnboardSecondStepItem className='w-[96px]' />
+            icon: <OnboardSecondStepItem className='w-[6rem]' />
         },
         {
             index: 3,
             title: "Apply Your Branding",
             description: "We need your logo and brand colours",
-            icon: <OnboardThirdStepIcon className='w-[96px]' />
+            icon: <OnboardThirdStepIcon className='w-[6rem]' />
         },
     ]
     return <div className={`${className}`}>

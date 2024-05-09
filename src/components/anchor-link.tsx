@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import useWindowSize from "../hooks/use-window-size";
 
 interface AnchorLinkProps {
@@ -6,9 +7,14 @@ interface AnchorLinkProps {
     className ?: string;
 }
 export default function AnchorLink({ href, children }: AnchorLinkProps) {
+    const [fontSize, setFontSize] = useState<number>(0);
     const {width} = useWindowSize();
 
-    const offset = width > 800 ? 121 : 55; 
+    useEffect(() => {
+        setFontSize(document.documentElement.style.fontSize ? parseInt(document.documentElement.style.fontSize) : 16);
+    },[]) 
+    const offset = width > 800 ? 6 * fontSize : 3.4375 * fontSize;
+
     return <a
         href={`#${href}`}
         onClick={e => {

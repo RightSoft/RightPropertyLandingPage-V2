@@ -1,4 +1,4 @@
-export default function DeviceIntegrationIcon({ className = "w-[70px]" }: { className?: string }) {
+export default function DeviceIntegrationIcon({ className = "w-[4.375rem]" }: { className?: string }) {
     return <svg className={className} viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0.554328 59.0279C0.253063 59.0279 0 58.7478 0 58.4142V11.5858C0 11.2522 0.253063 10.972 0.554328 10.972H59.4457C59.7469 10.972 60 11.2522 60 11.5858V58.4009C60 58.7344 59.7469 59.0146 59.4457 59.0146H0.554328V59.0279ZM1.12071 57.8539H58.9636V55.9461H1.12071V57.8539ZM1.12071 54.7186H58.9636V12.2128H1.12071V54.7186Z" fill="url(#paint0_linear_366_22394)" />
         <path d="M6.05189 15.4281C5.75062 15.4281 5.49756 15.148 5.49756 14.8144C5.49756 14.4809 5.75062 14.2007 6.05189 14.2007H53.6518C53.9531 14.2007 54.2061 14.4809 54.2061 14.8144C54.2061 15.148 53.9531 15.4281 53.6518 15.4281H6.05189Z" fill="url(#paint1_linear_366_22394)" />

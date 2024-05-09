@@ -108,7 +108,7 @@ export default function Features({ className }: { className?: string }) {
                 })}
             </div>
         </div>
-        <div className="flex-[2.46401_1_0%] bg-[#EFE8E4] overflow-hidden rounded-tr-[20px] rounded-br-[20px]">
+        <div className="flex-[2.3_1_0%] bg-[#EFE8E4] overflow-hidden rounded-tr-[20px] rounded-br-[20px]">
             <FeaturesImages activeIndex={active} />
         </div>
     </div>

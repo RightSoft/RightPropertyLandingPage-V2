@@ -1,13 +1,13 @@
-export default function RpLogo({ width = 110 }: { width?: number }) {
+export default function RpLogo({ className }: { className: string }) {
     return <svg
-    className="cursor-pointer"
+        className={`cursor-pointer ${className}`}
         onClick={() => {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
         }}
-        width={width} viewBox="0 0 136 91" fill="none" xmlns="http://www.w3.org/2000/svg">
+        viewBox="0 0 136 91" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_314_4680" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="136" height="91">
             <path d="M136.001 0.551575H0.144531V90.7576H136.001V0.551575Z" fill="white" />
         </mask>

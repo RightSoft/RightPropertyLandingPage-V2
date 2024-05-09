@@ -23,7 +23,7 @@ export default function Header() {
         <div className={`w-full h-[7.575rem] mobile:h-[3.4375rem] bg-[#F8F8F9] mobile:bg-rpBlue fixed z-50 ${shadow}`}>
             <div className="section flex justify-between mobile:px-5 pl-[5.625rem] pr-[1.6875rem] items-center h-full">
                 <div className="mobile:hidden">
-                    <RpLogo />
+                    <RpLogo className="w-[6.875rem]" />
                 </div>
                 <div className="hidden mobile:block ">
                     <RpWhiteLogo />

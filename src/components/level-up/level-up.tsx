@@ -3,9 +3,9 @@ import ActionButton from "../buttons/action-button";
 
 export default function LevelUp() {
     return <div className="relative h-[47.125rem] mobile:h-[35.375rem]  w-full mobile:bg-[#EEEEF0] ">
-        <div className="pl-[1.4375rem] pr-[0.9375rem] mobile:h-[13.6875rem] mobile:px-0 w-full h-full absolute mobile:relative">
-            <video className="w-full h-full object-cover absolute z-10" src="/rp-landing-last.mp4" autoPlay muted loop ></video>
-            <div className="w-full h-full absolute z-20 opacity-60">
+        <div className="px-[1.203125rem] mobile:h-[13.6875rem] mobile:px-0 w-full h-full absolute mobile:relative">
+            <video style={{padding:'inherit'}} className="w-full left-0 h-full object-cover absolute z-10 " src="/rp-landing-last.mp4" autoPlay muted playsInline loop ></video>
+            <div  style={{padding:'inherit'}} className="w-full left-0 h-full absolute z-20 opacity-60">
                 <div className="bg-[#1B1B1B]  w-full h-full"/>
             </div>
         </div>

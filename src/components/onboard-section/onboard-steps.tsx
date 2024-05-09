@@ -8,7 +8,7 @@ import { useEffect, useRef } from "react";
 
 export default function OnboardSteps() {
     const ref = useRef(null)
-    const inView = useInView(ref, {amount:"all"})
+    const inView = useInView(ref, {amount:0.9})
 
     useEffect(() => {
         if (inView) {
