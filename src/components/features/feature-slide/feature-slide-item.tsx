@@ -21,14 +21,15 @@ const ImageComponent = ({ featureItem }: { featureItem: FeatureItem }) => {
 
     return <div className={cnClass} style={{ boxShadow: '0px 8px 10px 0px rgba(0, 0, 0, 0.08)' }}>
         <img
+        draggable={false}
             src={featureItem.image}
-            className={`${featureItem.mobileClass} h-auto object-contain`}
+            className={`${featureItem.mobileClass} h-auto object-contain select-none pointer-events-none`}
             alt="feature"
         />
     </div>
 }
 export default function FeatureSlideItem({ featureItem, isImageTop }: { featureItem: FeatureItem, isImageTop: boolean }) {
-    return <div className="w-full flex  justify-center ">
+    return <div className="w-full flex  justify-center px-[1.875rem] select-none">
         <div className="flex flex-col gap-5 w-[20.3125rem]">
             {isImageTop ? <ImageComponent featureItem={featureItem} /> : <ContentComponent featureItem={featureItem} />}
             {isImageTop ? <ContentComponent featureItem={featureItem} /> : <ImageComponent featureItem={featureItem} />}

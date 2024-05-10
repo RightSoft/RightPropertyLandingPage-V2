@@ -51,4 +51,17 @@ body {
 
 .swiper-wrapper{
   transition-timing-function : linear;
+  transition-timing-function: linear 
+}
+
+.carousel-slide.transition {
+  animation: easeOutSlide 0.5s ease-out forwards;
+}
+
+@keyframes easeOutSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);  }
 }

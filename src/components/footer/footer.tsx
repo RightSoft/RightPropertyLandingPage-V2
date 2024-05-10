@@ -36,9 +36,11 @@ export default function Footer() {
                     <a href="https://www.instagram.com/rightpropertyapp/" target="_blank"><Instagram className="text-white w-6" /></a>
                     <a href="https://uk.linkedin.com/company/rightpropertyapp" target="_blank"><Linkedin className="text-white w-6" /></a>
                 </div>
-                <div className="text-white text-xs">
-                    Powered by <b>Rightsoft</b>
-                </div>
+                <a href="https://rightsoft.co.uk">
+                    <div className="text-white text-xs">
+                        Powered by <b>Rightsoft</b>
+                    </div>
+                </a>
             </div>
             <div className="text-[#83869D] font-light text-[1rem] leading-[1.21875rem] w-[12.625rem] mb-[2.29rem] mobile:hidden">
                 Highland House 401<br />
@@ -67,9 +69,11 @@ export default function Footer() {
                     <AnchorLink href="pricing">Pricing</AnchorLink>
                 </li>
             </ul>
-            <div className="text-[#525361] leading-[1rem]">
-                Powered by <b>Rightsoft</b>
-            </div>
+            <a target="_blank" href="https://rightsoft.co.uk">
+                <div className="text-[#525361] leading-[1rem]">
+                    Powered by <b>Rightsoft</b>
+                </div>
+            </a >
         </div>
     </div>
 }

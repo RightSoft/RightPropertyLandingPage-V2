@@ -1,5 +1,6 @@
 import SectionDescription from "../section-description";
 import SectionTitle from "../section-title";
+import BeautifulIntelligentAnimatigCaption from "./beautiful-intelligent-animating-caption";
 import Slide from "./slide";
 
 export default function SlideSection() {
@@ -9,9 +10,10 @@ export default function SlideSection() {
             <SectionDescription className="mb-3 mobile:mb-[1.875rem]">
                 Right Property gives you the best of both worlds:
             </SectionDescription>
-            <div className="text-[2.25rem] leading-[2.7425rem] mobile:text-24 mb-3 mobile:mb-[1.875rem] w-[57.4375rem] mobile:w-[22.06rem]">
+            <BeautifulIntelligentAnimatigCaption/>
+            <div className="mobile:hidden text-[2.25rem] leading-[2.7425rem] mobile:text-24 mb-3 mobile:mb-[1.875rem] w-[57.4375rem] mobile:w-[22.06rem]">
                 A <b>beautiful</b> interface <b>stunning</b> your clients
-                <span className="mobile:hidden">
+                <span className="">
                     <br />
                     A <b>focused</b> technology <b>empowering</b> your business.
                 </span>
