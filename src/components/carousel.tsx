@@ -94,7 +94,9 @@ const Carousel = ({ cards, speed }: CarouselProps) => {
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        setTimeout(() => {
+            setIsDragging(false);
+        }, 2000);
     };
 
     return (
