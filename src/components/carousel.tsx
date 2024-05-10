@@ -16,6 +16,7 @@ const Carousel = ({ cards, speed }: CarouselProps) => {
     const cardWidth = width <= 800 ? width : 375;
     const transitionDuration = isDragging ? 0 : 3;
     const position = useMotionValue(-cardWidth);
+    const releaseId = useRef<number|null>(null);
     const updatePosition = (isDragging: boolean) => {
         if (!isDragging) {
             const prevPosition = position.get();
@@ -69,14 +70,25 @@ const Carousel = ({ cards, speed }: CarouselProps) => {
     }
 
     const handleTouchStart = (e: React.TouchEvent) => {
+        e.preventDefault();
+        if(releaseId.current){
+            clearTimeout(releaseId.current);
+            releaseId.current = null;
+        }
         setIsDragging(true);
         setDragStart(e.touches[0].clientX);
     };
-    const handleMouseDown = (e: React.MouseEvent) => {
-        setIsDragging(true);
-        setDragStart(e.clientX);
-    };
+    // const handleMouseDown = (e: React.MouseEvent) => {
+    //     if(releaseId.current){
+    //         debugger;
+    //         clearTimeout(releaseId.current);
+    //         releaseId.current = null;
+    //     }
+    //     setIsDragging(true);
+    //     setDragStart(e.clientX);
+    // };
     const handleTouchMove = (e: React.TouchEvent) => {
+        e.preventDefault();
         if (isDragging) {
             const delta = e.touches[0].clientX - dragStart;
             const prevPosition = position.get();
@@ -84,32 +96,31 @@ const Carousel = ({ cards, speed }: CarouselProps) => {
             setDragStart(e.touches[0].clientX);
         }
     };
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (isDragging) {
-            const delta = e.clientX - dragStart;
-            const prevPosition = position.get();
-            position.set(prevPosition + delta);
-            setDragStart(e.clientX);
-        }
-    };
+    // const handleMouseMove = (e: React.MouseEvent) => {
+    //     e.preventDefault();
+    //     if (isDragging) {
+    //         const delta = e.clientX - dragStart;
+    //         const prevPosition = position.get();
+    //         position.set(prevPosition + delta);
+    //         setDragStart(e.clientX);
+    //     }
+    // };
 
     const handleMouseUp = () => {
-        setTimeout(() => {
+        releaseId.current = setTimeout(() => {
             setIsDragging(false);
-        }, 2000);
+        },4500)
+            
     };
 
     return (
         <motion.div
-            className="carousel"
+            className="carousel touch-pan-y"
             ref={carouselRef}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleMouseUp}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
+       
         >
             <motion.div
                 className="carousel-images"
