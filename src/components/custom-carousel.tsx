@@ -117,7 +117,7 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
         }, 4500)
 
         const imageWidth = cardWidth
-        const threshold = imageWidth / 3
+        const threshold = imageWidth / 5
         const progress = position.get() / carouselWidth;
         const positiveIndex = Math.abs(Math.ceil(cards.length * progress));
         const negativeIndex = Math.abs(Math.floor(cards.length * progress));
