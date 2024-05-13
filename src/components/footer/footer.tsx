@@ -25,9 +25,9 @@ export default function Footer() {
                     <li>
                         <AnchorLink href="book-a-demo">Book A Demo</AnchorLink>
                     </li>
-                    <li>
+                    {/* <li>
                         <AnchorLink href="pricing">Pricing</AnchorLink>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
             <div className="mobile:flex justify-between items-center hidden ">

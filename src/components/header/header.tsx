@@ -41,9 +41,9 @@ export default function Header() {
                     <li className={textClass('book-a-demo')}>
                         <AnchorLink href='book-a-demo'>Book a Demo</AnchorLink>
                     </li>
-                    <li className={textClass('pricing')}>
+                    {/* <li className={textClass('pricing')}>
                         <AnchorLink href='pricing'>Pricing</AnchorLink>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </div>
@@ -53,7 +53,7 @@ export default function Header() {
                 initial={{ opacity: 0.5, x: '-100%' }}
                 exit={{ opacity: 0.5, x: '-100%' }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
+                transition={{  duration:0.5,ease: "easeOut",}}
             >
                 <HeaderMenu toggleMenu={toggleMenu} />
             </motion.div>}
