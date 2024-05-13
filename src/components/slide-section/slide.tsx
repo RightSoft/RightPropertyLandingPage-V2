@@ -26,7 +26,7 @@ export default function Slide() {
         breakpoints={
             {
                 801: {
-                    slidesPerView: 2.85,
+                    slidesPerView: 3,
                     spaceBetween: 20
                 },
             }

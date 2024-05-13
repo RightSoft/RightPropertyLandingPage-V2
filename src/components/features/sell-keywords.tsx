@@ -1,12 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react"
 import { cn } from "../../lib/utils";
+import useLoopInRange from "../../hooks/use-loop-in-range";
 interface SellKeywordsProps {
     className: string;
 
 }
 export default function SellKeywords({ className }: SellKeywordsProps) {
-    const [activeIndex, setActiveIndex] = useState(0)
     const keywords = [
         'faster',
         'cost effective',
@@ -21,22 +20,7 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
     const startOpacity = 0.0;
     const duration = 0.4
     const wait = 3000 // in ms
-
-
-
-    useEffect(() => {
-        const id = setTimeout(() => {
-            let tmpIndex = activeIndex;
-            tmpIndex++;
-            if (tmpIndex >= (keywords.length)) {
-                tmpIndex = 0;
-            }
-            setActiveIndex(tmpIndex);
-        }, wait);
-        return () => {
-            clearTimeout(id)
-        }
-    }, [activeIndex])
+    const activeIndex = useLoopInRange(keywords.length, wait);
 
     const cnClass = cn("w-[52.7375rem] text-center text-[2.625rem] leading-[3.2rem] font-bold","mobile:text-[1.75rem] mobile:leading-[2.1331rem] mobile:w-full", className)
     return <div className={cnClass}>

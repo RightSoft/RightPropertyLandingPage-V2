@@ -7,7 +7,7 @@ interface CarouselProps {
     cards: React.ReactNode[];
     speed: number;
 }
-const Carousel = ({ cards, speed }: CarouselProps) => {
+const CustomCarousel = ({ cards, speed }: CarouselProps) => {
     const [slideCards, setSlideImages] = useState<React.ReactNode[]>(cards);
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState(0);
@@ -16,7 +16,7 @@ const Carousel = ({ cards, speed }: CarouselProps) => {
     const cardWidth = width <= 800 ? width : 375;
     const transitionDuration = isDragging ? 0 : 3;
     const position = useMotionValue(-cardWidth);
-    const releaseId = useRef<number|null>(null);
+    const releaseId = useRef<number | null>(null);
     const updatePosition = (isDragging: boolean) => {
         if (!isDragging) {
             const prevPosition = position.get();
@@ -71,7 +71,7 @@ const Carousel = ({ cards, speed }: CarouselProps) => {
 
     const handleTouchStart = (e: React.TouchEvent) => {
         e.preventDefault();
-        if(releaseId.current){
+        if (releaseId.current) {
             clearTimeout(releaseId.current);
             releaseId.current = null;
         }
@@ -109,18 +109,17 @@ const Carousel = ({ cards, speed }: CarouselProps) => {
     const handleMouseUp = () => {
         releaseId.current = setTimeout(() => {
             setIsDragging(false);
-        },4500)
-            
+        }, 4500)
+
     };
 
     return (
         <motion.div
-            className="carousel touch-pan-y"
+            className="carousel  touch-pan-y"
             ref={carouselRef}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleMouseUp}
-       
         >
             <motion.div
                 className="carousel-images"
@@ -137,4 +136,4 @@ const Carousel = ({ cards, speed }: CarouselProps) => {
     );
 };
 
-export default Carousel;
+export default CustomCarousel;
