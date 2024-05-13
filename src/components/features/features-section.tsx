@@ -6,7 +6,8 @@ import useSectionView from "../../hooks/use-section-view";
 import useWindowSize from "../../hooks/use-window-size";
 import { featureItems } from "./feature-data";
 import FeatureSlideItem from "./feature-slide/feature-slide-item";
-import SwiperCarousel from "./swiper-carousel";
+// import SwiperCarousel from "./swiper-carousel";
+import CustomCarousel from "../custom-carousel";
 
 export default function FeaturesSection() {
     const ref = useRef(null)
@@ -14,13 +15,14 @@ export default function FeaturesSection() {
 
     useSectionView({ inView: isInView, key: 'features' })
     const { width } = useWindowSize();
-    const carouselCards = featureItems.map((featureItem, index) => {
+    const items = [ featureItems[featureItems.length - 1], ...featureItems,featureItems[0]];
+    const carouselCards = items.map((featureItem, index) => {
         return <FeatureSlideItem key={`slide_${index}`} featureItem={featureItem} isImageTop={true} />
     })
     return <div ref={ref} id="features" className="section pb-[2.375rem] mobile:pb-[0]  px-[1.203125rem] mobile:px-0 mobile:bg-[#F7F7F7]">
         <SellKeywords className="pt-[7.5rem] pb-[6rem] mobile:pb-[3.375rem]  mobile:pt-3 mx-auto " />
         {width > 800 && <Features className="" />}
-        <SwiperCarousel cards={carouselCards} speed={0} />
-        {/* {width <= 800 && <CustomCarousel cards={carouselCards} speed={15} />} */}
+        {/* <SwiperCarousel cards={carouselCards} speed={0} /> */}
+        {width <= 800 && <CustomCarousel cards={carouselCards} speed={15} />}
     </div>
 }
