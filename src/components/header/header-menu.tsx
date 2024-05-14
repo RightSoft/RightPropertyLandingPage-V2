@@ -18,9 +18,9 @@ export default function HeaderMenu({ toggleMenu }: { toggleMenu: () => void }) {
                 <li onClick={toggleMenu} className={textClass}>
                     <AnchorLink href='book-a-demo'>Book a Demo</AnchorLink>
                 </li>
-                <li onClick={toggleMenu} className={textClass}>
+                {/* <li onClick={toggleMenu} className={textClass}>
                     <AnchorLink href='pricing'>Pricing</AnchorLink>
-                </li>
+                </li> */}
             </ul>
         </div>
         <div className="text-[0.875rem] leading-[1.21em] font-light">

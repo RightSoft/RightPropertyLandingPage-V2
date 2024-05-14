@@ -65,9 +65,9 @@ export default function Footer() {
                 <li>
                     <AnchorLink href="book-a-demo">Book A Demo</AnchorLink>
                 </li>
-                <li>
+                {/* <li>
                     <AnchorLink href="pricing">Pricing</AnchorLink>
-                </li>
+                </li> */}
             </ul>
             <a target="_blank" href="https://rightsoft.co.uk">
                 <div className="text-[#525361] leading-[1rem]">
