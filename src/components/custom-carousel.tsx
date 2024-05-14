@@ -1,33 +1,38 @@
 import { useState, useRef, useEffect } from 'react';
-import './Carousel.css';
 import useWindowSize from '../hooks/use-window-size';
-import {  motion, useMotionValue, useMotionValueEvent, useSpring, useWillChange } from 'framer-motion';
+import { motion, useMotionValue, useMotionValueEvent, useSpring, useWillChange } from 'framer-motion';
 
 interface CarouselProps {
     cards: React.ReactNode[];
-    speed: number;
+    speed: number; // in ms
 }
 const CustomCarousel = ({ cards, speed }: CarouselProps) => {
-    const [slideCards, _] = useState<React.ReactNode[]>(cards);
-    const [isDragging, setIsDragging] = useState(false);
-    const [dragStart, setDragStart] = useState<Partial<Touch>>();
-    const carouselRef = useRef(null);
+    // ====== Carousel ======
+    const willChange = useWillChange();
     const { width } = useWindowSize();
     const cardWidth = width <= 800 ? width : 375;
-
-    const transitionDuration = isDragging ? 0 : 3;
-    const positionx = useMotionValue(0);
-    const position = useSpring(positionx, { mass: 0.5, stiffness: 50, damping: 15});
+    const carouselWidth = cardWidth * cards.length;
+    // ====== Drag ======
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragStart, setDragStart] = useState<Partial<Touch>>();
     const $lastXDelta = useRef<number>(0);
+    const $prevPosition = useRef<number>(0);
+    // ====== Auto Slide ======
+    const transitionDuration = isDragging ? 0 : 3;
+    const positionMotionValue = useMotionValue(0);
+    const position = useSpring(positionMotionValue, { mass: 0.5, stiffness: 50, damping: 15 });
     const releaseId = useRef<number | null>(null);
     const $started_at = useRef<number>(Date.now());
-    const carouselWidth = cardWidth * cards.length;
-    const willChange = useWillChange();
-    const $prevPosition = useRef<number>(0);
     let timerId: number;
+
+    // Carousel starts at the third card
     useEffect(() => {
-        position.jump( cardWidth * -2);
-    },[cardWidth]);
+        position.jump(cardWidth * -2);
+    }, [cardWidth]);
+
+    /* --------------------------------
+    *            AUTO SLIDE
+    * ------------------------------- */
     const timerHandler = () => {
         let now = Date.now();
         if (now - $started_at.current > speed) {
@@ -36,41 +41,46 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
         }
         timerId = window.requestAnimationFrame(timerHandler);
     }
+
     const updatePosition = (isDragging: boolean) => {
         if (!isDragging) {
             const prevPosition = position.get();
             position.set(prevPosition - 15);
         }
     }
+
     useEffect(() => {
+        //  Wait for the cardWidth to be set
+        //  Stop the motion if the user is dragging
         if (!isDragging && cardWidth > 0) timerHandler();
         return () => cancelAnimationFrame(timerId);
-    }, [isDragging,cardWidth])
+    }, [isDragging, cardWidth])
 
+    /* --------------------------------
+    *           INFINITE LOOP
+    * ------------------------------- */
     useMotionValueEvent(position, "change", (latest: number) => {
         const direction = latest - $prevPosition.current;
         const jumpPoint = cardWidth * (cards.length - 1)
         if (direction < 0 && (Math.round(latest) == Math.round(-(jumpPoint)))) {
-            negativeArrange(latest + jumpPoint);
+            jumpToFirstCard(latest + jumpPoint);
         }
-        
-        else if(direction > 0 && (Math.round(latest) == 0)){
-            positiveArrange(latest + -Math.round(0));
+        else if (direction > 0 && (Math.round(latest) == 0)) {
+            jumpToLastCard(latest);
         }
         $prevPosition.current = latest;
     })
 
-
-    const negativeArrange = (offset:number) => {
-        console.log('negativeArrange');
-        position.jump((-cardWidth*1)+offset);
+    const jumpToFirstCard = (offset: number) => {
+        position.jump((-cardWidth * 1) + offset);
     }
-    const positiveArrange = (offset:number) => {
-        console.log('positiveArrenge');
-
-        position.jump((-cardWidth * (slideCards.length-2))-offset);
+    const jumpToLastCard = (offset: number) => {
+        position.jump((-cardWidth * (cards.length - 2)) - offset);
     }
 
+    /* --------------------------------
+    *        SNAP TO CARD ON DRAG
+    * ------------------------------- */
     const handleTouchStart = (e: React.TouchEvent) => {
         if (releaseId.current) {
             clearTimeout(releaseId.current);
@@ -79,15 +89,7 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
         setIsDragging(true);
         setDragStart(e.touches[0]);
     };
-    // const handleMouseDown = (e: React.MouseEvent) => {
-    //     if(releaseId.current){
-    //         debugger;
-    //         clearTimeout(releaseId.current);
-    //         releaseId.current = null;
-    //     }
-    //     setIsDragging(true);
-    //     setDragStart(e.clientX);
-    // };
+
     const handleTouchMove = (e: React.TouchEvent) => {
         if (isDragging) {
             const yDelta = e.touches[0].clientY - (dragStart?.clientY ?? 0);
@@ -100,18 +102,8 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
             $lastXDelta.current += xDelta;
         }
     };
-    // const handleMouseMove = (e: React.MouseEvent) => {
-    //     e.preventDefault();
-    //     if (isDragging) {
-    //         const delta = e.clientX - dragStart;
-    //         const prevPosition = position.get();
-    //         position.set(prevPosition + delta);
-    //         setDragStart(e.clientX);
-    //     }
-    // };
 
-    const handleMouseUp = (_: React.TouchEvent) => {
-
+    const handleTouchEnd = (_: React.TouchEvent) => {
         releaseId.current = setTimeout(() => {
             setIsDragging(false);
         }, 4500)
@@ -121,6 +113,7 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
         const progress = position.get() / carouselWidth;
         const positiveIndex = Math.abs(Math.ceil(cards.length * progress));
         const negativeIndex = Math.abs(Math.floor(cards.length * progress));
+
         if ($lastXDelta.current > 0) {
             if ($lastXDelta.current > threshold) {
                 position.set(cardWidth * -positiveIndex);
@@ -133,26 +126,24 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
             } else {
                 position.set(cardWidth * -positiveIndex);
             }
-
         }
-        $lastXDelta.current = 0
 
+        $lastXDelta.current = 0
     };
 
     return (
         <motion.div
-            className="carousel  touch-pan-y"
-            ref={carouselRef}
+            className="carousel touch-pan-y"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
-            onTouchEnd={handleMouseUp}
+            onTouchEnd={handleTouchEnd}
         >
             <motion.div
                 className="carousel-images"
                 style={{ x: position, willChange }}
                 transition={{ duration: transitionDuration, ease: "linear" }}
             >
-                {slideCards.map((card) => (
+                {cards.map((card) => (
                     card
                 ))}
             </motion.div>

@@ -1,0 +1,18 @@
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-images {
+  display: flex;
+}
+
+/* Additional styles for cursor and dragging effect */
+.carousel {
+  cursor: grab;
+}
+
+.carousel:active {
+  cursor: grabbing;
+}

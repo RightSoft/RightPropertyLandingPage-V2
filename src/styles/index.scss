@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "./utils.scss";
-
+@import "./custom-carousel.scss";
 :root {
   --bodyContentColor: #212e44;
   --accordionItemBg: white;
