@@ -36,6 +36,7 @@ export default function OnboardSlide({ className }: { className?: string }) {
             pagination={{
                 clickable: true,
             }}
+            speed={750}
             centeredSlides={true}
             centerInsufficientSlides={true}
             centeredSlidesBounds={true}

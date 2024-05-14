@@ -17,6 +17,7 @@ export default function Slide() {
         spaceBetween={22}
         slidesPerView={1}
         loop={true}
+        speed={2500}
         autoplay={{
             delay: 3000,
             disableOnInteraction: false,
