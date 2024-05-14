@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import useLoopInRange from "../../hooks/use-loop-in-range";
+import useLoopToN from "../../hooks/use-loop-to-n";
 
 export default function BeautifulIntelligentAnimatigCaption() {
     const startScaleY = 0.3;
@@ -13,7 +13,7 @@ export default function BeautifulIntelligentAnimatigCaption() {
             A <b>focused</b> technology <b>empowering</b> your business.
         </span>
     ]   
-    const activeIndex = useLoopInRange(captions.length,wait);
+    const [activeIndex,_] = useLoopToN(captions.length,wait);
 
     return <motion.div className="hidden mobile:block">
         <div className="h-[3.375rem]  text-24 mb-[1.875rem] w-[22.06rem]">

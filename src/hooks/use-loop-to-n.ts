@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function useLoopInRange(size:number,wait:number){
+export default function useLoopToN(size:number,wait:number) : [number, typeof setManualIndex]{
     const [activeIndex, setActiveIndex] = useState(0)
+    const [manualIndex, setManualIndex] = useState(0)
     const $started_at = useRef<number>(Date.now());
     let timerId: number;
     const timerHandler = () => {
@@ -22,11 +23,18 @@ export default function useLoopInRange(size:number,wait:number){
             return tmpIndex;
         })
     }
-
+    const resetTimer = () => {
+        cancelAnimationFrame(timerId);
+        $started_at.current = Date.now();
+        timerId = window.requestAnimationFrame(timerHandler);
+    }
     useEffect(() => {
         timerHandler();
         return () => cancelAnimationFrame(timerId);
     }, [])
-    
-    return activeIndex;
+    useEffect(() => {
+        resetTimer();
+        setActiveIndex(manualIndex);
+    },[manualIndex])
+    return [activeIndex,setManualIndex];
 }

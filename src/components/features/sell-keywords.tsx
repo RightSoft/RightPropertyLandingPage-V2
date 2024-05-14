@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "../../lib/utils";
-import useLoopInRange from "../../hooks/use-loop-in-range";
+import useLoopToN from "../../hooks/use-loop-to-n";
 interface SellKeywordsProps {
     className: string;
 
@@ -20,7 +20,7 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
     const startOpacity = 0.0;
     const duration = 0.4
     const wait = 3000 // in ms
-    const activeIndex = useLoopInRange(keywords.length, wait);
+    const [activeIndex,_] = useLoopToN(keywords.length, wait);
 
     const cnClass = cn("w-[52.7375rem] text-center text-[2.625rem] leading-[3.2rem] font-bold","mobile:text-[1.75rem] mobile:leading-[2.1331rem] mobile:w-full", className)
     return <div className={cnClass}>
