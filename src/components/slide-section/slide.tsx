@@ -2,10 +2,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import img1 from '../../assets/images/slide_image_1.webp';
 import img2 from '../../assets/images/slide_image_2.webp';
-
+import mainImage from '../../assets/images/carousel_main.webp';
 const SlideImage = ({ src }: { src: string }) => {
     return <div className='mobile:px-4'>
-        <img draggable={false} src={src} className='w-full object-cover h-auto max-h-[22.875rem] rounded-[20px]' />
+        <div className='w-full   h-[20.5rem] mobile:h-[17.5rem]'>
+            <img draggable={false} src={src} className='rounded-[20px] object-cover w-full h-full' />
+        </div>
+
     </div>
 }
 
@@ -19,6 +22,7 @@ export default function Slide() {
             disableOnInteraction: false,
             pauseOnMouseEnter: true
         }}
+        className='mobile:px-0 px-5'
         modules={[Autoplay]}
         draggable={false}
         onSlideChange={() => { }}
@@ -32,9 +36,10 @@ export default function Slide() {
             }
         }
     >
+        <SwiperSlide><SlideImage src={mainImage} /></SwiperSlide>
         <SwiperSlide><SlideImage src={img1} /></SwiperSlide>
         <SwiperSlide><SlideImage src={img2} /></SwiperSlide>
-        <SwiperSlide><SlideImage src={img1} /></SwiperSlide>
+        <SwiperSlide><SlideImage src={mainImage} /></SwiperSlide>
         <SwiperSlide><SlideImage src={img2} /></SwiperSlide>
     </Swiper>
 }
