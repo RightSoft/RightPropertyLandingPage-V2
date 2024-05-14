@@ -6,7 +6,7 @@ import Twitter from "../icons/twitter";
 import RpLogo from "../rp-logo";
 
 export default function Footer() {
-    return <div className="py-[5.125rem] pr-[5.625rem] pl-[7.25rem] w-full flex justify-between bg-[#EEEEF0] mobile:px-5 mobile:py-10 mobile:bg-rpBlue">
+    return <div className="py-[5.125rem] pr-[5.625rem] pl-[7.25rem] w-full flex justify-between bg-[#F8F8F9] mobile:px-5 mobile:py-10 mobile:bg-rpBlue">
         <div className="mobile:w-full">
             <div className="mb-[2.3906rem] mobile:hidden">
                 <RpLogo className="w-[7.0625rem]" />
