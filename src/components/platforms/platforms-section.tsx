@@ -15,8 +15,9 @@ export default function PlatformsSection() {
                 scrollTrigger: {
                     trigger: wallContainer.current,
                     scrub: true,
+                    markers:false,
                     start: "top bottom",
-                    end: "bottom center+=300",
+                    end: "center+=200 bottom",
                 },
             });
             tl.fromTo(wallContainer.current, { scale: 0.5 }, {

@@ -3,11 +3,11 @@ import DeviceIntegrationIcon from "../icons/device-integration-icon";
 import LeadManagementIcon from "../icons/lead-management-icon";
 import OneClickGenerationIcon from "../icons/one-click-generation-icon";
 import SetupIcon from "../icons/setup-icon";
-import customizableSrc from "../../assets/images/customizable.webp";
+import customizableSrc from "../../assets/images_v2/customizable.webp";
 import deviceIntegrationSrc from "../../assets/images_v2/device_mockup.webp";
-import leadManagementSrc from "../../assets/images/lead_management.webp";
-import oneClickWebsiteSrc from "../../assets/images/one_click_website.webp";
-import setupSrc from "../../assets/images/setup.webp";
+import leadManagementSrc from "../../assets/images_v2/lead_tracking.webp";
+import oneClickWebsiteSrc from "../../assets/images_v2/website_gen.webp";
+import setupSrc from "../../assets/images_v2/easy_setup.webp";
 import { FeatureItem } from "../../domain/feature-item";
 
 export const featureItems: FeatureItem[] = [

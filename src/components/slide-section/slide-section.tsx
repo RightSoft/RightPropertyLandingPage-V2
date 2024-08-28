@@ -14,9 +14,8 @@ export default function SlideSection() {
                 </span>
             </div>
         </div>
-        <div className="section pl-[7.68rem] mobile:pl-[1.1875rem] py-[6.25rem] mobile:py-8">
+        <div className="section  mobile:pl-[1.1875rem] py-[6.25rem] mobile:py-8">
             <Slide />
-
         </div>
     </div>
 }

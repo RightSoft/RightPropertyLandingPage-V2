@@ -17,7 +17,7 @@ export default function FeaturesImages({ activeIndex }: FeaturesImagesProps) {
         },
         {
             src: featureItems[2].image,
-            className: "w-auto max-h-[33.625rem]"
+            className: "max-w-[50.1875rem]"
         },
         {
             src: featureItems[3].image,

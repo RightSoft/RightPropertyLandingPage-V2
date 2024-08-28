@@ -16,7 +16,7 @@ const SlideImage = ({ src, isActive }: { src: string, isActive: boolean }) => {
         animate={isActive ? 'active' : 'inactive'}
         transition={{ duration: 2.5, ease: "easeOut" }}
         className=''>
-        <div className='w-full h-[35.5625rem] mobile:h-[17.5rem]'>
+        <div className='w-full h-[38.5625rem] mobile:h-[17.5rem]'>
             <img draggable={false} src={src} className='rounded-[50px] mobile:rounded-[17px] object-cover w-full h-full' />
         </div>
     </motion.div>
@@ -28,7 +28,7 @@ export default function Slide() {
         spaceBetween={-42}
         slidesPerView={1.1}
         loop={true}
-        speed={2500}
+        speed={1000}
         autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -39,14 +39,16 @@ export default function Slide() {
         draggable={false}
         onSlideChange={(swiper) => {
             setActiveIndex(swiper.realIndex);
-            console.log('slide change', swiper.activeIndex,swiper)
+            console.log('slide change', swiper.realIndex,swiper)
         }}
         onSwiper={(swiper) => console.log(swiper)}
         breakpoints={
             {
                 801: {
-                    slidesPerView: 1.57,
-                    spaceBetween: -100
+                    slidesPerView: 1.3,
+                    spaceBetween: -150,
+                    centeredSlides: true,
+                    centeredSlidesBounds: true,
                 },
             }
         }

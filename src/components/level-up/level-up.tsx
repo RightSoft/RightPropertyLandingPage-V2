@@ -10,7 +10,7 @@ export default function LevelUp() {
             <div style={{ padding: 'inherit' }} className="w-full left-0 h-full absolute z-20">
                 <div className=" w-full h-full"
                     style={{
-                        background: "linear-gradient(74.46deg, rgba(25, 25, 25, 0.62) 19.09%, rgba(0, 0, 0, 0) 79.82%)"
+                        background: "linear-gradient(74.46deg, rgba(25, 25, 25, 0.5) 19.09%, rgba(0, 0, 0, 0) 79.82%)"
                     }}
                 />
             </div>

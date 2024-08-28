@@ -33,12 +33,11 @@ function App() {
           <WindowSizeProvider />
           <Toaster />
           <Header />
-          <div className='pt-[7.575rem] mobile:pt-[3.4375rem]'>
+          <div className=' mobile:pt-[3.4375rem]'>
             <LevelUpSection />
             <SellKeywordsContainer />
             <PlatformsSection />
             <FeaturesSection />
-
             <SlideSection />
             <OnboardSection />
             <BookADemoSection />
