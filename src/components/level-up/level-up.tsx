@@ -7,8 +7,12 @@ export default function LevelUp() {
     >
         <div className="px-[1.203125rem] mobile:h-[13.6875rem] mobile:px-0 w-full h-full absolute mobile:relative">
             <video style={{ padding: 'inherit' }} className="w-full left-0 h-full object-cover absolute z-10 " src="/rp-landing-last.mp4" autoPlay muted playsInline loop ></video>
-            <div style={{ padding: 'inherit' }} className="w-full left-0 h-full absolute z-20 opacity-60">
-                <div className="bg-[#1B1B1B]  w-full h-full" />
+            <div style={{ padding: 'inherit' }} className="w-full left-0 h-full absolute z-20">
+                <div className=" w-full h-full"
+                    style={{
+                        background: "linear-gradient(74.46deg, rgba(25, 25, 25, 0.62) 19.09%, rgba(0, 0, 0, 0) 79.82%)"
+                    }}
+                />
             </div>
         </div>
 
