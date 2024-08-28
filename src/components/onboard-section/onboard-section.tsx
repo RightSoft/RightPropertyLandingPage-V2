@@ -15,13 +15,11 @@ export default function OnboardSection() {
     return <div
         ref={ref}
         id="onboarding"
-        className="py-[7.5rem] mobile:pb-[3.75rem] mobile:pt-[1.6875rem] flex flex-col items-center text-center"
-        style={{
-            background: 'linear-gradient(134.91deg, #F8F8F9 6.27%, #F7F7F7 60.03%)'
-        }}>
+        className="bg-white py-[5.47rem] mobile:pb-[3.75rem] mobile:pt-[1.6875rem] flex flex-col items-center text-center"
+        >
         <SectionTitle text="Onboard Before You Know" />
-        <SectionDescription className="mb-[1.9025rem] mobile:mb-[1.625rem]">
-            <div className="w-[31.75rem] mobile:w-[15.625rem]">
+        <SectionDescription className="mb-[4rem] mobile:mb-[1.625rem]">
+            <div className="w-[full] mobile:w-[15.625rem]">
                 At <b>Right Property,</b> we've streamlined the process of working with us into three easy steps.
             </div>
         </SectionDescription>

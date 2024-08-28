@@ -4,7 +4,7 @@ import LeadManagementIcon from "../icons/lead-management-icon";
 import OneClickGenerationIcon from "../icons/one-click-generation-icon";
 import SetupIcon from "../icons/setup-icon";
 import customizableSrc from "../../assets/images/customizable.webp";
-import deviceIntegrationSrc from "../../assets/images/device_integration.webp";
+import deviceIntegrationSrc from "../../assets/images_v2/device_mockup.webp";
 import leadManagementSrc from "../../assets/images/lead_management.webp";
 import oneClickWebsiteSrc from "../../assets/images/one_click_website.webp";
 import setupSrc from "../../assets/images/setup.webp";
@@ -16,7 +16,8 @@ export const featureItems: FeatureItem[] = [
         description: "Deliver consistent content across all digital touchpoints, from large wall screens to mobile devices.",
         icon: <DeviceIntegrationIcon />,
         image: deviceIntegrationSrc,
-        desktopClass: "max-h-[40.625rem]",
+        desktopClass: "max-w-[50.56rem]",
+        mobileClass: "max-w-[18.5rem]",
         mobileIcon: <DeviceIntegrationIcon className="w-10 m-[0.3125rem]"/>,
     },
     {

@@ -2,45 +2,59 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import img1 from '../../assets/images/slide_image_1.webp';
 import img2 from '../../assets/images/slide_image_2.webp';
-import mainImage from '../../assets/images/carousel_main.webp';
-const SlideImage = ({ src }: { src: string }) => {
-    return <div className='mobile:px-4'>
-        <div className='w-full   h-[20.5rem] mobile:h-[17.5rem]'>
-            <img draggable={false} src={src} className='rounded-[20px] object-cover w-full h-full' />
+import img3 from '../../assets/images/slide_image_3.webp';
+import img4 from '../../assets/images/slide_image_4.webp';
+import img5 from '../../assets/images/slide_image_5.webp';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+const SlideImage = ({ src, isActive }: { src: string, isActive: boolean }) => {
+    return <motion.div
+        variants={{
+            active: { scale: 1 },
+            inactive: { scale: .7 }
+        }}
+        animate={isActive ? 'active' : 'inactive'}
+        transition={{ duration: 2.5, ease: "easeOut" }}
+        className='mobile:px-4'>
+        <div className='w-full h-[35.5625rem] mobile:h-[17.5rem]'>
+            <img draggable={false} src={src} className='rounded-[50px] object-cover w-full h-full' />
         </div>
-
-    </div>
+    </motion.div>
 }
 
 export default function Slide() {
+    const [activeIndex, setActiveIndex] = useState(0);
     return <Swiper
         spaceBetween={22}
         slidesPerView={1}
         loop={true}
         speed={2500}
         autoplay={{
-            delay: 3000,
+            delay: 2500,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true
+            pauseOnMouseEnter: false
         }}
         className='mobile:px-0 px-5'
         modules={[Autoplay]}
         draggable={false}
-        onSlideChange={() => { }}
+        onSlideChange={(swiper) => {
+            setActiveIndex(swiper.realIndex);
+            console.log('slide change', swiper.activeIndex,swiper)
+        }}
         onSwiper={(swiper) => console.log(swiper)}
         breakpoints={
             {
                 801: {
-                    slidesPerView: 3,
-                    spaceBetween: 20
+                    slidesPerView: 1.57,
+                    spaceBetween: -100
                 },
             }
         }
     >
-        <SwiperSlide><SlideImage src={mainImage} /></SwiperSlide>
-        <SwiperSlide><SlideImage src={img1} /></SwiperSlide>
-        <SwiperSlide><SlideImage src={img2} /></SwiperSlide>
-        <SwiperSlide><SlideImage src={mainImage} /></SwiperSlide>
-        <SwiperSlide><SlideImage src={img2} /></SwiperSlide>
+        <SwiperSlide><SlideImage isActive={activeIndex == 0} src={img1} /></SwiperSlide>
+        <SwiperSlide><SlideImage isActive={activeIndex == 1} src={img2} /></SwiperSlide>
+        <SwiperSlide><SlideImage isActive={activeIndex == 2} src={img3} /></SwiperSlide>
+        <SwiperSlide><SlideImage isActive={activeIndex == 3} src={img4} /></SwiperSlide>
+        <SwiperSlide><SlideImage isActive={activeIndex == 4} src={img5} /></SwiperSlide>
     </Swiper>
 }

@@ -1,9 +1,16 @@
 export default function OnboardDivider() {
     return <div className="flex flex-col items-center gap-[3.75rem] ">
-        <div className="h-[14.5625rem] w-[1px] bg-[#DEDEDE]" />
-        <svg width="112" height="22" viewBox="0 0 112 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M111.245 14.0767C105.495 16.7867 100.375 19.2067 95.265 21.6267C95.015 21.2667 94.755 20.8967 94.505 20.5367C96.785 18.7767 99.065 17.0267 101.355 15.2667C101.285 14.8367 101.205 14.4067 101.135 13.9767H0.614961C0.614961 13.4867 0.594961 12.9967 0.584961 12.5067C33.585 7.53668 66.815 10.0367 101.025 10.8567C98.125 7.38668 95.705 4.47668 93.285 1.57668C93.505 1.33668 93.715 1.08668 93.935 0.84668C99.425 5.03668 104.905 9.23668 111.255 14.0867L111.245 14.0767Z" fill="#5EC6D3" />
+        <svg width="4" height="234" viewBox="0 0 4 234" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="2" y1="0.730103" x2="1.99999" y2="233.6" stroke="url(#paint0_linear_592_3511)" stroke-width="3" />
+            <defs>
+                <linearGradient id="paint0_linear_592_3511" x1="0" y1="0.730103" x2="-1.01791e-05" y2="233.6" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white" stop-opacity="0" />
+                    <stop offset="0.375" stop-color="#03D4FB" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+            </defs>
         </svg>
+
 
     </div>
 }

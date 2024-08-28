@@ -9,15 +9,15 @@ export default function FeaturesImages({ activeIndex }: FeaturesImagesProps) {
     const images = [
         {
             src: featureItems[0].image,
-            className: "max-h-[40.625rem]"
+            className: "max-w-[50.1875rem]"
         },
         {
             src: featureItems[1].image,
-            className: "max-w-[59.375rem]"
+            className: "max-w-[50.1875rem]"
         },
         {
             src: featureItems[2].image,
-            className: "w-full max-h-[45.625rem]"
+            className: "w-auto max-h-[33.625rem]"
         },
         {
             src: featureItems[3].image,

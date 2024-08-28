@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       fontSize:{
+        "36" : ["2.25rem", "2.7425rem"],
         "28" : ["1.75rem", "2.133125rem"],
         "24" : ['1.5rem', '1.828125rem'],
         "18" : ["1.125rem", "1.37125rem"],

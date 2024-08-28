@@ -8,9 +8,9 @@ export default function BeautifulIntelligentAnimatigCaption() {
     const duration = 0.4
     const wait = 3000 // in ms
     const captions: JSX.Element[] = [
-        <span>A <b>beautiful</b> interface <b>stunning</b> your clients</span>,
+        <span>a <b>beautiful</b> interface <b>stunning</b> your clients</span>,
         <span>
-            A <b>focused</b> technology <b>empowering</b> your business.
+            a <b>focused</b> technology <b>empowering</b> your business.
         </span>
     ]   
     const [activeIndex,_] = useLoopToN(captions.length,wait);

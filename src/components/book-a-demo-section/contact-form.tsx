@@ -70,22 +70,22 @@ export default function ContactForm() {
         toast.success('Received Information Successfully!');
 
     };
-    return <div className="w-[37.5rem] mobile:w-[19.5625rem] flex items-center flex-col">
+    return <div className="w-[22.06rem] mobile:w-[19.5625rem] flex items-center flex-col">
         <div className="flex flex-col items-center gap-3 w-full">
-            <TextInput label={"Name"} onChange={(e) => {
+            <TextInput placeholder="Phone company" label={"Name"} onChange={(e) => {
                 setName(e.target.value)
             }} value={name} />
-            <TextInput label={"Company"} onChange={(e) => {
+            <TextInput placeholder="Your name" label={"Company"} onChange={(e) => {
                 setCompany(e.target.value)
             }} value={company} />
-            <TextInput label={"Email"} onChange={(e) => {
+            <TextInput placeholder="The company you work for" label={"Email"} onChange={(e) => {
                 setEmail(e.target.value)
             }} value={email} />
-            <TextInput label={"Phone"} onChange={(e) => {
+            <TextInput placeholder="Enter your work email" label={"Phone"} onChange={(e) => {
                 setPhone(e.target.value)
             }} value={phone} />
         </div>
-        <ActionButton text={"BOOK A DEMO"} className={"mt-[1.875rem]"} onClick={(e: any) => handleSubmit(e)} />
+        <ActionButton text={"Submit"} className={"mt-[1.875rem] w-full bg-[#FFA657] rounded-[12px]"} onClick={(e: any) => handleSubmit(e)} />
     </div>
 
 }

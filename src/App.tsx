@@ -1,4 +1,3 @@
-import ActionButton from './components/buttons/action-button'
 import FeaturesSection from './components/features/features-section'
 import Header from './components/header/header'
 import LevelUpSection from './components/level-up/level-up-section'
@@ -13,9 +12,10 @@ import BookADemoSection from './components/book-a-demo-section/book-a-demo-secti
 // import PricingSection from './components/pricing-section/pricing-section'
 import Footer from './components/footer/footer'
 import ActiveSectionProvider from './context/section-context/section-context'
-import AnchorLink from './components/anchor-link'
 import WindowSizeProvider from './components/window-size-provider'
 import ReactGA from "react-ga4";
+import SellKeywordsContainer from './components/sell-keywords/sell-keywords-container'
+import PlatformsSection from './components/platforms/platforms-section'
 
 
 function App() {
@@ -29,12 +29,10 @@ function App() {
         <Header />
         <div className='pt-[7.575rem] mobile:pt-[3.4375rem]'>
           <LevelUpSection />
+          <SellKeywordsContainer/>
+          <PlatformsSection/>
           <FeaturesSection />
-          <div className='flex justify-center mobile:hidden'>
-            <AnchorLink href='book-a-demo'>
-              <ActionButton text={"BOOK A DEMO"} className={"mb-[3.75rem]"} onClick={() => { }} />
-            </AnchorLink>
-          </div>
+         
           <SlideSection />
           <OnboardSection />
           <BookADemoSection />
