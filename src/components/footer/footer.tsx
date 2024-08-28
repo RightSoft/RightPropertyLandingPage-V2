@@ -1,7 +1,6 @@
 import AnchorLink from "../anchor-link";
 import Instagram from "../icons/instagram";
 import Linkedin from "../icons/linkedin";
-import RpWhiteLogo from "../icons/rp-white-logo";
 import Twitter from "../icons/twitter";
 import RpLogo from "../rp-logo";
 

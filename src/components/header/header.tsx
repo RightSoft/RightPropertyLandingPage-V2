@@ -1,7 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useActiveSectionContext } from "../../context/section-context/section-context";
 import AnchorLink from "../anchor-link";
-import RpWhiteLogo from "../icons/rp-white-logo";
 import RpLogo from "../rp-logo";
 import { useEffect, useState } from "react";
 import Hamburger from "./hamburger";

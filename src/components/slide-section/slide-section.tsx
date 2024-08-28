@@ -1,5 +1,4 @@
 import SectionTitle from "../section-title";
-import BeautifulIntelligentAnimatigCaption from "./beautiful-intelligent-animating-caption";
 import Slide from "./slide";
 
 export default function SlideSection() {

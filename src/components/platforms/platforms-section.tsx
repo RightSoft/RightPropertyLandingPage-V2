@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 import SectionTitle from "../section-title";
 import MultiPlatform from "./multi-platform";
 import WallPlatform from "./wall-platform";
