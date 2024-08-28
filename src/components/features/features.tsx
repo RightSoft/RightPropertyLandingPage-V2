@@ -5,7 +5,7 @@ import { featureItems } from "./feature-data"
 import useLoopToN from "../../hooks/use-loop-to-n"
 
 export default function Features({ className }: { className?: string }) {
-    const wait = 10000000;
+    const wait = 10000;
     const accordionItems = [
         {
             className: "items-center ",

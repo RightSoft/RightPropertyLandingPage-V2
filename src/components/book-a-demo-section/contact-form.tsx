@@ -70,7 +70,7 @@ export default function ContactForm() {
         toast.success('Received Information Successfully!');
 
     };
-    return <div className="w-[22.06rem] mobile:w-[19.5625rem] flex items-center flex-col">
+    return <div className="w-[22.06rem] mobile:w-[20.3125rem] flex items-center flex-col">
         <div className="flex flex-col items-center gap-3 w-full">
             <TextInput placeholder="Phone company" label={"Name"} onChange={(e) => {
                 setName(e.target.value)
@@ -85,7 +85,7 @@ export default function ContactForm() {
                 setPhone(e.target.value)
             }} value={phone} />
         </div>
-        <ActionButton text={"Submit"} className={"mt-[1.875rem] w-full bg-[#FFA657] rounded-[12px]"} onClick={(e: any) => handleSubmit(e)} />
+        <ActionButton text={"Submit"} className={"mt-[1.875rem] w-full mobile:w-full bg-[#FFA657] rounded-[12px]"} onClick={(e: any) => handleSubmit(e)} />
     </div>
 
 }

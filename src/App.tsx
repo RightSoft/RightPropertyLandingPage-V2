@@ -16,32 +16,39 @@ import WindowSizeProvider from './components/window-size-provider'
 import ReactGA from "react-ga4";
 import SellKeywordsContainer from './components/sell-keywords/sell-keywords-container'
 import PlatformsSection from './components/platforms/platforms-section'
+import GSAP from './lib/gsap'
+import { ReactLenis } from '@studio-freight/react-lenis'
 
 
 function App() {
   ReactGA.initialize("G-D169WBQW9L");
 
   return (
-    <ActiveSectionProvider>
-      <>
-        <WindowSizeProvider />
-        <Toaster />
-        <Header />
-        <div className='pt-[7.575rem] mobile:pt-[3.4375rem]'>
-          <LevelUpSection />
-          <SellKeywordsContainer/>
-          <PlatformsSection/>
-          <FeaturesSection />
-         
-          <SlideSection />
-          <OnboardSection />
-          <BookADemoSection />
-          {/* <PricingSection /> */}
-          <Footer />
-        </div>
-        <WindowSizeProvider />
-      </>
-    </ActiveSectionProvider>
+    <ReactLenis options={{
+      lerp:0.08
+    }} root>
+      <GSAP/>
+      <ActiveSectionProvider>
+        <>
+          <WindowSizeProvider />
+          <Toaster />
+          <Header />
+          <div className='pt-[7.575rem] mobile:pt-[3.4375rem]'>
+            <LevelUpSection />
+            <SellKeywordsContainer />
+            <PlatformsSection />
+            <FeaturesSection />
+
+            <SlideSection />
+            <OnboardSection />
+            <BookADemoSection />
+            {/* <PricingSection /> */}
+            <Footer />
+          </div>
+          <WindowSizeProvider />
+        </>
+      </ActiveSectionProvider>
+    </ReactLenis>
   )
 }
 

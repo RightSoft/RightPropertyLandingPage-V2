@@ -15,14 +15,23 @@ export default function OnboardSection() {
     return <div
         ref={ref}
         id="onboarding"
-        className="bg-white py-[5.47rem] mobile:pb-[3.75rem] mobile:pt-[1.6875rem] flex flex-col items-center text-center"
-        >
-        <SectionTitle text="Onboard Before You Know" />
+        className="bg-white py-[5.47rem] mobile:pb-[3.75rem] mobile:py-[2.5rem] flex flex-col items-center text-center"
+    >
+        <SectionTitle text={
+            <div className="mobile:mb-3">
+                <div className="hidden mobile:block">
+                    Onboard<br />Before You Know
+                </div>
+                <div className="mobile:hidden">
+                    Onboard Before You Know
+                </div>
+            </div>
+        } variant="md" />
         <SectionDescription className="mb-[4rem] mobile:mb-[1.625rem]">
             <div className="w-[full] mobile:w-[15.625rem]">
                 At <b>Right Property,</b> we've streamlined the process of working with us into three easy steps.
             </div>
         </SectionDescription>
-        {width > 800 ? <OnboardSteps /> : <OnboardSlide />}
+        {<OnboardSteps />}
     </div>
 }

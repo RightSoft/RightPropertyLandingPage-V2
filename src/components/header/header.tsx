@@ -18,15 +18,15 @@ export default function Header() {
         if (showMenu) document.body.classList.add('stop-scrolling')
         else document.body.classList.remove('stop-scrolling')
     }, [showMenu])
-    const shadow  = showMenu ? '' : 'drop-shadow-md'
+    const shadow = showMenu ? '' : 'drop-shadow-md'
     return <>
-        <div className={`w-full h-[7.51rem] mobile:h-[3.4375rem] bg-[#F8F8F9] mobile:bg-rpBlue fixed z-50 ${shadow}`}>
+        <div className={`w-full h-[7.51rem] mobile:h-[3.4375rem] bg-white  fixed z-50 ${shadow}`}>
             <div className="section flex justify-between mobile:px-5 pl-[5.625rem] pr-[1.6875rem] items-center h-full">
                 <div className="mobile:hidden">
                     <RpLogo className="w-[6.875rem]" />
                 </div>
                 <div className="hidden mobile:block ">
-                    <RpWhiteLogo />
+                    <RpLogo className="w-[3.31rem]" />
                 </div>
                 <div className="hidden mobile:block">
                     <Hamburger isMenuShown={showMenu} toggleMenu={toggleMenu} />
@@ -53,7 +53,7 @@ export default function Header() {
                 initial={{ opacity: 0.5, x: '-100%' }}
                 exit={{ opacity: 0.5, x: '-100%' }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{  duration:0.5,ease: "easeOut",}}
+                transition={{ duration: 0.5, ease: "easeOut", }}
             >
                 <HeaderMenu toggleMenu={toggleMenu} />
             </motion.div>}

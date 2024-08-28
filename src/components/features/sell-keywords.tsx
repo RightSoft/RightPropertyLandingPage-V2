@@ -22,7 +22,7 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
     const wait = 3000 // in ms
     const [activeIndex,_] = useLoopToN(keywords.length, wait);
 
-    const cnClass = cn("w-[52.7375rem] text-center text-[2.625rem] leading-[3.2rem] font-bold","mobile:text-[1.75rem] mobile:leading-[2.1331rem] mobile:w-full", className)
+    const cnClass = cn("w-[52.7375rem] text-center text-[2.625rem] leading-[3.2rem] font-bold","mobile:text-[1.25rem] mobile:leading-[1.5rem] mobile:w-full", className)
     return <div className={cnClass}>
         <div className="">
             We help to sell your properties

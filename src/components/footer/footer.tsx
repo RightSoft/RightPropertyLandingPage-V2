@@ -6,16 +6,20 @@ import Twitter from "../icons/twitter";
 import RpLogo from "../rp-logo";
 
 export default function Footer() {
-    return <div className="py-[5.125rem] pr-[5.625rem] pl-[7.25rem] w-full flex justify-between bg-[#F8F8F9] mobile:px-5 mobile:py-10 mobile:bg-rpBlue">
+    return <div className="py-[5.125rem] pr-[5.625rem] pl-[7.25rem] w-full flex justify-between bg-[#F8F8F9] mobile:px-5 mobile:py-[1.875rem] "
+        style={{
+            background: "linear-gradient(180deg, #FFFFFF 0%, #F5F9FA 100%)"
+        }}
+    >
         <div className="mobile:w-full">
             <div className="mb-[2.3906rem] mobile:hidden">
                 <RpLogo className="w-[7.0625rem]" />
             </div>
             <div className="mobile:block hidden mb-10">
-                <RpWhiteLogo width={78} />
+            <RpLogo className="w-[3.3125rem]" />
             </div>
             <div className="mobile:block hidden ">
-                <ul className="flex flex-col gap-3 text-white text-start text-[0.8125rem] leading-[1.21em] mb-10">
+                <ul className="flex flex-col gap-3 text-[#7BD6E1] text-start text-[0.8125rem] leading-[1.21em] mb-10">
                     <li>
                         <AnchorLink href="features">Features</AnchorLink>
                     </li>
@@ -31,13 +35,13 @@ export default function Footer() {
                 </ul>
             </div>
             <div className="mobile:flex justify-between items-center hidden ">
-                <div className="flex gap-[0.8125rem] ">
-                    <a href="https://twitter.com/ukrightproperty" target="_blank"><Twitter className="text-white w-6" /></a>
-                    <a href="https://www.instagram.com/rightpropertyapp/" target="_blank"><Instagram className="text-white w-6" /></a>
-                    <a href="https://uk.linkedin.com/company/rightpropertyapp" target="_blank"><Linkedin className="text-white w-6" /></a>
+                <div className="flex gap-[0.8125rem] text-[#7BD6E1] ">
+                    <a href="https://twitter.com/ukrightproperty" target="_blank"><Twitter className=" w-6" /></a>
+                    <a href="https://www.instagram.com/rightpropertyapp/" target="_blank"><Instagram className=" w-6" /></a>
+                    <a href="https://uk.linkedin.com/company/rightpropertyapp" target="_blank"><Linkedin className=" w-6" /></a>
                 </div>
                 <a href="https://rightsoft.co.uk">
-                    <div className="text-white text-xs">
+                    <div className="text-[#7BD6E1] text-xs">
                         Powered by <b>Rightsoft</b>
                     </div>
                 </a>

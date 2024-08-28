@@ -15,9 +15,9 @@ const SlideImage = ({ src, isActive }: { src: string, isActive: boolean }) => {
         }}
         animate={isActive ? 'active' : 'inactive'}
         transition={{ duration: 2.5, ease: "easeOut" }}
-        className='mobile:px-4'>
+        className=''>
         <div className='w-full h-[35.5625rem] mobile:h-[17.5rem]'>
-            <img draggable={false} src={src} className='rounded-[50px] object-cover w-full h-full' />
+            <img draggable={false} src={src} className='rounded-[50px] mobile:rounded-[17px] object-cover w-full h-full' />
         </div>
     </motion.div>
 }
@@ -25,8 +25,8 @@ const SlideImage = ({ src, isActive }: { src: string, isActive: boolean }) => {
 export default function Slide() {
     const [activeIndex, setActiveIndex] = useState(0);
     return <Swiper
-        spaceBetween={22}
-        slidesPerView={1}
+        spaceBetween={-42}
+        slidesPerView={1.1}
         loop={true}
         speed={2500}
         autoplay={{

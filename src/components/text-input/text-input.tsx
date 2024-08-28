@@ -8,7 +8,7 @@ export default function TextInput({ label, onChange, value,placeholder }: { labe
                 onChange={onChange}
                 value={value}
                 placeholder={placeholder}
-                className="mobile:text-12 rounded-[12px] mobile:rounded-[10px] w-full h-[3.75rem] mobile:h-10 pl-4 focus-visible:outline-none border-[1px] border-[#686B83]"
+                className="mobile:text-12 rounded-[12px] mobile:rounded-[10px] w-full h-[3.75rem] mobile:h-[3.25rem] pl-4 focus-visible:outline-none border-[1px] border-[#686B83]"
       
                 type="text"
             />

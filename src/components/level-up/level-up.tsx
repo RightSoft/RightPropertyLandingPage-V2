@@ -1,12 +1,14 @@
-import AnchorLink from "../anchor-link";
-import ActionButton from "../buttons/action-button";
 
 export default function LevelUp() {
-    return <div className="relative h-[47.125rem] mobile:h-[35.375rem]  w-full mobile:bg-[#EEEEF0] ">
+    return <div className="relative h-[47.125rem] mobile:h-[auto]  w-full  "
+        style={{
+            background: "linear-gradient(360deg, #FFFFFF 0%, rgba(248, 237, 240, 0.5) 100%)"
+        }}
+    >
         <div className="px-[1.203125rem] mobile:h-[13.6875rem] mobile:px-0 w-full h-full absolute mobile:relative">
-            <video style={{padding:'inherit'}} className="w-full left-0 h-full object-cover absolute z-10 " src="/rp-landing-last.mp4" autoPlay muted playsInline loop ></video>
-            <div  style={{padding:'inherit'}} className="w-full left-0 h-full absolute z-20 opacity-60">
-                <div className="bg-[#1B1B1B]  w-full h-full"/>
+            <video style={{ padding: 'inherit' }} className="w-full left-0 h-full object-cover absolute z-10 " src="/rp-landing-last.mp4" autoPlay muted playsInline loop ></video>
+            <div style={{ padding: 'inherit' }} className="w-full left-0 h-full absolute z-20 opacity-60">
+                <div className="bg-[#1B1B1B]  w-full h-full" />
             </div>
         </div>
 
@@ -15,13 +17,9 @@ export default function LevelUp() {
                 Level Up Your<br />
                 Real Estate Marketing
             </h1>
-            <p className="w-[44.76rem] text-[1.5rem] leading-[1.82875rem] mobile:text-xs mobile:leading-[0.9143rem] mobile:w-full ">
+            <p className="w-[44.76rem] text-[1.5rem] leading-[1.82875rem] pb-[3.125rem] mobile:pb-[0] mobile:text-xs mobile:leading-[0.9143rem] mobile:w-full ">
                 <b>Right Property</b> is a <b>digital marketing suite</b> tailored for real estate developers. We offer tools to <b>create, manage, and display</b> your development on various devices to <b>enhance marketing and sales</b> efforts.
             </p>
-            <br />
-            <AnchorLink href='book-a-demo'>
-                <ActionButton text={"BOOK A DEMO"} className={"mt-4 mb-[3.125rem] mobile:mt-0"} onClick={() => { }} />
-            </AnchorLink>
         </div>
     </div>
 } 

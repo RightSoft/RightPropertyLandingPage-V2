@@ -21,10 +21,10 @@ export default function FeaturesSection() {
     return <div
         style={{ background: 'linear-gradient(180deg, #FFFFFF -5.17%, rgba(245, 253, 255, 0.35) 27.7%, #FFF4F4 77.35%, #FFFFFF 100%)' }}
     >
-        <div ref={ref} id="features" className="section pt-[5rem] pb-[4.375rem]  px-[3.8125rem]  mobile:pb-[0] mobile:px-0 mobile:bg-[#F7F7F7] "
+        <div ref={ref} id="features" className="section pt-[5rem] pb-[4.375rem]  px-[3.8125rem]  mobile:pb-[0] mobile:px-0 mobile:pt-[2.5rem]"
         >
-            <SectionTitle text={"Powerful & Effortless"} className="flex justify-center" />
-            <SectionDescription className="mb-[2.5rem]" >
+            <SectionTitle text={<div>Powerful <span className="mobile:text-rpBlue">&</span> Effortless</div>} variant="md" className="flex justify-center" />
+            <SectionDescription className="mb-[2.5rem] mobile:w-[20.93rem] mx-auto" >
                 Deliver seamless experiences, customise with ease, and drive results with our advanced, user-friendly platform.
             </SectionDescription>
             {width > 800 && <Features className="" />}

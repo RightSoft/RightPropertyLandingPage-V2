@@ -24,7 +24,7 @@ export default function Hamburger({ isMenuShown, toggleMenu }: HamburgerProps) {
                     closed: { d: "M 2 3.5 L 19 3.5" },
                     open: { d: "M 3 16.5 L 17 2.5" }
                 }}
-                stroke={"#FFFFFF"}
+                stroke={"#5EC6D3"}
                 transition={{ duration: 0.1 }}
             />
             <Path
@@ -32,7 +32,7 @@ export default function Hamburger({ isMenuShown, toggleMenu }: HamburgerProps) {
                     closed: { d: "M 2 10.423 L 19 10.423" },
                     open: { d: "M 3 2.5 L 17 16.346" }
                 }}
-                stroke={"#FFFFFF"}
+                stroke={"#5EC6D3"}
                 transition={{ duration: 0.1 }}
             />
             <Path
@@ -41,7 +41,7 @@ export default function Hamburger({ isMenuShown, toggleMenu }: HamburgerProps) {
                     closed: { opacity: 1, },
                     open: { opacity: 0 }
                 }}
-                stroke={"#FFFFFF"}
+                stroke={"#5EC6D3"}
                 transition={{ duration: 0.1 }}
 
             />

@@ -16,7 +16,7 @@ export default function BeautifulIntelligentAnimatigCaption() {
     const [activeIndex,_] = useLoopToN(captions.length,wait);
 
     return <motion.div className="hidden mobile:block">
-        <div className="h-[3.375rem]  text-24 mb-[1.875rem] w-[22.06rem]">
+        <div className="h-[3.375rem]  text-12 mb-[1.875rem] w-[22.06rem]">
             <AnimatePresence mode="wait">
                 {captions.map((_, index) => (
                     activeIndex === index && <motion.div
