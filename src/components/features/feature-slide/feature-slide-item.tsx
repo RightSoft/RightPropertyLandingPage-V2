@@ -24,9 +24,6 @@ const ContentComponent = ({ featureItem, isActive }: { featureItem: FeatureItem,
 }
 
 const ImageComponent = ({ featureItem }: { featureItem: FeatureItem }) => {
-    const justifyClass = featureItem.title == "Fully Customizable" ? "items-start justify-end" : "justify-center"
-    const cnClass = cn('bg-[#EFE8E4] overflow-hidden rounded-[10px] flex h-[14.8125rem] border-[0.5px] border-[#B3B3B3]', justifyClass)
-
     return <img
         draggable={false}
         src={featureItem.image}
