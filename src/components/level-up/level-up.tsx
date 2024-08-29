@@ -1,9 +1,7 @@
 
 export default function LevelUp() {
-    return <div className="relative h-[47.125rem] mobile:h-[auto]  w-full  "
-        style={{
-            background: "linear-gradient(360deg, #FFFFFF 0%, rgba(248, 237, 240, 0.5) 100%)"
-        }}
+    return <div className="relative h-[47.125rem] mobile:h-[auto]  w-full pt-[1.875rem] mobile:pt-0 "
+        
     >
         <div className="px-[1.203125rem] mobile:h-[13.6875rem] mobile:px-0 w-full h-full absolute mobile:relative">
             <video style={{ padding: 'inherit' }} className="w-full left-0 h-full object-cover absolute z-10 " src="/rp-landing-last.mp4" autoPlay muted playsInline loop ></video>
@@ -16,7 +14,10 @@ export default function LevelUp() {
             </div>
         </div>
 
-        <div className="h-full mobile:h-auto w-full flex flex-col justify-end mobile:justify-start pl-[4.25rem] mobile:pl-2.5 mobile:pt-10 text-white mobile:text-[#40424E]  relative z-20">
+        <div className="h-full mobile:h-auto w-full flex flex-col justify-end mobile:justify-start pl-[4.25rem] mobile:pl-2.5 mobile:pt-10 text-white mobile:text-[#40424E]  relative z-20 level-up-gradient"
+       
+        
+        >
             <h1 className="text-[3rem] leading-[3.6568rem] mobile:text-[2.25rem] mobile:leading-[2.7425rem] mb-3 font-bold">
                 Level Up Your<br />
                 Real Estate Marketing

@@ -39,19 +39,15 @@ body {
   width: 100%;
   display: block !important;
   overflow-x: hidden;
-
 }
 @media screen and (max-width: 800px) {
-  html{
-    font-size: w(16, 375,1,false);
+  html {
+    font-size: w(16, 375, 1, false);
   }
- 
-
 }
 
-.swiper-wrapper{
-  transition-timing-function : ease-out;
-  
+.swiper-wrapper {
+  transition-timing-function: ease-out;
 }
 
 .carousel-slide.transition {
@@ -63,5 +59,13 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);  }
+    transform: translateX(-100%);
+  }
+}
+
+.level-up-gradient {
+  @media screen and (max-width: 800px) {
+    background: linear-gradient(360deg, #FFFFFF 0%, rgba(248, 237, 240, 0.5) 100%);
+    
+  }
 }
