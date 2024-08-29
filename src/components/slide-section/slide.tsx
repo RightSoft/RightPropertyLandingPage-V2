@@ -45,6 +45,7 @@ export default function Slide() {
         breakpoints={
             {
                 801: {
+                    
                     slidesPerView: 1.3,
                     spaceBetween: -150,
                     centeredSlides: true,
