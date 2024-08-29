@@ -17,7 +17,7 @@ export const featureItems: FeatureItem[] = [
         icon: <DeviceIntegrationIcon />,
         image: deviceIntegrationSrc,
         desktopClass: "max-w-[50.56rem]",
-        mobileClass: "max-w-[18.5rem]",
+        mobileClass: "max-w-[19.5rem]",
         mobileIcon: <DeviceIntegrationIcon className="w-10 m-[0.3125rem]"/>,
     },
     {
@@ -35,6 +35,7 @@ export const featureItems: FeatureItem[] = [
         icon: <CustomizableIcon />,
         image: customizableSrc,
         desktopClass: "w-full",
+        mobileClass: "max-w-[19.5rem]",
         mobileIcon: <CustomizableIcon  className="w-10 m-[0.3125rem]"/>,
     },
     {
@@ -43,7 +44,7 @@ export const featureItems: FeatureItem[] = [
         icon: <OneClickGenerationIcon />,
         image: oneClickWebsiteSrc,
         desktopClass: "max-w-[50.1875rem]",
-        mobileClass: "max-w-[18.5rem]",
+        mobileClass: "max-w-[19.5rem]",
         mobileIcon: <OneClickGenerationIcon  className="w-10 m-[0.3125rem]"/>,
     },
     {
@@ -52,7 +53,7 @@ export const featureItems: FeatureItem[] = [
         icon: <LeadManagementIcon />,
         image: leadManagementSrc,
         desktopClass: "max-w-[50.1875rem]",
-        mobileClass: "max-w-[18.5rem]",
+        mobileClass: "max-w-[19.5rem]",
         mobileIcon: <LeadManagementIcon  className="w-10 m-[0.3125rem]"/>,
     }
 ]

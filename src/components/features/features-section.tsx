@@ -3,21 +3,17 @@ import Features from "./features";
 import { useRef } from "react";
 import useSectionView from "../../hooks/use-section-view";
 import useWindowSize from "../../hooks/use-window-size";
-import { featureItems } from "./feature-data";
-import FeatureSlideItem from "./feature-slide/feature-slide-item";
-import CustomCarousel from "../custom-carousel";
 import SectionTitle from "../section-title";
 import SectionDescription from "../section-description";
+import SwiperCarousel from "./swiper-carousel";
 export default function FeaturesSection() {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
     useSectionView({ inView: isInView, key: 'features' })
     const { width } = useWindowSize();
-    const items = [featureItems[featureItems.length - 1], ...featureItems, featureItems[0]];
-    const carouselCards = items.map((featureItem, index) => {
-        return <FeatureSlideItem key={`slide_${index}`} featureItem={featureItem} isImageTop={true} />
-    })
+    // const items = [featureItems[featureItems.length - 1], ...featureItems, featureItems[0]];
+  
     return <div
         style={{ background: 'linear-gradient(180deg, #FFFFFF -5.17%, rgba(245, 253, 255, 0.35) 27.7%, #FFF4F4 77.35%, #FFFFFF 100%)' }}
     >
@@ -28,7 +24,10 @@ export default function FeaturesSection() {
                 Deliver seamless experiences, customise with ease, and drive results with our advanced, user-friendly platform.
             </SectionDescription>
             {width > 800 && <Features className="" />}
-            {width <= 800 && <CustomCarousel cards={carouselCards} speed={15} />}
+            {width <= 800 &&
+                <div className="pb-20 overflow-visible"> <SwiperCarousel speed={15} /></div>
+
+            }
         </div>
     </div>
 

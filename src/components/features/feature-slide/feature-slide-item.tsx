@@ -1,39 +1,45 @@
+import { motion } from "framer-motion";
 import { FeatureItem } from "../../../domain/feature-item";
 import { cn } from "../../../lib/utils";
 
 
-const ContentComponent = ({ featureItem }: { featureItem: FeatureItem }) => {
-    return <div className="">
-        <div className="flex items-center">
-            {featureItem.mobileIcon}
-            <div className="text-18 text-[#40424E] font-medium">
+const ContentComponent = ({ featureItem, isActive }: { featureItem: FeatureItem, isActive: boolean }) => {
+    return <div className="relative">
+        <div className="flex items-center justify-center mb-1">
+            <div className="text-12 text-[#40424E] font-bold">
                 {featureItem.title}
             </div>
         </div>
-        <div className="font-light text-[#83869D] text-12 pl-[0.3125rem] h-[6.25rem]">
+        <motion.div 
+        variants={{
+            active: { opacity: 1,transition: { duration: 1.5,ease:"easeOut" } },
+            inactive: { opacity: 0,transition: { duration: 0.5,ease:"easeOut" } }
+        }}
+        initial="inactive"
+        animate={isActive ? 'active' : 'inactive'}
+        className="font-light text-[#83869D] text-12 text-center w-[21.06rem] absolute bottom-0 translate-y-full left-1/2 -translate-x-1/2">
             {featureItem.description}
-        </div>
+        </motion.div>
     </div>
 }
+
 const ImageComponent = ({ featureItem }: { featureItem: FeatureItem }) => {
     const justifyClass = featureItem.title == "Fully Customizable" ? "items-start justify-end" : "justify-center"
     const cnClass = cn('bg-[#EFE8E4] overflow-hidden rounded-[10px] flex h-[14.8125rem] border-[0.5px] border-[#B3B3B3]', justifyClass)
 
-    return <div className={cnClass} style={{ boxShadow: '0px 8px 10px 0px rgba(0, 0, 0, 0.08)' }}>
-        <img
+    return <img
         draggable={false}
-            src={featureItem.image}
-            className={`${featureItem.mobileClass} h-auto object-contain select-none pointer-events-none`}
-            alt="feature"
-        />
-    </div>
-}
-export default function FeatureSlideItem({ featureItem, isImageTop }: { featureItem: FeatureItem, isImageTop: boolean }) {
-    return <div className="w-full flex  justify-center px-[1.875rem] select-none">
-        <div className="flex flex-col gap-5 w-[20.3125rem]">
-            {isImageTop ? <ImageComponent featureItem={featureItem} /> : <ContentComponent featureItem={featureItem} />}
-            {isImageTop ? <ContentComponent featureItem={featureItem} /> : <ImageComponent featureItem={featureItem} />}
-        </div>
+        src={featureItem.image}
+        className={`w-full h-[11.5rem] rounded-[15px] object-cover select-none pointer-events-none`}
+        alt="feature"
+    />
 
+}
+export default function FeatureSlideItem({ featureItem, isImageTop, isActive }: { featureItem: FeatureItem, isImageTop: boolean, isActive: boolean }) {
+    return <div className="w-full flex  justify-center  select-none">
+        <div className="flex flex-col gap-3 w-[16.75rem]">
+            {isImageTop ? <ImageComponent featureItem={featureItem} /> : <ContentComponent featureItem={featureItem} isActive={isActive} />}
+            {isImageTop ? <ContentComponent featureItem={featureItem} isActive={isActive} /> : <ImageComponent featureItem={featureItem} />}
+        </div>
     </div>
 }
