@@ -27,7 +27,7 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
         <div className="">
             We help to sell your properties
         </div>
-        <div className="text-keywordColor leading-[3.65rem]">
+        <div className="text-titleOrange leading-[3.65rem]">
             <AnimatePresence mode="wait">
                 {Array.from({ length: 6 }, (_, index) => (
                     activeIndex === index && (

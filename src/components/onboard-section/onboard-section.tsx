@@ -26,7 +26,7 @@ export default function OnboardSection() {
         } variant="md" />
         <SectionDescription className="mb-[4rem] mobile:mb-[1.625rem]">
             <div className="w-[full] mobile:w-[15.625rem]">
-                At <b>Right Property,</b> we've streamlined the process of working with us into three easy steps.
+                At <b>Right Property,</b> we streamlined the process of working with us into three easy steps.
             </div>
         </SectionDescription>
         {<OnboardSteps />}

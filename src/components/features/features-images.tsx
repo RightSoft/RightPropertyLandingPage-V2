@@ -28,12 +28,12 @@ export default function FeaturesImages({ activeIndex }: FeaturesImagesProps) {
             className: "max-w-[50.1875rem]"
         },
     ]
-    const justifyClass = activeIndex == 2 ? "items-start justify-end" : "justify-center"
+    const justifyClass = "justify-center"
     const cnClass = cn('w-full h-full flex items-center relative', justifyClass)
 
     const startScale = 0.8;
     const startOpacity = 0.7;
-    const duration = 0.4
+    const duration = 0.6;
 
     return <div className={cnClass}>
         <AnimatePresence mode="popLayout">

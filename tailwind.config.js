@@ -21,6 +21,7 @@ export default {
         rpBlue: "#5EC6D3",
         buttonWhite: "#EEEEF0",
         keywordColor: "#FF3F79",
+        titleOrange: "#FFA657",
       },
       screens: {
         mobile: { max: "800px" },
