@@ -72,17 +72,17 @@ export default function ContactForm() {
     };
     return <div className="w-[22.06rem] mobile:w-[20.3125rem] flex items-center flex-col">
         <div className="flex flex-col items-center gap-3 w-full">
-            <TextInput placeholder="Phone company" label={"Name"} onChange={(e) => {
-                setName(e.target.value)
-            }} value={name} />
-            <TextInput placeholder="Your name" label={"Company"} onChange={(e) => {
-                setCompany(e.target.value)
-            }} value={company} />
-            <TextInput placeholder="The company you work for" label={"Email"} onChange={(e) => {
-                setEmail(e.target.value)
-            }} value={email} />
-            <TextInput placeholder="Enter your work email" label={"Phone"} onChange={(e) => {
+            <TextInput placeholder="Phone company" label={"Phone"} onChange={(e) => {
                 setPhone(e.target.value)
+            }} value={name} />
+            <TextInput placeholder="Your name" label={"Name"} onChange={(e) => {
+                setName(e.target.value)
+            }} value={company} />
+            <TextInput placeholder="The company you work for" label={"Company"} onChange={(e) => {
+                setCompany(e.target.value)
+            }} value={email} />
+            <TextInput placeholder="Enter your work email" label={"Email"} onChange={(e) => {
+                setEmail(e.target.value)
             }} value={phone} />
         </div>
         <ActionButton text={"Submit"} className={"mt-[1.875rem] w-full mobile:w-full bg-[#FFA657] rounded-[12px]"} onClick={(e: any) => handleSubmit(e)} />
