@@ -14,7 +14,7 @@ export default function OnboardSteps() {
             return;
         };
         if (inView) {
-            animate(".onboard-step", { opacity: 1 }, { delay: stagger(1), duration: 1, ease: "easeOut" },)
+            animate(".onboard-step", { opacity: 1 }, { delay: stagger(0.6), duration: 0.6, ease: "easeOut" },)
         } else {
             animate(".onboard-step", { opacity: 0 })
         }
