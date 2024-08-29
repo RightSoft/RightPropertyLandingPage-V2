@@ -11,7 +11,7 @@ interface AccordionProps {
     content: React.ReactNode
     className?: string
 }
-export default function Accordion({ i, activeId, isExpanded, setExpanded, header, content, className }: AccordionProps) {
+export default function Accordion({ i, isExpanded, setExpanded, header, content, className }: AccordionProps) {
 
     const [isOpen, setIsOpen] = useState(isExpanded);
     const bgColorClass = isOpen ? "bg-white" : "bg-[#F7F7F7]"

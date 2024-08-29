@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FeatureItem } from "../../../domain/feature-item";
-import { cn } from "../../../lib/utils";
 
 
 const ContentComponent = ({ featureItem, isActive }: { featureItem: FeatureItem, isActive: boolean }) => {

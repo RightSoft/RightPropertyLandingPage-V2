@@ -3,14 +3,10 @@ import FeaturesImages from "./features-images"
 import { cn } from "../../lib/utils"
 import { featureItems } from "./feature-data"
 import useLoopToN from "../../hooks/use-loop-to-n"
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function Features({ className }: { className?: string }) {
     const wait = 10000;
-    const duration = 0.6;
-    // const initialAnimState = { initial: { opacity: 0.5, y: 30, transition: { duration, ease: "easeOut" } } };
-    // const animState = { animate: { opacity: 1, y: 0, transition: { duration, ease: "easeOut" } } };
-    // const exitAnimState = { exit: { opacity: 0.5, y: 30, transition: { duration, ease: "easeOut" } } };
     const accordionItems = [
         {
             id: 0,
@@ -106,7 +102,6 @@ export default function Features({ className }: { className?: string }) {
     ]
     const [active, setManualIndex] = useLoopToN(accordionItems.length - 1, wait);
     const cnClass = cn("flex h-[42.875rem] w-full rounded-tl-[20px] rounded-bl-[20px] rounded-tr-[20px] rounded-br-[20px] overflow-hidden", className)
-    const activeItem = accordionItems[active];
     return <div className={cnClass} 
     
     style={{
