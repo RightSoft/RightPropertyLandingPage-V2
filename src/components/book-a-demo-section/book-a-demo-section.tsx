@@ -17,7 +17,7 @@ export default function BookADemoSection() {
         style={{ background: `linear-gradient(94.44deg, rgba(255, 255, 255, 0.8) 5.42%, rgba(255, 255, 255, 0) 54.55%), url(${sectionBgSrc})`, backgroundSize: 'cover' }}
     >
 
-        <div className="section flex items-center justify-between w-full pl-[6.9375rem] pr-[6.5718rem] mobile:flex-col mobile:items-center mobile:pl-0 mobile:pr-0" style={{margin:"auto"}}>
+        <div className="section flex items-center justify-center gap-[12.5rem] mobile:gap-0 w-full pl-[6.9375rem] pr-[6.5718rem] mobile:flex-col mobile:items-center mobile:pl-0 mobile:pr-0" style={{margin:"auto"}}>
             <div>
                 <h3 className="mobile:hidden mb-6 text-[#5EC6D3] font-extrabold tracking-[0.17em] text-[4.375rem] leading-[5.33rem]" >
                     Book<span className="text-[#FFA657]">a</span>demo.

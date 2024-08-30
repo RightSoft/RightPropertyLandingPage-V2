@@ -5,18 +5,18 @@ import { FeatureItem } from "../../../domain/feature-item";
 const ContentComponent = ({ featureItem, isActive }: { featureItem: FeatureItem, isActive: boolean }) => {
     return <div className="relative">
         <div className="flex items-center justify-center mb-1">
-            <div className="text-12 text-[#40424E] font-bold">
+            <div className="text-base text-[#40424E] font-medium">
                 {featureItem.title}
             </div>
         </div>
         <motion.div 
-        variants={{
-            active: { opacity: 1,transition: { duration: 1.5,ease:"easeOut" } },
-            inactive: { opacity: 0,transition: { duration: 0.5,ease:"easeOut" } }
-        }}
-        initial="inactive"
-        animate={isActive ? 'active' : 'inactive'}
-        className="font-light text-[#83869D] text-12 text-center w-[21.06rem] absolute bottom-0 translate-y-full left-1/2 -translate-x-1/2">
+        // variants={{
+        //     active: { opacity: 1,transition: { duration: 1.5,ease:"easeOut" } },
+        //     inactive: { opacity: 0,transition: { duration: 0.5,ease:"easeOut" } }
+        // }}
+        // initial="inactive"
+        // animate={isActive ? 'active' : 'inactive'}
+        className="font-light text-[#83869D] text-12 text-center w-full">
             {featureItem.description}
         </motion.div>
     </div>
