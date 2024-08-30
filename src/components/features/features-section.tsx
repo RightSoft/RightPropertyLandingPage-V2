@@ -5,7 +5,6 @@ import useSectionView from "../../hooks/use-section-view";
 import useWindowSize from "../../hooks/use-window-size";
 import SectionTitle from "../section-title";
 import SectionDescription from "../section-description";
-import SwiperCarousel from "./swiper-carousel";
 import FeaturesMobileColumn from "./features-mobile-column";
 export default function FeaturesSection() {
     const ref = useRef(null)

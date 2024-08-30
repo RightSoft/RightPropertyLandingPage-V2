@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FeatureItem } from "../../../domain/feature-item";
 
 
-const ContentComponent = ({ featureItem, isActive }: { featureItem: FeatureItem, isActive: boolean }) => {
+const ContentComponent = ({ featureItem }: { featureItem: FeatureItem, isActive: boolean }) => {
     return <div className="relative">
         <div className="flex items-center justify-center mb-1">
             <div className="text-base text-[#40424E] font-medium">

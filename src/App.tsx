@@ -18,7 +18,6 @@ import SellKeywordsContainer from './components/sell-keywords/sell-keywords-cont
 import PlatformsSection from './components/platforms/platforms-section'
 import GSAP from './lib/gsap'
 import { ReactLenis } from '@studio-freight/react-lenis'
-import FAQSection from './components/faq/faq-section'
 
 
 function App() {
