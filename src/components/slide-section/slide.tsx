@@ -39,9 +39,7 @@ export default function Slide() {
         draggable={false}
         onSlideChange={(swiper) => {
             setActiveIndex(swiper.realIndex);
-            console.log('slide change', swiper.realIndex,swiper)
         }}
-        onSwiper={(swiper) => console.log(swiper)}
         breakpoints={
             {
                 801: {

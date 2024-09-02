@@ -31,7 +31,6 @@ export default function Header() {
             }
         }
         $prevProgress.current = $progress.current;
-        console.log($progress.current, $prevProgress.current, lenis.progress);
     }
     useLenis(lenisHandler,[width]);
 

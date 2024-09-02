@@ -12,7 +12,6 @@ export default function AddonsSlide() {
             slidesPerView={1.9}
             onSlideChange={() => { }}
             freeMode={true}
-            onSwiper={(swiper) => console.log(swiper)}
             modules={[ Pagination,FreeMode]}
             className='w-[100vw] flex justify-center  px-7'
         >

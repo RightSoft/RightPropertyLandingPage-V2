@@ -34,7 +34,6 @@ export default function SwiperCarousel({  }: CarouselProps) {
     
         onSlideChange={(swiper) => {
             setActiveIndex(swiper.realIndex);
-            console.log('slide change', swiper.realIndex, swiper)
         }}
         onTouchStart={() => {
             $swiper.current?.autoplay?.stop()

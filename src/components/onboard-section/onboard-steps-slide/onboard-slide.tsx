@@ -42,7 +42,6 @@ export default function OnboardSlide({ className }: { className?: string }) {
             centeredSlidesBounds={true}
             modules={[ Pagination]}
             onSlideChange={() => { }}
-            onSwiper={(swiper) => console.log(swiper)}
             className='w-[100vw] flex justify-center pb-14'
         >
             {
