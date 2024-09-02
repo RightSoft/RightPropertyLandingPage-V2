@@ -2,31 +2,58 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useActiveSectionContext } from "../../context/section-context/section-context";
 import AnchorLink from "../anchor-link";
 import RpLogo from "../rp-logo";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Hamburger from "./hamburger";
 import HeaderMenu from "./header-menu";
+import { useLenis } from '@studio-freight/react-lenis'
+import Lenis from '@studio-freight/lenis';
+import useWindowSize from "../../hooks/use-window-size";
 
 export default function Header() {
+    const [hideHeader, setHideHeader] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const toggleMenu = () => setShowMenu(!showMenu);
     const { activeSection } = useActiveSectionContext();
     const textClass = (key: string) => {
         return activeSection == key ? 'font-bold text-[#5EC6D3]' : ''
     }
+    const {width} = useWindowSize();
+    const $progress = useRef(0);
+    const $prevProgress = useRef(0);
+    const lenisHandler = (lenis: Lenis) => {
+        if(width < 768) return;
+        $progress.current = lenis.progress;
+        if ($progress.current >= 0.01) {
+            if (($prevProgress.current ?? 0) < $progress.current) {
+                setHideHeader(true);
+            } else {
+                setHideHeader(false);
+            }
+        }
+        $prevProgress.current = $progress.current;
+        console.log($progress.current, $prevProgress.current, lenis.progress);
+    }
+    useLenis(lenisHandler,[width]);
+
     useEffect(() => {
         if (showMenu) document.body.classList.add('stop-scrolling')
         else document.body.classList.remove('stop-scrolling')
     }, [showMenu])
     const shadow = showMenu ? '' : 'drop-shadow-md'
+    const transition = {
+        duration: 0.5,
+        ease: "easeOut",
+    }
     return <>
-        <div className={`w-full h-[7.51rem] mobile:h-[3.4375rem] bg-white  static mobile:fixed z-50 ${shadow}`}>
+        <motion.div
+            variants={{
+                hidden: { y: "-100%", transition: transition },
+                visible: { y: 0, transition: transition }
+            }}
+            animate={hideHeader ? 'hidden' : 'visible'}
+            className={`w-full h-[7.51rem] mobile:h-[3.4375rem] bg-white  fixed mobile:fixed z-50 ${shadow}`}>
             <div className="section flex justify-between mobile:px-5 pl-[5.625rem] pr-[1.6875rem] items-center h-full">
-                <div className="mobile:hidden">
-                    <RpLogo className="w-[6.875rem]" />
-                </div>
-                <div className="hidden mobile:block ">
-                    <RpLogo className="w-[3.31rem]" />
-                </div>
+                <RpLogo className="w-[6.875rem] mobile:w-[3.31rem]" />
                 <div className="hidden mobile:block">
                     <Hamburger isMenuShown={showMenu} toggleMenu={toggleMenu} />
                 </div>
@@ -45,7 +72,7 @@ export default function Header() {
                     </li> */}
                 </ul>
             </div>
-        </div>
+        </motion.div>
         <AnimatePresence>
             {showMenu && <motion.div
                 className="fixed h-full w-full z-40"
