@@ -11,8 +11,14 @@ export default function Footer() {
     const { width } = useWindowSize();
     useEffect(() => {
         let footer = document.querySelector("footer"),
-            getOverlap = () => Math.min(window.innerHeight, footer!.offsetHeight), 
-            adjustFooterOverlap = () => footer!.style.marginTop = -getOverlap() + "px";
+            getOverlap = () => Math.min(window.innerHeight, footer!.offsetHeight),
+            adjustFooterOverlap = () => footer!.style.marginTop = -getOverlap() + "px",
+            resetFooterMargin = () => footer!.style.marginTop = "0px";
+
+        if (width < 1024) {
+            resetFooterMargin();
+            return;
+        };
 
         adjustFooterOverlap();
 
