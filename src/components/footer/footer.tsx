@@ -1,4 +1,3 @@
-import { useGSAP } from "@gsap/react";
 import AnchorLink from "../anchor-link";
 import Instagram from "../icons/instagram";
 import Linkedin from "../icons/linkedin";
