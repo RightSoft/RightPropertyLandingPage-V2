@@ -1,11 +1,12 @@
+import { useLenis } from '@studio-freight/react-lenis'
+
 export default function RpLogo({ className }: { className: string }) {
+    const lenis = useLenis();
+
     return <svg
         className={`cursor-pointer ${className}`}
         onClick={() => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+           lenis?.scrollTo(0);
         }}
         viewBox="0 0 136 91" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_314_4680" style={{ maskType: 'luminance' }} maskUnits="userSpaceOnUse" x="0" y="0" width="136" height="91">
