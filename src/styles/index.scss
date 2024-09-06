@@ -10,6 +10,9 @@
   --swiper-theme-color: #5ec6d3;
   --swiper-pagination-bullet-size: 10.31px;
 }
+.body{
+  position: relative;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -65,19 +68,25 @@ body {
 
 .level-up-gradient {
   @media screen and (max-width: 800px) {
-    background: linear-gradient(360deg, #FFFFFF 0%, rgba(248, 237, 240, 0.5) 100%);
-    
+    background: linear-gradient(
+      360deg,
+      #ffffff 0%,
+      rgba(248, 237, 240, 0.5) 100%
+    );
   }
 }
 
-
-html{
+html {
   --swiper-pagination-bullet-width: 0.3125rem;
-  --swiper-pagination-bullet-height : 0.3125rem;
-  --swiper-pagination-color : #898585;
-  --swiper-pagination-bottom : 1.875rem;
+  --swiper-pagination-bullet-height: 0.3125rem;
+  --swiper-pagination-color: #898585;
+  --swiper-pagination-bottom: 1.875rem;
 }
 
-.half-opacity{
-  opacity: 0.1!important;
+.half-opacity {
+  opacity: 0.1 !important;
+}
+
+.cookie-popup {
+  box-shadow: 3px 4px 4px 0px rgba(32, 51, 73, 0.15);
 }

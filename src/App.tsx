@@ -14,21 +14,20 @@ import BookADemoSection from './components/book-a-demo-section/book-a-demo-secti
 import Footer from './components/footer/footer'
 import ActiveSectionProvider from './context/section-context/section-context'
 import WindowSizeProvider from './components/window-size-provider'
-import ReactGA from "react-ga4";
 import SellKeywordsContainer from './components/sell-keywords/sell-keywords-container'
 import PlatformsSection from './components/platforms/platforms-section'
 import GSAP from './lib/gsap'
 import { ReactLenis } from '@studio-freight/react-lenis'
+import CookiePopupProvider from './components/cookie-popup/cookie-popup-provider'
 
 
 function App() {
-  ReactGA.initialize("G-D169WBQW9L");
 
   return (
     <ReactLenis options={{
-      lerp:0.08
+      lerp: 0.08
     }} root>
-      <GSAP/>
+      <GSAP />
       <ActiveSectionProvider>
         <>
           <WindowSizeProvider />
@@ -45,6 +44,7 @@ function App() {
             {/* <FAQSection/> */}
             <Footer />
           </div>
+          <CookiePopupProvider />
           <WindowSizeProvider />
         </>
       </ActiveSectionProvider>
