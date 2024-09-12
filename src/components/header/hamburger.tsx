@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface HamburgerProps {
     isMenuShown: boolean;
     toggleMenu: () => void;
 }
 const Path = (props: any) => (
-    <motion.path
+    <m.path
         strokeWidth="3"
         strokeLinecap="round"
         stroke="white"
@@ -18,7 +18,7 @@ export default function Hamburger({ isMenuShown, toggleMenu }: HamburgerProps) {
         onClick={toggleMenu}
 
     >
-        <motion.svg width="24" height="24" viewBox="0 0 24 24" animate={isMenuShown ? "open" : "closed"}>
+        <m.svg width="24" height="24" viewBox="0 0 24 24" animate={isMenuShown ? "open" : "closed"}>
             <Path
                 variants={{
                     closed: { d: "M 2 3.5 L 19 3.5" },
@@ -45,6 +45,6 @@ export default function Hamburger({ isMenuShown, toggleMenu }: HamburgerProps) {
                 transition={{ duration: 0.1 }}
 
             />
-        </motion.svg>
+        </m.svg>
     </button>
 }

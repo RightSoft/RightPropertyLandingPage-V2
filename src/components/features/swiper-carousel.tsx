@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide, SwiperClass } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { featureItems } from './feature-data';
 import FeatureSlideItem from './feature-slide/feature-slide-item';
 interface CarouselProps {
@@ -47,7 +47,7 @@ export default function SwiperCarousel({  }: CarouselProps) {
         {
             carouselCards.map((card, i) => (
                 <SwiperSlide>
-                    <motion.div
+                    <m.div
                         variants={{
                             active: { scale: 1 },
                             inactive: { scale: .7 }
@@ -56,7 +56,7 @@ export default function SwiperCarousel({  }: CarouselProps) {
                         transition={{ duration: 2.5, ease: "easeOut" }}
                     >
                         {card}
-                    </motion.div>
+                    </m.div>
 
                 </SwiperSlide>
             ))}

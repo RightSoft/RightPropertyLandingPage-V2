@@ -19,6 +19,7 @@ import SellKeywordsContainer from './components/sell-keywords/sell-keywords-cont
 import PlatformsSection from './components/platforms/platforms-section'
 import GSAP from './lib/gsap'
 import { ReactLenis } from '@studio-freight/react-lenis'
+import { LazyMotion, domAnimation } from 'framer-motion'
 
 
 function App() {
@@ -26,11 +27,11 @@ function App() {
 
   return (
     <ReactLenis options={{
-      lerp:0.08
+      lerp: 0.08
     }} root>
-      <GSAP/>
+      <GSAP />
       <ActiveSectionProvider>
-        <>
+        <LazyMotion features={domAnimation}>
           <WindowSizeProvider />
           <Toaster />
           <Header />
@@ -46,7 +47,7 @@ function App() {
             <Footer />
           </div>
           <WindowSizeProvider />
-        </>
+        </LazyMotion>
       </ActiveSectionProvider>
     </ReactLenis>
   )

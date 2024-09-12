@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FeatureItem } from "../../../domain/feature-item";
 
 
@@ -9,7 +9,7 @@ const ContentComponent = ({ featureItem }: { featureItem: FeatureItem, isActive:
                 {featureItem.title}
             </div>
         </div>
-        <motion.div 
+        <m.div 
         // variants={{
         //     active: { opacity: 1,transition: { duration: 1.5,ease:"easeOut" } },
         //     inactive: { opacity: 0,transition: { duration: 0.5,ease:"easeOut" } }
@@ -18,7 +18,7 @@ const ContentComponent = ({ featureItem }: { featureItem: FeatureItem, isActive:
         // animate={isActive ? 'active' : 'inactive'}
         className="font-light text-[#83869D] text-12 text-center w-full">
             {featureItem.description}
-        </motion.div>
+        </m.div>
     </div>
 }
 

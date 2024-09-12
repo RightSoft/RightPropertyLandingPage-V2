@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import useLoopToN from "../../hooks/use-loop-to-n";
 
 export default function BeautifulIntelligentAnimatigCaption() {
@@ -15,11 +15,11 @@ export default function BeautifulIntelligentAnimatigCaption() {
     ]   
     const [activeIndex,_] = useLoopToN(captions.length,wait);
 
-    return <motion.div className="hidden mobile:block">
+    return <m.div className="hidden mobile:block">
         <div className="h-[3.375rem]  text-12 mb-[1.875rem] w-[22.06rem]">
             <AnimatePresence mode="wait">
                 {captions.map((_, index) => (
-                    activeIndex === index && <motion.div
+                    activeIndex === index && <m.div
                         key={`beautiful-item-${index}`}
                         initial={{ opacity: startOpacity, y: startY, scaleY: startScaleY }}
                         animate={{ opacity: 1, y: 0, scaleY: 1.0 }}
@@ -27,11 +27,11 @@ export default function BeautifulIntelligentAnimatigCaption() {
                         transition={{ duration: duration }}
                     >
                         {captions[activeIndex]}
-                    </motion.div>
+                    </m.div>
                 ))}
             </AnimatePresence>
 
 
         </div>
-    </motion.div>
+    </m.div>
 }

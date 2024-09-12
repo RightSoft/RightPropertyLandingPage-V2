@@ -6,9 +6,9 @@ import img3 from '../../assets/images/slide_image_3.webp';
 import img4 from '../../assets/images/slide_image_4.webp';
 import img5 from '../../assets/images/slide_image_5.webp';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 const SlideImage = ({ src, isActive }: { src: string, isActive: boolean }) => {
-    return <motion.div
+    return <m.div
         variants={{
             active: { scale: 1 },
             inactive: { scale: .7 }
@@ -17,9 +17,9 @@ const SlideImage = ({ src, isActive }: { src: string, isActive: boolean }) => {
         transition={{ duration: 2.5, ease: "easeOut" }}
         className=''>
         <div className='w-full h-[38.5625rem] mobile:h-[17.5rem]'>
-            <img draggable={false} src={src} className='rounded-[50px] mobile:rounded-[17px] object-cover w-full h-full' />
+            <img draggable={false} src={src} alt='beautiful & intelligent' className='rounded-[50px] mobile:rounded-[17px] object-cover w-full h-full' />
         </div>
-    </motion.div>
+    </m.div>
 }
 
 export default function Slide() {

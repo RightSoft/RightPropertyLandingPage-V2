@@ -4,7 +4,8 @@ export default function LevelUp() {
         
     >
         <div className="px-[1.203125rem] mobile:h-[13.6875rem] mobile:px-0 w-full h-full absolute mobile:relative">
-            <video style={{ padding: 'inherit' }} className="w-full left-0 h-full object-cover absolute z-10 " src="/rp-landing-last.mp4" autoPlay muted playsInline loop ></video>
+            <video style={{ padding: 'inherit' }} className="w-full left-0 h-full object-cover absolute z-10 mobile:hidden" src="/rp-landing-last.mp4" autoPlay muted playsInline loop ></video>
+            <video style={{ padding: 'inherit' }} className="w-full left-0 h-full object-cover absolute z-10 hidden mobile:block" src="/rp-landing-mobile.mp4" autoPlay muted playsInline loop ></video>
             <div style={{ padding: 'inherit' }} className="w-full left-0 h-full absolute z-20">
                 <div className=" w-full h-full"
                     style={{

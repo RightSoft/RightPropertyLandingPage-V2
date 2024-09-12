@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { cn } from "../../lib/utils";
 import useLoopToN from "../../hooks/use-loop-to-n";
 interface SellKeywordsProps {
@@ -31,7 +31,7 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
             <AnimatePresence mode="wait">
                 {Array.from({ length: 6 }, (_, index) => (
                     activeIndex === index && (
-                        <motion.div
+                        <m.div
                             key={`item-${index}`}
                             initial={{ opacity: startOpacity, y: startY, scaleY:startScaleY }}
                             animate={{ opacity: 1, y: 0, scaleY:1.0 }}
@@ -39,7 +39,7 @@ export default function SellKeywords({ className }: SellKeywordsProps) {
                             transition={{duration:duration}}
                             className="">
                             {keywords[index]}
-                        </motion.div>
+                        </m.div>
                     )
                 ))}
             </AnimatePresence>

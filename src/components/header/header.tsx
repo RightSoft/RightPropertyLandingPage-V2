@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useActiveSectionContext } from "../../context/section-context/section-context";
 import AnchorLink from "../anchor-link";
 import RpLogo from "../rp-logo";
@@ -44,7 +44,7 @@ export default function Header() {
         ease: "easeOut",
     }
     return <>
-        <motion.div
+        <m.div
             variants={{
                 hidden: { y: "-100%", transition: transition },
                 visible: { y: 0, transition: transition }
@@ -71,9 +71,9 @@ export default function Header() {
                     </li> */}
                 </ul>
             </div>
-        </motion.div>
+        </m.div>
         <AnimatePresence>
-            {showMenu && <motion.div
+            {showMenu && <m.div
                 className="fixed h-full w-full z-40"
                 initial={{ opacity: 0.5, x: '-100%' }}
                 exit={{ opacity: 0.5, x: '-100%' }}
@@ -81,7 +81,7 @@ export default function Header() {
                 transition={{ duration: 0.5, ease: "easeOut", }}
             >
                 <HeaderMenu toggleMenu={toggleMenu} />
-            </motion.div>}
+            </m.div>}
         </AnimatePresence>
     </>
 }

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 import { cn } from "../../lib/utils";
 import { featureItems } from "./feature-data";
@@ -37,7 +37,7 @@ export default function FeaturesImages({ activeIndex }: FeaturesImagesProps) {
 
     return <div className={cnClass}>
         <AnimatePresence mode="popLayout">
-            <motion.img
+            <m.img
                 key={`k-${activeIndex}`}
                 src={images[activeIndex].src}
                 className={images[activeIndex].className}

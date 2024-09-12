@@ -3,7 +3,7 @@ import FeaturesImages from "./features-images"
 import { cn } from "../../lib/utils"
 import { featureItems } from "./feature-data"
 import useLoopToN from "../../hooks/use-loop-to-n"
-import { motion } from "framer-motion"
+import { m } from "framer-motion"
 
 export default function Features({ className }: { className?: string }) {
     const wait = 10000;
@@ -11,7 +11,7 @@ export default function Features({ className }: { className?: string }) {
         {
             id: 0,
             className: "items-center ",
-            header: <motion.div
+            header: <m.div
                 key={"0000"}
 
                 className="relative pl-[2.7rem] " >
@@ -19,32 +19,32 @@ export default function Features({ className }: { className?: string }) {
                     {featureItems[0].title}
                 </div>
 
-            </motion.div>,
-            content: <motion.div
+            </m.div>,
+            content: <m.div
                 key={"0000"}
 
                 className=" font-light leading-[1.21875rem] text-accordionItemDescColor">
-                {featureItems[0].description}          </motion.div>
+                {featureItems[0].description}          </m.div>
         },
         {
             id: 1,
             className: "items-center",
-            header: <motion.div
+            header: <m.div
                 className="relative pl-[2.7rem]" >
                 <div>
                     {featureItems[1].title}
                 </div>
-            </motion.div>,
-            content: <motion.div
+            </m.div>,
+            content: <m.div
 
                 className=" font-light leading-[1.21875rem] text-accordionItemDescColor">
                 {featureItems[1].description}
-            </motion.div>
+            </m.div>
         },
         {
             id: 2,
             className: "items-center ",
-            header: <motion.div
+            header: <m.div
 
                 className="relative pl-[2.7rem]" >
 
@@ -52,20 +52,20 @@ export default function Features({ className }: { className?: string }) {
                     {featureItems[2].title}
                 </div>
 
-            </motion.div>,
-            content: <motion.div
+            </m.div>,
+            content: <m.div
                 key={"2001"}
 
                 className=" font-light leading-[1.21875rem] text-accordionItemDescColor">
                 <div className=" font-light leading-[1.21875rem] text-accordionItemDescColor">
                     {featureItems[2].description}
 
-                </div>            </motion.div>
+                </div>            </m.div>
         },
         {
             id: 3,
             className: "items-center ",
-            header: <motion.div
+            header: <m.div
                 key={"3000"}
 
                 className="relative pl-[2.7rem]" >
@@ -74,30 +74,30 @@ export default function Features({ className }: { className?: string }) {
                     {featureItems[3].title}
                 </div>
 
-            </motion.div>,
-            content: <motion.div
+            </m.div>,
+            content: <m.div
                 key={"3001"}
                 className=" font-light leading-[1.21875rem] text-accordionItemDescColor">
                 {featureItems[3].description}
-            </motion.div>
+            </m.div>
         },
         {
             id: 4,
             className: "items-center rounded-bl-[20px] rounded-tl-[4px] rounded-tr-[4px] rounded-br-[4px]",
-            header: <motion.div
+            header: <m.div
 
                 className="relative pl-[2.7rem]" >
 
                 <div>
                     {featureItems[4].title}
                 </div>
-            </motion.div>,
-            content: <motion.div
+            </m.div>,
+            content: <m.div
                 key={"4001"}
 
                 className=" font-light leading-[1.21875rem] text-accordionItemDescColor">
                 {featureItems[4].description}
-            </motion.div>
+            </m.div>
         }
     ]
     const [active, setManualIndex] = useLoopToN(accordionItems.length - 1, wait);

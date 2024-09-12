@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { cn } from "../lib/utils";
 import { useEffect, useState } from "react";
 
@@ -22,7 +22,7 @@ export default function Accordion({ i, isExpanded, setExpanded, header, content,
     }, [isExpanded])
     const headerText = isExpanded ? "text-[#F08E37]" : "text-[#2F303B]";
     return (
-        <motion.div
+        <m.div
             variants={{
                 open: { height: "22.1875rem", transition: transition },
                 collapsed: { height: "auto", transition: transition }
@@ -34,7 +34,7 @@ export default function Accordion({ i, isExpanded, setExpanded, header, content,
                 background: isOpen ? "white" : "linear-gradient(90deg, rgba(255, 250, 250, 0.934) 0%, rgba(247, 246, 246, 0.934) 100%)",
             }}
         >
-            <motion.div
+            <m.div
             variants={{
                 open: { y : "20%", transition: {...transition,duration:.4,delay:0.25} },
                 collapsed: {y : 0, transition: {...transition,duration:.4,delay:0.25} }
@@ -42,7 +42,7 @@ export default function Accordion({ i, isExpanded, setExpanded, header, content,
             className="flex flex-col"
             
             >
-                <motion.div
+                <m.div
                     variants={{
                         open: {},
                         collapsed: { paddingTop: "0", paddingBottom: '0' }
@@ -55,10 +55,10 @@ export default function Accordion({ i, isExpanded, setExpanded, header, content,
                         className={`${headerText} font-semibold`}>
                         {header}
                     </div>
-                </motion.div>
+                </m.div>
                 <AnimatePresence initial={false}>
                     {isOpen && (
-                        <motion.section
+                        <m.section
                             key="content"
                             initial="collapsed"
                             animate="open"
@@ -71,11 +71,11 @@ export default function Accordion({ i, isExpanded, setExpanded, header, content,
                             className="pl-[2.7rem] pr-[2.7rem] text-[1.125rem] leading-[1.37rem]"
                         >
                             {content}
-                        </motion.section>
+                        </m.section>
                     )}
                 </AnimatePresence>
-            </motion.div>
+            </m.div>
 
-        </motion.div>
+        </m.div>
     );
 };

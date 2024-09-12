@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import useWindowSize from '../hooks/use-window-size';
-import { motion, useMotionValue, useMotionValueEvent, useSpring, useWillChange } from 'framer-motion';
+import { m, useMotionValue, useMotionValueEvent, useSpring, useWillChange } from 'framer-motion';
 
 interface CarouselProps {
     cards: React.ReactNode[];
@@ -19,8 +19,8 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
     const $prevPosition = useRef<number>(0);
     // ====== Auto Slide ======
     const transitionDuration = isDragging ? 0 : 3;
-    const positionMotionValue = useMotionValue(0);
-    const position = useSpring(positionMotionValue, { mass: 0.5, stiffness: 50, damping: 15 });
+    const positionmValue = useMotionValue(0);
+    const position = useSpring(positionmValue, { mass: 0.5, stiffness: 50, damping: 15 });
     const releaseId = useRef<number | null>(null);
     const $started_at = useRef<number>(Date.now());
     let timerId: number;
@@ -51,7 +51,7 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
 
     useEffect(() => {
         //  Wait for the cardWidth to be set
-        //  Stop the motion if the user is dragging
+        //  Stop the m if the user is dragging
         if (!isDragging && cardWidth > 0) timerHandler();
         return () => cancelAnimationFrame(timerId);
     }, [isDragging, cardWidth])
@@ -132,13 +132,13 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
     };
 
     return (
-        <motion.div
+        <m.div
             className="carousel touch-pan-y"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
         >
-            <motion.div
+            <m.div
                 className="carousel-images"
                 style={{ x: position, willChange }}
                 transition={{ duration: transitionDuration, ease: "linear" }}
@@ -146,8 +146,8 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
                 {cards.map((card) => (
                     card
                 ))}
-            </motion.div>
-        </motion.div>
+            </m.div>
+        </m.div>
     );
 };
 

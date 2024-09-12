@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 import { More, Less } from "./faq-svg/faq-svg";
 interface FAQItemProps {
@@ -19,7 +19,7 @@ export default function FAQItem({
     <button className="flex flex-col gap-2" onClick={setActiveIndex}>
       <div className="flex items-center gap-3 text-[#56586C]">
         <AnimatePresence initial={false} mode="wait">
-          <motion.div
+          <m.div
             key={index == activeIndex ? "minus" : "plus"}
             initial={{
               rotate: index == activeIndex ? -90 : 90,
@@ -44,13 +44,13 @@ export default function FAQItem({
             }}
           >
             {index == activeIndex ? <Less /> : <More />}
-          </motion.div>
+          </m.div>
         </AnimatePresence>
         <div className="text-24 font-medium">{question}</div>
       </div>
       <AnimatePresence mode="wait">
         {index == activeIndex && (
-          <motion.div
+          <m.div
             initial={{
               height: 0,
               opacity: 0,
@@ -86,7 +86,7 @@ export default function FAQItem({
             <div className="text-24 font-light">
               {answer}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </button>

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import React from "react";
 
 interface OnboardStepProps {
@@ -8,7 +8,7 @@ interface OnboardStepProps {
     icon: React.ReactNode
 }
 export default function OnboardStep({  title, description, icon }: OnboardStepProps) {
-    return <motion.div
+    return <m.div
         initial={{ opacity: 0}}
         className="onboard-step text-center w-[23.4375rem] mobile:w-[20.4375rem] flex flex-col  items-center">
         <div className="h-[7.9375rem] mobile:h-[auto] mobile:mb-[1.125rem]">
@@ -21,5 +21,5 @@ export default function OnboardStep({  title, description, icon }: OnboardStepPr
         </div>
 
         {icon}
-    </motion.div>
+    </m.div>
 }
