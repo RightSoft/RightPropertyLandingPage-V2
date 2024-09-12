@@ -15,25 +15,31 @@ export default function Footer() {
             getOverlap = () => Math.min(window.innerHeight, footer!.offsetHeight),
             adjustFooterOverlap = () => footer!.style.marginTop = -getOverlap() + "px",
             resetFooterMargin = () => footer!.style.marginTop = "0px";
-
-        if (width < 1024) {
-            resetFooterMargin();
-            return;
-        };
-
-        adjustFooterOverlap();
-
-        let scrollTriggerInstance = ScrollTrigger.create({
-            trigger: footer,
-            start: () => "top " + (window.innerHeight - getOverlap()),
-            end: () => "+=" + getOverlap(),
-            pin: true,
-        });
-
+        let scrollTriggerInstance: ScrollTrigger | null = null;
         const handleResize = () => {
             adjustFooterOverlap();
-            scrollTriggerInstance.refresh(); // Recalculate the ScrollTrigger positions
+            scrollTriggerInstance?.refresh(); // Recalculate the ScrollTrigger positions
         };
+
+        setTimeout(() => {
+
+            if (width < 1024) {
+                resetFooterMargin();
+                return;
+            };
+
+            adjustFooterOverlap();
+
+            scrollTriggerInstance = ScrollTrigger.create({
+                trigger: footer,
+                start: () => "top " + (window.innerHeight - getOverlap()),
+                end: () => "+=" + getOverlap(),
+                pin: true,
+            });
+
+
+
+        }, 500);
 
         window.addEventListener('resize', handleResize);
 
