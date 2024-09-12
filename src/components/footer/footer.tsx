@@ -3,13 +3,14 @@ import Instagram from "../icons/instagram";
 import Linkedin from "../icons/linkedin";
 import Twitter from "../icons/twitter";
 import RpLogo from "../rp-logo";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import useWindowSize from "../../hooks/use-window-size";
+import { useGSAP } from "@gsap/react";
 export default function Footer() {
     const container = useRef<HTMLDivElement>(null);
     const { width } = useWindowSize();
-    useEffect(() => {
+    useGSAP(() => {
         let footer = document.querySelector("footer"),
             getOverlap = () => Math.min(window.innerHeight, footer!.offsetHeight),
             adjustFooterOverlap = () => footer!.style.marginTop = -getOverlap() + "px",
@@ -38,9 +39,12 @@ export default function Footer() {
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            scrollTriggerInstance.kill(); // Clean up on component unmount
         };
-    }, [width]);
+    }, {
+        dependencies: [width],
+        scope: container,
+        revertOnUpdate: true
+    });
     return <footer ref={container} className=" bg-[#F8F8F9] z-0 relative "
         style={{
             background: "linear-gradient(180deg, #FFFFFF 0%, #F5F9FA 100%)"
