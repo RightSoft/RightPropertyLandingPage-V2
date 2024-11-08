@@ -8,7 +8,9 @@ import { ScrollTrigger } from "gsap/all";
 import useWindowSize from "../../hooks/use-window-size";
 import { useGSAP } from "@gsap/react";
 import useOnlyHome from "../../hooks/use-only-home";
+import { useDictionary } from "../../hooks/use-dictionary";
 export default function Footer() {
+  const bookDemoText = useDictionary("book-a-demo");
   const isHome = useOnlyHome();
   const container = useRef<HTMLDivElement>(null);
   const { width } = useWindowSize();
@@ -79,7 +81,7 @@ export default function Footer() {
                 <AnchorLink href="onboarding">Onboarding</AnchorLink>
               </li>
               <li>
-                <AnchorLink href="book-a-demo">Book A Demo</AnchorLink>
+                <AnchorLink href="book-a-demo">{bookDemoText}</AnchorLink>
               </li>
               {/* <li>
                         <AnchorLink href="pricing">Pricing</AnchorLink>
@@ -148,7 +150,7 @@ export default function Footer() {
               </li>
             )}
             <li>
-              <AnchorLink href="book-a-demo">Book A Demo</AnchorLink>
+              <AnchorLink href="book-a-demo">{bookDemoText}</AnchorLink>
             </li>
             {/* <li>
                     <AnchorLink href="pricing">Pricing</AnchorLink>

@@ -1,3 +1,4 @@
+import { useDictionary } from "../../hooks/use-dictionary";
 import useOnlyHome from "../../hooks/use-only-home";
 import AnchorLink from "../anchor-link";
 import Instagram from "../icons/instagram";
@@ -5,6 +6,7 @@ import Linkedin from "../icons/linkedin";
 import Twitter from "../icons/twitter";
 
 export default function HeaderMenu({ toggleMenu }: { toggleMenu: () => void }) {
+  const bookDemoText = useDictionary("book-a-demo");
   const isHome = useOnlyHome();
   const textClass = " active:text-[#C2ECF1]";
   return (
@@ -20,7 +22,7 @@ export default function HeaderMenu({ toggleMenu }: { toggleMenu: () => void }) {
             </li>
           )}
           <li onClick={toggleMenu} className={textClass}>
-            <AnchorLink href="book-a-demo">Book a Demo</AnchorLink>
+            <AnchorLink href="book-a-demo">{bookDemoText}</AnchorLink>
           </li>
           {/* <li onClick={toggleMenu} className={textClass}>
                     <AnchorLink href='pricing'>Pricing</AnchorLink>

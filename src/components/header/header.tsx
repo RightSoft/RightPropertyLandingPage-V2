@@ -9,8 +9,10 @@ import { useLenis } from '@studio-freight/react-lenis'
 import Lenis from '@studio-freight/lenis';
 import useWindowSize from "../../hooks/use-window-size";
 import useOnlyHome from "../../hooks/use-only-home";
+import { useDictionary } from "../../hooks/use-dictionary";
 
 export default function Header() {
+    const bookDemoText = useDictionary('book-a-demo');
     const isHome = useOnlyHome();
     const [hideHeader, setHideHeader] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
@@ -66,7 +68,7 @@ export default function Header() {
                         <AnchorLink href='onboarding'>Onboarding</AnchorLink>
                     </li>}
                     <li className={textClass('book-a-demo')}>
-                        <AnchorLink href='book-a-demo'>Book a Demo</AnchorLink>
+                        <AnchorLink href='book-a-demo'>{bookDemoText}</AnchorLink>
                     </li>
                     {/* <li className={textClass('pricing')}>
                         <AnchorLink href='pricing'>Pricing</AnchorLink>
