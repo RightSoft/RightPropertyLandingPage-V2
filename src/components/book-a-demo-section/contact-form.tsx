@@ -74,16 +74,16 @@ export default function ContactForm({inputClassName}: {inputClassName?: string})
         <div className="flex flex-col items-center gap-3 w-full">
             <TextInput className={inputClassName} placeholder="Phone company" label={"Phone"} onChange={(e) => {
                 setPhone(e.target.value)
-            }} value={name} />
+            }} value={phone} />
             <TextInput className={inputClassName} placeholder="Your name" label={"Name"} onChange={(e) => {
                 setName(e.target.value)
-            }} value={company} />
+            }} value={name} />
             <TextInput className={inputClassName} placeholder="The company you work for" label={"Company"} onChange={(e) => {
                 setCompany(e.target.value)
-            }} value={email} />
+            }} value={company} />
             <TextInput className={inputClassName} placeholder="Enter your work email" label={"Email"} onChange={(e) => {
                 setEmail(e.target.value)
-            }} value={phone} />
+            }} value={email} />
         </div>
         <ActionButton text={"Submit"} className={"mt-[1.875rem] w-full mobile:w-full bg-[#FFA657] rounded-[12px]"} onClick={(e: any) => handleSubmit(e)} />
     </div>
