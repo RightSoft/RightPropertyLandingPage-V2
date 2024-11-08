@@ -8,8 +8,10 @@ import HeaderMenu from "./header-menu";
 import { useLenis } from '@studio-freight/react-lenis'
 import Lenis from '@studio-freight/lenis';
 import useWindowSize from "../../hooks/use-window-size";
+import useOnlyHome from "../../hooks/use-only-home";
 
 export default function Header() {
+    const isHome = useOnlyHome();
     const [hideHeader, setHideHeader] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const toggleMenu = () => setShowMenu(!showMenu);
@@ -60,9 +62,9 @@ export default function Header() {
                     <li className={textClass('features')}>
                         <AnchorLink href='features'>Features</AnchorLink>
                     </li>
-                    <li className={textClass('onboarding')}>
+                    {isHome && <li className={textClass('onboarding')}>
                         <AnchorLink href='onboarding'>Onboarding</AnchorLink>
-                    </li>
+                    </li>}
                     <li className={textClass('book-a-demo')}>
                         <AnchorLink href='book-a-demo'>Book a Demo</AnchorLink>
                     </li>

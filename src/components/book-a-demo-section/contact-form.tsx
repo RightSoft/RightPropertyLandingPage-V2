@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import TextInput from "../text-input/text-input";
 import ActionButton from "../buttons/action-button";
 
-export default function ContactForm() {
+export default function ContactForm({inputClassName}: {inputClassName?: string}) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [company, setCompany] = useState('');
@@ -72,16 +72,16 @@ export default function ContactForm() {
     };
     return <div className="w-[22.06rem] mobile:w-[20.3125rem] flex items-center flex-col">
         <div className="flex flex-col items-center gap-3 w-full">
-            <TextInput placeholder="Phone company" label={"Phone"} onChange={(e) => {
+            <TextInput className={inputClassName} placeholder="Phone company" label={"Phone"} onChange={(e) => {
                 setPhone(e.target.value)
             }} value={name} />
-            <TextInput placeholder="Your name" label={"Name"} onChange={(e) => {
+            <TextInput className={inputClassName} placeholder="Your name" label={"Name"} onChange={(e) => {
                 setName(e.target.value)
             }} value={company} />
-            <TextInput placeholder="The company you work for" label={"Company"} onChange={(e) => {
+            <TextInput className={inputClassName} placeholder="The company you work for" label={"Company"} onChange={(e) => {
                 setCompany(e.target.value)
             }} value={email} />
-            <TextInput placeholder="Enter your work email" label={"Email"} onChange={(e) => {
+            <TextInput className={inputClassName} placeholder="Enter your work email" label={"Email"} onChange={(e) => {
                 setEmail(e.target.value)
             }} value={phone} />
         </div>
