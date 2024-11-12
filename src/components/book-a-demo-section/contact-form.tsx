@@ -67,7 +67,7 @@ export default function ContactForm({inputClassName}: {inputClassName?: string})
             phone,
         );
         clearInputs();
-        toast.success('We’ve received your details and will be in touch with you shortly.');
+        toast.success('Thank you for registering!\nWe’ve received your details and will be in touch with you shortly.',{duration:3500});
 
     };
     return <div className="w-[22.06rem] mobile:w-[20.3125rem] flex items-center flex-col">
