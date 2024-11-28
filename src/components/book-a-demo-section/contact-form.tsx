@@ -70,7 +70,7 @@ export default function ContactForm({inputClassName}: {inputClassName?: string})
         toast.success('Thank you for registering!\nWe’ve received your details and will be in touch with you shortly.',{duration:3500});
 
     };
-    return <div className="w-[22.06rem] mobile:w-[20.3125rem] flex items-center flex-col">
+    return <div className="w-[22.06rem] mobile:w-[20.3125rem] flex items-center flex-col shrink-0">
         <div className="flex flex-col items-center gap-3 w-full">
             <TextInput className={inputClassName} placeholder="Phone company" label={"Phone"} onChange={(e) => {
                 setPhone(e.target.value)
@@ -85,7 +85,7 @@ export default function ContactForm({inputClassName}: {inputClassName?: string})
                 setEmail(e.target.value)
             }} value={email} />
         </div>
-        <ActionButton text={"Submit"} className={"mt-[1.875rem] w-full mobile:w-full bg-[#FFA657] rounded-[12px]"} onClick={(e: any) => handleSubmit(e)} />
+        <ActionButton text={"Get in touch"} className={"mt-[1.875rem] w-full mobile:w-full bg-[#FFA657] rounded-[12px]"} onClick={(e: any) => handleSubmit(e)} />
     </div>
 
 }

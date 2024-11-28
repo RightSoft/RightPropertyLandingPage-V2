@@ -81,3 +81,22 @@ html{
 .half-opacity{
   opacity: 0.1!important;
 }
+
+.qxCTlb {
+  color: #FFFFFF !important; /* Force white text */
+  width: 300px;
+  height: 50px;
+  background: #5EC6D3;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.21875rem;
+  margin-top: 1.875rem;
+  border-radius: 12px;
+  &:active{
+    scale: 0.95;
+  }
+  @media screen and (max-width: 800px) {    
+    font-size:1rem;
+    width: 100%;
+  }
+}
