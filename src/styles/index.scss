@@ -111,3 +111,33 @@ html{
 .hur54b{
   padding:12px;
 }
+.rs-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+.page-container {
+  @extend .rs-container;
+  display: flex;
+  flex-direction: column;
+}
+.privacy {
+  ul {
+    list-style: disc;
+    list-style-position: inside;
+  }
+  p {
+    display: inline;
+    margin: 12px 0;
+  }
+  h3 + div {
+    margin-top: 12px;
+  }
+  ul + h3 {
+    margin-top: 12px;
+  }
+  p + p {
+    margin-top: 0;
+  }
+}

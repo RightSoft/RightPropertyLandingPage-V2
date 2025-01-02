@@ -88,6 +88,12 @@ export default function Footer() {
                     </li> */}
             </ul>
           </div>
+          <div className="mobile:flex hidden mb-4">
+          <a href="/privacy-policy" className="text-[#7BD6E1] text-xs">
+                Privacy Policy
+            </a>
+          </div>
+  
           <div className="mobile:flex justify-between items-center hidden ">
             <div className="flex gap-[0.8125rem] text-[#7BD6E1] ">
               <a href="https://twitter.com/ukrightproperty" target="_blank">
@@ -106,6 +112,7 @@ export default function Footer() {
                 <Linkedin className=" w-6" />
               </a>
             </div>
+   
             <a href="https://rightsoft.co.uk">
               <div className="text-[#7BD6E1] text-xs">
                 Powered by <b>Rightsoft</b>
@@ -139,8 +146,8 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className="mobile:hidden">
-          <ul className="flex flex-col gap-[1.875rem] text-[#83869D] text-end text[1.25rem] leading-[1.52375rem] mb-[5.3068rem]">
+        <div className="mobile:hidden flex flex-col">
+          <ul className="flex flex-col gap-[1.875rem] text-[#83869D] text-end text[1.25rem] leading-[1.52375rem] grow">
             <li>
               <AnchorLink href="features">Features</AnchorLink>
             </li>
@@ -156,6 +163,13 @@ export default function Footer() {
                     <AnchorLink href="pricing">Pricing</AnchorLink>
                 </li> */}
           </ul>
+          <a
+            target="_blank"
+            href="/privacy-policy"
+            className="mb-[2.29rem] text-[#525361] leading-[1rem] text-end"
+          >
+            Privacy Policy
+          </a>
           <a target="_blank" href="https://rightsoft.co.uk">
             <div className="text-[#525361] leading-[1rem]">
               Powered by <b>Rightsoft</b>

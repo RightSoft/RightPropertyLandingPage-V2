@@ -5,7 +5,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./styles/index.scss";
 import "lenis/dist/lenis.css";
-// import PricingSection from './components/pricing-section/pricing-section'
 import Footer from "./components/footer/footer";
 import ActiveSectionProvider from "./context/section-context/section-context";
 import WindowSizeProvider from "./components/window-size-provider";
@@ -14,8 +13,8 @@ import GSAP from "./lib/gsap";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
-import Campaign from "./pages/campaign";
 import Home from "./pages";
+import PrivacyPolicy from "./pages/privacy-policy";
 
 function App() {
   ReactGA.initialize("G-D169WBQW9L");
@@ -23,7 +22,7 @@ function App() {
   useEffect(() => {
     setPathname(window.location.pathname);
   }, []);
-  const page = pathname === "/campaign" ? <Campaign /> : <Home />;
+  const page = pathname === "/privacy-policy" ? <PrivacyPolicy /> : <Home />;
   return (
     <ReactLenis
       options={{
