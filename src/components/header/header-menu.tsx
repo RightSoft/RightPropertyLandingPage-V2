@@ -5,14 +5,14 @@ import Instagram from "../icons/instagram";
 import Linkedin from "../icons/linkedin";
 import Twitter from "../icons/twitter";
 
-export default function HeaderMenu({ toggleMenu }: { toggleMenu: () => void }) {
+export default function HeaderMenu({ toggleMenu,isUseAnchorLinks }: { toggleMenu: () => void,isUseAnchorLinks: boolean }) {
   const bookDemoText = useDictionary("book-a-demo");
   const isHome = useOnlyHome();
   const textClass = " active:text-[#C2ECF1]";
   return (
     <div className="bg-white pt-[7.2843rem] pb-[1.4218rem] px-4 flex flex-col text-[#7BD6E1] active:text-[#14737F] w-full h-full">
       <div className="flex flex-col gap-[3rem] text-[2.25rem] leading-[1.21em]  font-semibold grow">
-        <ul className=" flex flex-col items-start gap-[1.575rem] ">
+       {isUseAnchorLinks && <ul className=" flex flex-col items-start gap-[1.575rem] ">
           <li onClick={toggleMenu} className={textClass}>
             <AnchorLink href="features">Features</AnchorLink>
           </li>
@@ -27,7 +27,7 @@ export default function HeaderMenu({ toggleMenu }: { toggleMenu: () => void }) {
           {/* <li onClick={toggleMenu} className={textClass}>
                     <AnchorLink href='pricing'>Pricing</AnchorLink>
                 </li> */}
-        </ul>
+        </ul>}
       </div>
       <div className="text-[0.875rem] leading-[1.21em] font-light text-[#14737F]">
         <span className="font-bold">Right Property</span>

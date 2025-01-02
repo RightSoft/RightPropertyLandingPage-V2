@@ -9,7 +9,7 @@ import useWindowSize from "../../hooks/use-window-size";
 import { useGSAP } from "@gsap/react";
 import useOnlyHome from "../../hooks/use-only-home";
 import { useDictionary } from "../../hooks/use-dictionary";
-export default function Footer() {
+export default function Footer({ isUseAnchorLinks }: { isUseAnchorLinks: boolean }) {
   const bookDemoText = useDictionary("book-a-demo");
   const isHome = useOnlyHome();
   const container = useRef<HTMLDivElement>(null);
@@ -73,7 +73,7 @@ export default function Footer() {
             <RpLogo className="w-[3.3125rem]" />
           </div>
           <div className="mobile:block hidden ">
-            <ul className="flex flex-col gap-3 text-[#7BD6E1] text-start text-[0.8125rem] leading-[1.21em] mb-10">
+           {isUseAnchorLinks &&  <ul className="flex flex-col gap-3 text-[#7BD6E1] text-start text-[0.8125rem] leading-[1.21em] mb-10">
               <li>
                 <AnchorLink href="features">Features</AnchorLink>
               </li>
@@ -86,7 +86,7 @@ export default function Footer() {
               {/* <li>
                         <AnchorLink href="pricing">Pricing</AnchorLink>
                     </li> */}
-            </ul>
+            </ul>}
           </div>
           <div className="mobile:flex hidden mb-4">
           <a href="/privacy-policy" className="text-[#7BD6E1] text-xs">
@@ -147,7 +147,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mobile:hidden flex flex-col">
-          <ul className="flex flex-col gap-[1.875rem] text-[#83869D] text-end text[1.25rem] leading-[1.52375rem] grow">
+         {isUseAnchorLinks &&  <ul className="flex flex-col gap-[1.875rem] text-[#83869D] text-end text[1.25rem] leading-[1.52375rem] grow">
             <li>
               <AnchorLink href="features">Features</AnchorLink>
             </li>
@@ -162,7 +162,7 @@ export default function Footer() {
             {/* <li>
                     <AnchorLink href="pricing">Pricing</AnchorLink>
                 </li> */}
-          </ul>
+          </ul>}
           <a
             target="_blank"
             href="/privacy-policy"

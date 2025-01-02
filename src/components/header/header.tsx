@@ -11,7 +11,7 @@ import useWindowSize from "../../hooks/use-window-size";
 import useOnlyHome from "../../hooks/use-only-home";
 import { useDictionary } from "../../hooks/use-dictionary";
 
-export default function Header() {
+export default function Header({isUseAnchorLinks} : {isUseAnchorLinks: boolean}) {
     const bookDemoText = useDictionary('book-a-demo');
     const isHome = useOnlyHome();
     const [hideHeader, setHideHeader] = useState(false);
@@ -60,7 +60,7 @@ export default function Header() {
                 <div className="hidden mobile:block">
                     <Hamburger isMenuShown={showMenu} toggleMenu={toggleMenu} />
                 </div>
-                <ul className='mobile:hidden flex items-center gap-[1.875rem] text-[1.25rem] leading-[1.52375rem] '>
+               {isUseAnchorLinks &&  <ul className='mobile:hidden flex items-center gap-[1.875rem] text-[1.25rem] leading-[1.52375rem] '>
                     <li className={textClass('features')}>
                         <AnchorLink href='features'>Features</AnchorLink>
                     </li>
@@ -73,7 +73,7 @@ export default function Header() {
                     {/* <li className={textClass('pricing')}>
                         <AnchorLink href='pricing'>Pricing</AnchorLink>
                     </li> */}
-                </ul>
+                </ul>}
             </div>
         </m.div>
         <AnimatePresence>
@@ -84,7 +84,7 @@ export default function Header() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut", }}
             >
-                <HeaderMenu toggleMenu={toggleMenu} />
+                <HeaderMenu toggleMenu={toggleMenu} isUseAnchorLinks={isUseAnchorLinks} />
             </m.div>}
         </AnimatePresence>
     </>

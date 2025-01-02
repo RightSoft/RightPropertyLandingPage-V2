@@ -23,6 +23,7 @@ function App() {
     setPathname(window.location.pathname);
   }, []);
   const page = pathname === "/privacy-policy" ? <PrivacyPolicy /> : <Home />;
+  const isUseAnchorLinks = pathname === "/" ? true : false;
   return (
     <ReactLenis
       options={{
@@ -35,10 +36,10 @@ function App() {
         <LazyMotion features={domAnimation}>
           <WindowSizeProvider />
           <Toaster />
-          <Header />
+          <Header isUseAnchorLinks={isUseAnchorLinks} />
           <div className="pt-[7.51rem] mobile:pt-[3.4375rem]">
             {page}
-            <Footer />
+            <Footer isUseAnchorLinks={isUseAnchorLinks} />
           </div>
           <WindowSizeProvider />
         </LazyMotion>
