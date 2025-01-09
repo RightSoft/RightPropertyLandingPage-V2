@@ -3,6 +3,7 @@ import FeaturesSection from "../components/features/features-section";
 import LevelUpSection from "../components/level-up/level-up-section";
 import OnboardSection from "../components/onboard-section/onboard-section";
 import OutlookSection from "../components/outlook-section/outlook-section";
+import PropertyOutlookModal from "../components/outlook-section/property-outlook-modal";
 import PlatformsSection from "../components/platforms/platforms-section";
 import SellKeywordsContainer from "../components/sell-keywords/sell-keywords-container";
 import SlideSection from "../components/slide-section/slide-section";
@@ -18,6 +19,7 @@ export default function Home() {
       <SlideSection />
       <OnboardSection />
       <BookADemoSection />
+      <PropertyOutlookModal initialState={true} />
     </>
   );
 }
