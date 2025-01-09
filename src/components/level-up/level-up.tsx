@@ -4,6 +4,7 @@ import ActionButton from "../buttons/action-button";
 import TextInput from "../text-input/text-input";
 import propertyOutlookImageMobile from "../../assets/images_v2/outlook-mobile.webp";
 import Countdown from "../outlook-section/property-countdown";
+import { subscribeToCampaign } from "../../lib/utils";
 export default function LevelUp() {
   const [email, setEmail] = useState("");
   const validation = (email: string) => {
@@ -17,7 +18,9 @@ export default function LevelUp() {
   const handleSubmit = async (event: React.MouseEvent) => {
     event.preventDefault();
     if (!validation(email)) return;
-    toast.success("Form submitted successfully");
+    await subscribeToCampaign(email);
+    toast.success("Your report is in your inbox");
+    setEmail("");
   };
   return (
     <div className="relative h-[47.125rem] mobile:h-[auto]  w-full pt-[1.875rem] mobile:pt-0 ">

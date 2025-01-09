@@ -10,6 +10,7 @@ import Lenis from '@studio-freight/lenis';
 import useWindowSize from "../../hooks/use-window-size";
 import useOnlyHome from "../../hooks/use-only-home";
 import { useDictionary } from "../../hooks/use-dictionary";
+import { useAutoAnchorScroll } from "../../hooks/use-auto-anchor-scroll";
 
 export default function Header({isUseAnchorLinks} : {isUseAnchorLinks: boolean}) {
     const bookDemoText = useDictionary('book-a-demo');
@@ -42,6 +43,8 @@ export default function Header({isUseAnchorLinks} : {isUseAnchorLinks: boolean})
         if (showMenu) document.body.classList.add('stop-scrolling')
         else document.body.classList.remove('stop-scrolling')
     }, [showMenu])
+    useAutoAnchorScroll();
+
     const shadow = showMenu ? '' : 'drop-shadow-md'
     const transition = {
         duration: 0.5,

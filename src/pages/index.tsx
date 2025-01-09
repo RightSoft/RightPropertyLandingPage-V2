@@ -9,6 +9,7 @@ import SellKeywordsContainer from "../components/sell-keywords/sell-keywords-con
 import SlideSection from "../components/slide-section/slide-section";
 
 export default function Home() {
+  const hidePropertyOutlookModal = localStorage.getItem('hide-popup') === 'true';
   return (
     <>
       <LevelUpSection />
@@ -19,7 +20,7 @@ export default function Home() {
       <SlideSection />
       <OnboardSection />
       <BookADemoSection />
-      <PropertyOutlookModal initialState={true} />
+      <PropertyOutlookModal initialState={!hidePropertyOutlookModal} />
     </>
   );
 }

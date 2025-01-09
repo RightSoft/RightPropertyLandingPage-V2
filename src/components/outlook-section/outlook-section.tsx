@@ -4,6 +4,7 @@ import propertyOutlookImage from "../../assets/images_v2/property-outlook.webp";
 import { ChangeEvent, useState } from "react";
 import toast from "react-hot-toast";
 import Countdown from "./property-countdown";
+import { subscribeToCampaign } from "../../lib/utils";
 export default function OutlookSection() {
   const [email, setEmail] = useState("");
   const validation = (email: string) => {
@@ -17,7 +18,9 @@ export default function OutlookSection() {
   const handleSubmit = async (event: React.MouseEvent) => {
     event.preventDefault();
     if (!validation(email)) return;
-    toast.success("Form submitted successfully");
+    await subscribeToCampaign(email);
+    toast.success("Your report is in your inbox!");
+    setEmail("");
   };
   return (
     <>
@@ -87,4 +90,3 @@ function DesktopLayout({
     </div>
   );
 }
-
