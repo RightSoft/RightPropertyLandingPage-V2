@@ -34,7 +34,7 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
     *            AUTO SLIDE
     * ------------------------------- */
     const timerHandler = () => {
-        let now = Date.now();
+        const now = Date.now();
         if (now - $started_at.current > speed) {
             updatePosition(isDragging);
             $started_at.current = now;
@@ -103,8 +103,8 @@ const CustomCarousel = ({ cards, speed }: CarouselProps) => {
         }
     };
 
-    const handleTouchEnd = (_: React.TouchEvent) => {
-        releaseId.current = setTimeout(() => {
+    const handleTouchEnd = () => {
+        releaseId.current = window.setTimeout(() => {
             setIsDragging(false);
         }, 4500)
 
