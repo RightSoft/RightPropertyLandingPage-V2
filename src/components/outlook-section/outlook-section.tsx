@@ -58,7 +58,7 @@ function DesktopLayout({
             </p>
           </div>
           <div className="mb-[2.75rem]">
-            <Countdown targetDate="2025-02-01T00:00:00" />
+            <Countdown targetDate="2025-03-01T00:00:00" />
           </div>
           <TextInput
             onChange={(e: ChangeEvent<HTMLInputElement>) => {

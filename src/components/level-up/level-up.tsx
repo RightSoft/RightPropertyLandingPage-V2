@@ -92,7 +92,7 @@ function PropertyOutlook({
         src={propertyOutlookImageMobile}
         className="h-[10.875rem] w-auto mx-auto"
       />
-      <Countdown targetDate="2025-02-01T00:00:00" />
+      <Countdown targetDate="2025-03-01T00:00:00" />
       <p className="text-black font-regular text-24  mobile:text-20 text-center px-[1.25rem]">
         This exclusive report offers in-depth insights into the latest trends,
         opportunities, and challenges shaping the property development market in
