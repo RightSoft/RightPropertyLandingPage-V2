@@ -24,14 +24,14 @@ export default function PresentSmarterSection() {
         <div className="rp-container pt-[7rem] pb-[9.375rem] lg:pt-6 lg:pb-[4.5rem]">
             <div className="flex gap-[6.875rem] lg:flex-col lg:gap-[2.25rem]">
 
-                <div className="flex gap-4 lg:justify-center">
-                    <Parallax id="present-smarter-section" speed={1}>
+                <div className="mt-[10rem] lg:mt-[0.625rem] flex gap-4 lg:justify-center">
+                    <Parallax id="present-smarter-section" speed={1.3}>
                         <div className="flex flex-col gap-4">
                             <img src={presentSmarter1} alt="present-smarter-1" className="w-[23.375rem] lg:w-[11rem] h-auto" />
                             <img src={presentSmarter2} alt="present-smarter-2" className="w-[23.375rem] lg:w-[11rem] h-auto" />
                         </div>
                     </Parallax>
-                    <Parallax id="present-smarter-section" speed={1.5}>
+                    <Parallax id="present-smarter-section" speed={1.8}>
                         <div className="mt-120 flex flex-col gap-4">
                             <img src={presentSmarter3} alt="present-smarter-3" className="w-[23.375rem] lg:w-[10.375rem] h-auto" />
                             <img src={presentSmarter4} alt="present-smarter-4" className="w-[23.375rem] lg:w-[10.375rem] h-auto" />

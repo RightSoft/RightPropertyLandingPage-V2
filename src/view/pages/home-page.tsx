@@ -24,7 +24,7 @@ export default function HomePage() {
             <ConvertMoreLeadsSection/>
             <EasyOnboardingSection/>
             <BinarySection subHeader="Did you know?" title="Automated where it matters" description="We simplify the complex. Many steps you’d expect to handle manually are fully automated behind the scenes." />
-            <LevelUpYourMarketing/>
+            <div className="hidden lg:block"><LevelUpYourMarketing/></div>
             <FeaturesCarousel/>
             <BackToBackReveal/>
             <MadeToFit/>

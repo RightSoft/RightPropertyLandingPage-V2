@@ -2,12 +2,12 @@ import wallApp from '../../../assets/wall-app.webp'
 import wallAppMobile from '@/assets/mobile-wall.png';
 export default function MeetRightPropertySection() {
     return (
-        <div id="meet-right-property" className="rp-container mb-35 flex lg:flex-col items-center justify-center">
-            <img src={wallApp} alt="wall-app" className="lg:hidden w-[43.75rem] h-auto" />
+        <div id="meet-right-property" className="rp-container mb-35 flex gap-[6.25rem] lg:gap-0 lg:flex-col items-center justify-center py-[6rem] lg:py-0">
+            <img src={wallApp} alt="wall-app" className="flex-shrink-0 lg:hidden w-[43.75rem] h-auto" />
             <img src={wallAppMobile} alt="wall-app" className="lg:block hidden w-full h-auto" />
-            <div className="pr-16 flex flex-col justify-center h-[45.8125rem] lg:p-6 lg:justify-start lg:h-auto">
-                <div className="flex flex-col w-[52rem] lg:w-full">
-                    <h3 className="font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
+            <div className="pr-16 flex flex-col justify-start h-[45.8125rem] lg:p-6 lg:justify-start lg:h-auto">
+                <div className="mt-[5.5325rem] lg:mt-3 flex flex-col w-[52rem] lg:w-full">
+                    <h3 className="mb-[0.625rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
                         Meet Right Property
                     </h3>
                     <p className="mb-[2.125rem] font-geist font-normal text-40 leading-[120%] -tracking-[0.04em] text-squid-ink lg:text-30 lg:mb-[1.25rem]">
@@ -26,10 +26,13 @@ export default function MeetRightPropertySection() {
                             <NumberIndicator number="3" />
                            
                         </span>
-                        <span className="ml-2">turning interest into action.</span>
+                        <span className="ml-2 lg:ml-0">turning interest into action.</span>
                     </p>
-                    <p className='font-geist font-normal text-24 leading-[140%] lg:text-18'>
+                    <p className='mb-[5rem] lg:mb-[0] font-geist font-normal text-24 leading-[140%] lg:text-18'>
                         Right Property gives you precisely what you need to make your sales and marketing efforts truly count.
+                    </p>
+                    <p className="lg:hidden font-geist-mono font-normal text-16 leading-[150%] tracking-[0.04em] uppercase text-squid-ink">
+                    Trusted by <span className="font-semibold">forward-thinking developers</span>
                     </p>
                 </div>
 

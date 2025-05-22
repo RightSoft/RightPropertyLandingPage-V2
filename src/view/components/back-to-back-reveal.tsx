@@ -7,6 +7,7 @@ import SeoReady from "./sliding-sections/seo-ready";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useWindowSize } from "hamo";
+import LevelUpYourMarketing from "./sliding-sections/level-up-your-marketing";
 gsap.registerPlugin(ScrollTrigger);
 export default function BackToBackReveal({
 }: {
@@ -66,6 +67,7 @@ export default function BackToBackReveal({
         };
     }, [width])
     return <div ref={$ref} className="relative h-[100vh] lg:hidden bg-[#F5F5F5]">
+         <RevealItem> <LevelUpYourMarketing /></RevealItem>
         <RevealItem> <InteractiveWebsiteSection /></RevealItem>
         <RevealItem>      <SwitchBetweenTemplates /></RevealItem>
         <RevealItem>   <PowerfulCMS /></RevealItem>
