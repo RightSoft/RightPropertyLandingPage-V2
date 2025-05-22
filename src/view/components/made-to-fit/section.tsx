@@ -1,4 +1,3 @@
-import madeToFitImage from "@/assets/made-to-fit.png";
 import laptopImage from "@/assets/gallery/laptop.webp";
 import lounge01 from "@/assets/gallery/lounge01.webp";
 import lounge02 from "@/assets/gallery/lounge02.webp";
@@ -10,7 +9,6 @@ import SimpleGallery from "../gallery/simple-gallery";
 export default function MadeToFit() {
 
     const imagesSources = [
-        madeToFitImage,
         laptopImage,
         lounge01,
         lounge02,
