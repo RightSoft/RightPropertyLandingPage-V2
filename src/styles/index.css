@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@theme {
+  --breakpoint-*: initial;
+}
+
+@custom-variant 2xl (@media (max-width: 1535px));
+@custom-variant xl (@media (max-width: 1279px));
+@custom-variant lg (@media (max-width: 1023px));
+@custom-variant md (@media (max-width: 767px));
+@custom-variant sm (@media (max-width: 639px));
+
+@import "./fonts.css";
+@theme {
+  --color-header-bg: #144566;
+  --font-geist: "Geist", sans-serif;
+  --font-geist-mono: "Geist Mono", sans-serif;
+  --font-general-sans: "General Sans", sans-serif;
+  --text-14: 0.875rem;
+  --text-18: 1.125rem;
+  --text-19: 1.1875rem;
+  --text-20: 1.25rem;
+  --text-22: 1.375rem;
+  --text-24: 1.5rem;
+  --text-28: 1.75rem;
+  --text-30: 1.875rem;
+  --text-32: 2rem;
+  --text-36: 2.25rem;
+  --text-40: 2.5rem;
+  --text-46: 2.875rem;
+  --text-48: 3rem;
+  --text-56: 3.5rem;
+  --text-60: 3.75rem;
+  --text-64: 4rem;
+  --text-80: 5rem;
+  --color-azure: #274d66;
+  --color-azure-light: #88c3e7;
+  --color-squid-ink: #1f3147;
+  --color-blue-light: #7fd6f0;
+  --color-blue-soft: #ddf3f8;
+  --color-navy: #174b8c;
+  --spacing-30: 1.875rem;
+  --spacing-10: 0.625rem;
+  --spacing-15: 0.9375rem;
+  --spacing-22: 1.375rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-35: 2.1875rem;
+  --spacing-70: 4.375rem;
+  --spacing-120: 7.5rem;
+  --leading-30px: 1.875rem;
+}
+
+body {
+  font-family: var(--font-geist);
+  color: var(--color-squid-ink);
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+
+
+.rp-container {
+  max-width: 1680px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .rp-container {
+    max-width: 393px;
+  }
+}
+
+.enhanced-bg {
+  background: radial-gradient(
+    71.62% 185.6% at 86.17% 30.43%,
+    #ffffff 0%,
+    rgba(251, 226, 215, 0.44) 44.23%,
+    rgba(239, 245, 248, 0.946897) 72.6%,
+    #eef7fc 100%
+  );
+}
+
+.surface-gradient {
+  background: linear-gradient(180deg, #586670 0%, #a2adb6 100%);
+}
+.space-gradient {
+  background: linear-gradient(180deg, #0a0a0a 0%, #333333 80.68%);
+}
+
+:root {
+  --text-color: rgba(0, 0, 0, 0.2);
+  --text-stroke-color: black;
+  --text-fill-color: black;
+}
+.text-fill {
+  background: linear-gradient(
+      to right,
+      var(--text-fill-color),
+      var(--text-fill-color)
+    )
+    no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0%;
+  color: var(--text-color);
+  transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+  -webkit-text-stroke: 0.1rem var(--text-stroke-color);
+  text-stroke: 0.1rem var(--text-stroke-color);
+}
+
+
+.swiper-pagination-bullet{
+  background : #7FD6F033;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #7FD6F0;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background : #174B8C;
+  border: none;
+}

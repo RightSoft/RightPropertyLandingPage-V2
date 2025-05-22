@@ -1,30 +1,30 @@
-import Header from "./components/header/header";
-import { Toaster } from "react-hot-toast";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "./styles/index.scss";
-import "lenis/dist/lenis.css";
-import Footer from "./components/footer/footer";
-import ActiveSectionProvider from "./context/section-context/section-context";
-import WindowSizeProvider from "./components/window-size-provider";
+import GSAP from './lib/gsap'
+import ReactLenis from 'lenis/react';
+//@ts-ignore
+import 'swiper/css';
+//@ts-ignore
+import 'swiper/css/pagination';
+import './styles/index.scss'
+import './styles/index.css'
+
+import HomePage from './view/pages/home-page';
+import Header from './view/components/header';
 import ReactGA from "react-ga4";
-import GSAP from "./lib/gsap";
-import { ReactLenis } from "@studio-freight/react-lenis";
-import { LazyMotion, domAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
-import Home from "./pages";
-import PrivacyPolicy from "./pages/privacy-policy";
+import { useEffect, useState } from 'react';
+import PrivacyPolicy from './view/pages/privacy-policy';
+import FooterSection from './view/components/footer/section';
 
 function App() {
   ReactGA.initialize("G-D169WBQW9L");
+
   const [pathname, setPathname] = useState<string>();
   useEffect(() => {
     setPathname(window.location.pathname);
   }, []);
-  const page = pathname === "/privacy-policy" ? <PrivacyPolicy /> : <Home />;
-  const isUseAnchorLinks = pathname === "/" ? true : false;
+  const page = pathname === "/privacy-policy" ? <PrivacyPolicy /> : <HomePage />;
+
   return (
+
     <ReactLenis
       options={{
         lerp: 0.08,
@@ -32,20 +32,13 @@ function App() {
       root
     >
       <GSAP />
-      <ActiveSectionProvider>
-        <LazyMotion features={domAnimation}>
-          <WindowSizeProvider />
-          <Toaster />
-          <Header isUseAnchorLinks={isUseAnchorLinks} />
-          <div className="pt-[7.51rem] mobile:pt-[3.4375rem]">
-            {page}
-            <Footer isUseAnchorLinks={isUseAnchorLinks} />
-          </div>
-          <WindowSizeProvider />
-        </LazyMotion>
-      </ActiveSectionProvider>
+      <Header />
+      <div className='mt-[6.25rem] lg:mt-[5rem] overflow-x-hidden'>
+        {page}
+        <FooterSection />
+      </div>
     </ReactLenis>
-  );
+  )
 }
 
-export default App;
+export default App
