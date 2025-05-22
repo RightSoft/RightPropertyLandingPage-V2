@@ -1,11 +1,12 @@
 import fullyInteractiveImage from "@/assets/fully-interactive.png";
+import fullyInteractiveMobile from "@/assets/interactive_mobile.png";
 export default function InteractiveWebsiteSection() {
     return (
-        <div className="lg:bg-[#F5F5F5] lg:h-[48rem]">
+        <div className="lg:bg-[#F5F5F5] lg:h-[42rem]">
             <div className="rp-container lg:pb-[2.25rem]">
-                <div className="flex gap-[8.4375rem] items-center justify-center lg:gap-0">
+                <div className="flex gap-[8.4375rem] items-center justify-center lg:gap-[2.25rem]">
                     <div className="flex flex-col">
-                        <img className="w-full hidden lg:block px-2" src={fullyInteractiveImage} alt="Fully interactive project website" />
+                        <img className="mb-[2.25rem] w-full hidden lg:block px-2" src={fullyInteractiveMobile} alt="Fully interactive project website" />
                         <h4 className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
                             Interactive website
                         </h4>

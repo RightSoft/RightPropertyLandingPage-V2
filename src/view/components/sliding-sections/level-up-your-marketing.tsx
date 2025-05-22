@@ -2,9 +2,9 @@ import levelUpYourMarketing from "@/assets/level-up-marketing.png"
 import BookADemoButton from "../book-a-demo-button";
 export default function LevelUpYourMarketing() {
     return (
-        <div className="lg:bg-[#F5F5F5]">
+        <div className="bg-[#F5F5F5] lg:h-auto h-[100vh]">
             <div className="rp-container">
-                <div className="flex gap-[8.4375rem] items-center justify-center lg:px-6 lg:py-[2.25rem]">
+                <div className="flex gap-[8.4375rem] items-center justify-center h-full lg:px-6 lg:py-[2.25rem]">
                     <img src={levelUpYourMarketing} className="w-[44.375rem] lg:w-full object-contain h-auto lg:hidden" alt="level-up-marketing" />
                     <div className="">
                         <h4 className="mb-4 lg:mb-3 font-geist-mono text-base lg:text-14 font-normal leading-[150%] tracking-[0.04em] uppercase">

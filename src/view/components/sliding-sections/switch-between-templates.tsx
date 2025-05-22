@@ -1,10 +1,12 @@
-import fullyInteractiveImage from "@/assets/fully-interactive.png";
+import switchTemplatesImage from "@/assets/switch_templates.webp";
+import switchMobile from "@/assets/switch_mobile.png";
 export default function SwitchBetweenTemplates() {
     return (
-        <div className="lg:bg-[#F5F5F5] lg:h-[48rem]">
+        <div className="lg:bg-[#F5F5F5] lg:h-[42rem]">
             <div className="rp-container lg:pb-[2.25rem]">
-                <div className="flex gap-[8.4375rem] lg:gap-0 lg:flex-col items-center justify-center">
-                    <img className="w-[33.125rem] lg:w-full h-auto lg:px-2" src={fullyInteractiveImage} alt="Fully interactive project website" />
+                <div className="flex gap-[8.4375rem] lg:gap-[2.25rem] lg:flex-col items-center justify-center">
+                    <img className="lg:hidden w-[33.125rem] lg:w-full h-auto lg:px-2" src={switchTemplatesImage} alt="Fully interactive project website" />
+                    <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={switchMobile} alt="Fully interactive project website" />
                     <div className="flex flex-col">
                         <h4 className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
                             ready-to-use templates

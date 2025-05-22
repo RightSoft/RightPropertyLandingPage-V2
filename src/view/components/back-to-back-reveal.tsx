@@ -65,7 +65,7 @@ export default function BackToBackReveal({
             window.removeEventListener("resize", handleRefresh);
         };
     }, [width])
-    return <div ref={$ref} className="relative h-[100vh] lg:hidden">
+    return <div ref={$ref} className="relative h-[100vh] lg:hidden bg-[#F5F5F5]">
         <RevealItem> <InteractiveWebsiteSection /></RevealItem>
         <RevealItem>      <SwitchBetweenTemplates /></RevealItem>
         <RevealItem>   <PowerfulCMS /></RevealItem>
