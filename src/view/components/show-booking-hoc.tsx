@@ -12,7 +12,7 @@ export default function ShowBookingHoc({ children }: { children: React.ReactNode
     }, [show]);
     return (
         <>
-            <div onClick={(e) => {
+            <div onClick={(_) => {
                 setShow(prev => !prev)
             }}>
                 {children}

@@ -1,5 +1,4 @@
 import whiteLogo from "@/assets/white_rp_logo.png";
-import NavigationItems from "./header/navigation-items";
 import { useRef, useState } from "react";
 import type Lenis from "lenis";
 import { useLenis } from 'lenis/react'

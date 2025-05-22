@@ -2,7 +2,6 @@ import enhancedIllustration from '../../../assets/enhanced.webp';
 import Button from '../button';
 import BookADemoButton from '../book-a-demo-button';
 import AnchorLink from '../anchor-link';
-import ShowBookingHoc from '../show-booking-hoc';
 export default function EnhancedPresentationsSection() {
     return (
         <div className="enhanced-bg w-full h-[50rem] mb-35">
