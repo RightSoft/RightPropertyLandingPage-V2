@@ -17,7 +17,12 @@ export default function ChoosePresentationSection() {
                         <p className="mb-[6.625rem] lg:mb-[2.5rem] lg:px-[1.375rem] font-geist font-normal text-base leading-[140%] text-[#FFFFFF99]">
                             2D, fast, cost-effective, and easy to set up
                         </p>
-                        <img src={surfaceImage} alt="surface" />
+                        <img 
+                            src={surfaceImage} 
+                            alt="surface"
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </div>
                     <div className="p-[0.625rem] space-gradient flex flex-col justify-center rounded-[24px] pt-[3rem] items-center lg:items-start">
                         <h5 className="mb-3 font-general-sans font-light text-46 lg:text-36 lg:px-[1.375rem] leading-[100%] text-white">
@@ -26,7 +31,12 @@ export default function ChoosePresentationSection() {
                         <p className="mb-[6.625rem] lg:mb-[2.5rem] lg:px-[1.375rem] font-geist font-normal text-base leading-[140%] text-[#FFFFFF99]">
                             3D, stunning, immersive, interactive.
                         </p>
-                        <img src={spaceImage} alt="surface" />
+                        <img 
+                            src={spaceImage} 
+                            alt="space"
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </div>
                 </div>
             </div>

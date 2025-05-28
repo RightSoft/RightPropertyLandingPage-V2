@@ -9,6 +9,8 @@ export default function MeetRightPropertySection() {
                 className="flex-shrink-0 lg:hidden w-[43.75rem] h-auto"
                 loading="lazy"
                 decoding="async"
+                width="700"
+                height="500"
             />
             <img 
                 src={wallAppMobile} 
@@ -16,8 +18,10 @@ export default function MeetRightPropertySection() {
                 className="lg:block hidden w-full h-auto"
                 loading="lazy" 
                 decoding="async"
+                width="393"
+                height="300"
             />
-            <div className="pr-16 flex flex-col justify-start h-[45.8125rem] lg:p-6 lg:justify-start lg:h-auto">
+            <div className="pr-16 flex flex-col justify-start h-[45.8125rem] lg:p-6 lg:justify-start lg:h-auto min-h-[30rem] lg:min-h-0">
                 <div className="mt-[5.5325rem] lg:mt-3 flex flex-col w-[52rem] lg:w-full">
                     <h2 className="mb-[0.625rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
                         Meet Right Property

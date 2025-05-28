@@ -15,12 +15,42 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preload" href="/src/assets/enhanced.webp" as="image" type="image/webp" />
-    <link rel="preload" href="/src/assets/mobile-wall.png" as="image" type="image/png" media="(max-width: 768px)" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      /* Inline critical font fallbacks to prevent FOUT */
+      @font-face {
+        font-family: 'General Sans Fallback';
+        src: local('Arial'), local('Helvetica'), local('sans-serif');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Geist Fallback'; 
+        src: local('Arial'), local('Helvetica'), local('sans-serif');
+        font-display: swap;
+      }
+      /* Critical render optimization */
+      .enhanced-bg { 
+        background: linear-gradient(135deg, #ffffff 0%, #eef7fc 100%);
+        contain: layout style paint;
+        will-change: auto;
+      }
+      /* Prevent layout shifts */
+      .rp-container {
+        contain: layout;
+      }
+      /* LCP optimization */
+      img[fetchpriority="high"] {
+        image-rendering: auto;
+        contain: layout style;
+      }
+    </style>
+    <link rel="preload" href="/src/assets/enhanced-lcp.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/src/assets/enhanced-lcp-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)" />
     <link rel="preload" href="/src/main.tsx" as="script" />
     <title>Rightproperty</title>
-        <meta
+    <meta
       property="og:description"
       content="Right Property is a digital marketing suite for real estate developers, offering tools to create, manage, and display developments across devices to boost marketing and sales."
     />

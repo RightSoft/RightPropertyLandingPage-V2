@@ -1,20 +1,14 @@
-import enhancedIllustration from '../../../assets/enhanced.webp';
+import enhancedIllustration from '../../../assets/enhanced-lcp.webp';
+import enhancedMobile from '../../../assets/enhanced-lcp-mobile.webp';
 import Button from '../button';
 import BookADemoButton from '../book-a-demo-button';
 import AnchorLink from '../anchor-link';
+
 export default function EnhancedPresentationsSection() {
     return (
-        <div className="enhanced-bg w-full h-[50rem] mb-35">
+        <div className="enhanced-bg w-full h-[auto] mb-35">
             <div className="rp-container relative flex lg:flex-col lg:items-start items-center">
-                <img 
-                    src={enhancedIllustration} 
-                    className="lg:mb-[2.25rem] lg:static absolute bottom-0 right-0 w-[70.15875rem] h-auto" 
-                    alt="enhanced illustration"
-                    loading="eager"
-                    decoding="async"
-                    fetchPriority="high"
-                />
-                <div className="pl-[8.625rem] lg:px-6 lg:w-full flex flex-col items-start font-general-sans">
+                <div className="pl-[8.625rem] lg:px-6 lg:w-full flex flex-col items-start justify-center font-general-sans min-h-[40rem] lg:min-h-0 lg:order-2">
                     <h2 className="mb-22 lg:mb-[0.875rem] font-general-sans font-semibold text-60 lg:text-40 leading-[100%] tracking-0% text-azure">
                         Enhanced<br />Presentations.<br />
                         Smarter Sales.
@@ -31,6 +25,32 @@ export default function EnhancedPresentationsSection() {
                         </AnchorLink>
                         <BookADemoButton className="lg:w-full" />
                     </div>
+                </div>
+                <div className="flex-shrink-0 lg:order-1 lg:mb-[2.25rem]" style={{ contain: 'layout' }}>
+                    <picture>
+                        <source 
+                            media="(max-width: 768px)" 
+                            srcSet={enhancedMobile} 
+                            type="image/webp"
+                        />
+                        <img 
+                            src={enhancedIllustration} 
+                            className="max-w-[1200px] w-full h-auto lg:max-w-full" 
+                            alt="enhanced illustration"
+                            loading="eager"
+                            decoding="sync"
+                            fetchPriority="high"
+                            width="1200"
+                            height="800"
+                            style={{
+                                contentVisibility: 'visible',
+                                contain: 'layout style paint',
+                                imageRendering: 'auto',
+                                backfaceVisibility: 'hidden',
+                                transform: 'translateZ(0)'
+                            }}
+                        />
+                    </picture>
                 </div>
             </div>
         </div>

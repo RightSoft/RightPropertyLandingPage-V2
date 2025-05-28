@@ -13,7 +13,6 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.7",
-    "animejs": "^4.0.2",
     "clsx": "^2.1.1",
     "gsap": "^3.13.0",
     "hamo": "^1.0.0-dev.6",

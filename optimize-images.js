@@ -3,6 +3,12 @@ import fs from 'fs';
 import path from 'path';
 
 const imagesToOptimize = [
+  { input: 'src/assets/enhanced.webp', output: 'src/assets/enhanced_optimized.webp' },
+  { input: 'src/assets/gallery/laptop.webp', output: 'src/assets/gallery/laptop_optimized.webp' },
+  { input: 'src/assets/gallery/lounge01.webp', output: 'src/assets/gallery/lounge01_optimized.webp' },
+  { input: 'src/assets/gallery/lounge02.webp', output: 'src/assets/gallery/lounge02_optimized.webp' },
+  { input: 'src/assets/gallery/lounge03.webp', output: 'src/assets/gallery/lounge03_optimized.webp' },
+  { input: 'src/assets/gallery/lounge04.webp', output: 'src/assets/gallery/lounge04_optimized.webp' },
   { input: 'src/assets/made-to-fit.png', output: 'src/assets/made-to-fit.webp' },
   { input: 'src/assets/level-up-marketing.png', output: 'src/assets/level-up-marketing.webp' },
   { input: 'src/assets/space.png', output: 'src/assets/space.webp' },
@@ -13,6 +19,8 @@ const imagesToOptimize = [
 ];
 
 async function optimizeImages() {
+  console.log('🚀 Starting image optimization...\n');
+  
   for (const image of imagesToOptimize) {
     try {
       if (fs.existsSync(image.input)) {
@@ -25,13 +33,15 @@ async function optimizeImages() {
         const savings = ((originalSize - optimizedSize) / originalSize * 100).toFixed(1);
         
         console.log(`✓ ${image.input} → ${image.output} (${savings}% smaller)`);
+      } else {
+        console.log(`⚠️  ${image.input} not found`);
       }
     } catch (error) {
-      console.error(`Error optimizing ${image.input}:`, error);
+      console.error(`❌ Error optimizing ${image.input}:`, error.message);
     }
   }
+  
+  console.log('\n🎉 Image optimization complete!');
 }
 
-optimizeImages().then(() => {
-  console.log('Image optimization complete!');
-}); 
+optimizeImages(); 

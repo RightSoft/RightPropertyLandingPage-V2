@@ -1,7 +1,8 @@
-import laptopImage from "@/assets/gallery/laptop.webp";
-import lounge01 from "@/assets/gallery/lounge01.webp";
-import lounge02 from "@/assets/gallery/lounge02.webp";
-import lounge03 from "@/assets/gallery/lounge03.webp";
+import laptopImage from "@/assets/gallery/laptop_optimized.webp";
+import lounge01 from "@/assets/gallery/lounge01_optimized.webp";
+import lounge02 from "@/assets/gallery/lounge02_optimized.webp";
+import lounge03 from "@/assets/gallery/lounge03_optimized.webp";
+import lounge04 from "@/assets/gallery/lounge04_optimized.webp";
 import chevronLeft from "@/assets/icons/chevron_left.png";
 import chevronRight from "@/assets/icons/chevron_right.png";
 import { useState } from "react";
@@ -12,7 +13,8 @@ export default function MadeToFit() {
         laptopImage,
         lounge01,
         lounge02,
-        lounge03
+        lounge03,
+        lounge04
     ]
 
     const [activeIndex, setActiveIndex] = useState(0);
