@@ -71,7 +71,7 @@ function App() {
     // Fallback: load after 5 seconds regardless
     const analyticsTimer = setTimeout(loadAnalyticsOnce, 5000);
     
-    requestIdleCallback(loadSwiper);
+    loadSwiper();
     
     return () => {
       clearTimeout(gsapTimer);
