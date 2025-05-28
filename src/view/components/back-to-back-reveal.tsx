@@ -39,22 +39,23 @@ export default function BackToBackReveal({
                     );
                     items.forEach((item: any, index) => {
                         const itemTl = gsap.timeline();
-                        const a = gsap.from(item, {
+                        const duration = 1;
+                        const fadeIn = gsap.from(item, {
                             opacity: 0,
-                            duration: 1,
+                            duration,
                         });
-                        const b = gsap.to(item, {
+                        const fadeOut = gsap.to(item, {
                             opacity: 0,
-                            duration: 1,
+                            duration,
                             delay: 1.5,
                         });
                         if (index == 0) {
-                            itemTl.add(b);
+                            itemTl.add(fadeOut);
                         } else if (index == items.length - 1) {
-                            itemTl.add(a);
+                            itemTl.add(fadeIn);
                         } else {
-                            itemTl.add(a, 0);
-                            itemTl.add(b, 1);
+                            itemTl.add(fadeIn, 0);
+                            itemTl.add(fadeOut, 1);
                         }
                         timeline?.add(itemTl);
                     });

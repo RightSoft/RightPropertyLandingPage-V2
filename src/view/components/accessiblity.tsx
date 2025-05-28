@@ -60,9 +60,9 @@ export default function Accessibility({ subHeading, title, description, items }:
             <h3 className="mb-4 font-geist-mono font-normal text-16 lg:text-14 leading-[150%] tracking-[0.04em] uppercase text-squid-ink">
                 {subHeading}
             </h3>
-            <h4 className="mb-[2.5rem] lg:mb-6 font-general-sans font-semibold text-64 lg:text-40 tracking-[0em] leading-[100%] text-squid-ink">
+            <h2 className="mb-[2.5rem] lg:mb-6 font-general-sans font-semibold text-64 lg:text-40 tracking-[0em] leading-[100%] text-squid-ink">
                 {title}
-            </h4>
+            </h2>
             <p className="mb-6 font-geist font-normal text-20 lg:text-18 tracking-[0em] leading-[140%] text-squid-ink">
                 {description}
             </p>

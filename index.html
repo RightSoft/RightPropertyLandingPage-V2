@@ -15,6 +15,10 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preload" href="/src/assets/enhanced.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/src/assets/mobile-wall.png" as="image" type="image/png" media="(max-width: 768px)" />
+    <link rel="preload" href="/src/main.tsx" as="script" />
     <title>Rightproperty</title>
         <meta
       property="og:description"
@@ -58,9 +62,27 @@
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "RightProperty",
+        "name": "Right Property",
         "url": "https://rightproperty.app",
         "logo": "https://rightproperty.app/rp-logo.png",
+        priceRange: "Competitive",
+        telephone: "+44 20 8050 2733",
+        email: "hello@rightproperty.app",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Highland House 401, 165 The Broadway",
+          addressLocality: "London",
+          addressRegion: "London",
+          postalCode: "SW19 1NE ",
+          addressCountry: "GB",
+        },
+        hasMap: "https://maps.app.goo.gl/BcEAzAvJa3xhGwK49",
+        openingHours: ["Mo-Fr 09:30-18:00"],
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "Customer Service",
+          telephone: "+44 20 8050 2733",
+        },
         "sameAs": [
           "https://www.instagram.com/rightpropertyapp/",
           "https://uk.linkedin.com/company/rightpropertyapp",
