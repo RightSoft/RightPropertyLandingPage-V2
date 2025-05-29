@@ -26,7 +26,7 @@ export default function EnhancedPresentationsSection() {
                         <BookADemoButton className="lg:w-full" />
                     </div>
                 </div>
-                <div className="flex-shrink-0 lg:order-1 lg:mb-[2.25rem]" style={{ contain: 'layout' }}>
+                <div className="flex-shrink-1 lg:order-1 lg:mb-[2.25rem]" style={{ contain: 'layout' }}>
                     <picture>
                         <source 
                             media="(max-width: 768px)" 
@@ -36,7 +36,7 @@ export default function EnhancedPresentationsSection() {
                         <img 
                             src={enhancedIllustration} 
                             className="max-w-[1200px] w-full h-auto lg:max-w-full" 
-                            alt="enhanced illustration"
+                            alt="Enhanced Presentations. Smarter Sales"
                             loading="eager"
                             decoding="sync"
                             fetchPriority="high"

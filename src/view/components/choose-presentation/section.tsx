@@ -20,7 +20,6 @@ export default function ChoosePresentationSection() {
                         <img 
                             src={surfaceImage} 
                             alt="surface"
-                            loading="lazy"
                             decoding="async"
                         />
                     </div>
@@ -34,7 +33,6 @@ export default function ChoosePresentationSection() {
                         <img 
                             src={spaceImage} 
                             alt="space"
-                            loading="lazy"
                             decoding="async"
                         />
                     </div>

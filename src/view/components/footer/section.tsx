@@ -73,7 +73,7 @@ export default function FooterSection() {
                 }
             </div>
             <div className="flex lg:items-center">
-                <img src={darkLogo} className="w-[4.5rem] h-auto mr-4" />
+                <img src={darkLogo} alt="Right Property" className="w-[4.5rem] h-auto mr-4" />
                 <span className="font-geist text-14 font-normal leading-[24px] tracking-[0] text-[#8D98A5]" >
                     © {year} Right Property Ltd
                 </span>

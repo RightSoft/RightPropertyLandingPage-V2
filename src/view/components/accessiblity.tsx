@@ -57,12 +57,12 @@ export const AccessibilityItems = ({ items }: { items: { icon: React.ReactNode, 
 export default function Accessibility({ subHeading, title, description, items }: { subHeading: string, title: string, description: string, items: { icon: React.ReactNode, title: string, description: string }[] }) {
     return (
         <div className="lg:px-6">
-            <h3 className="mb-4 font-geist-mono font-normal text-16 lg:text-14 leading-[150%] tracking-[0.04em] uppercase text-squid-ink">
+            <h2 className="mb-4 font-geist-mono font-normal text-16 lg:text-14 leading-[150%] tracking-[0.04em] uppercase text-squid-ink">
                 {subHeading}
-            </h3>
-            <h2 className="mb-[2.5rem] lg:mb-6 font-general-sans font-semibold text-64 lg:text-40 tracking-[0em] leading-[100%] text-squid-ink">
-                {title}
             </h2>
+            <h3 className="mb-[2.5rem] lg:mb-6 font-general-sans font-semibold text-64 lg:text-40 tracking-[0em] leading-[100%] text-squid-ink">
+                {title}
+            </h3>
             <p className="mb-6 font-geist font-normal text-20 lg:text-18 tracking-[0em] leading-[140%] text-squid-ink">
                 {description}
             </p>

@@ -22,12 +22,12 @@ export default function ConvertMoreLeadsSection() {
                 <div className="flex-1">
                     <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
                 </div>
-                <img src={mobileInsights} className="flex-1 h-auto lg:hidden" />
+                <img src={mobileInsights} alt="sales insights" className="flex-1 h-auto lg:hidden" />
             </div>
             <div className="hidden lg:flex gap-6 items-center justify-center lg:flex-col lg:gap-8">
                 <AccessibilityRoot>
                     <AccessibilityHeaderInformation subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." />
-                    <img src={mobileInsights} className="flex-1 h-auto mb-[2.25rem]" />
+                    <img src={mobileInsights} alt="sales insights" className="flex-1 h-auto mb-[2.25rem]" />
                     <AccessibilityItems items={items} />
                     <div className="hidden lg:block lg:mt-[2.25rem] ">
                         <ShowBookingHoc>

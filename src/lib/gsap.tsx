@@ -9,6 +9,7 @@ export default function GSAP() {
 
         // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
         lenis.on('scroll', ScrollTrigger.update);
+        ScrollTrigger.clearScrollMemory('manual')
 
         // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
         // This ensures Lenis's smooth scroll animation updates on each GSAP tick

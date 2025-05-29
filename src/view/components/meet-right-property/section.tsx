@@ -22,7 +22,7 @@ export default function MeetRightPropertySection() {
                 height="300"
             />
             <div className="pr-16 flex flex-col justify-start h-[45.8125rem] lg:p-6 lg:justify-start lg:h-auto min-h-[30rem] lg:min-h-0">
-                <div className="mt-[5.5325rem] lg:mt-3 flex flex-col w-[52rem] lg:w-full">
+                <div className="mt-[5.5325rem] lg:mt-3 flex flex-col w-full lg:w-full">
                     <h2 className="mb-[0.625rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
                         Meet Right Property
                     </h2>
@@ -32,7 +32,7 @@ export default function MeetRightPropertySection() {
                             <NumberIndicator number="1" />
                             <span className="ml-2">connecting</span>
                         </span>
-                        <span className='inline-flex'> with buyers,</span>
+                        <span className='inline-flex ml-2'> with buyers,</span>
                         <span className="inline-flex items-center ml-3">
                             <NumberIndicator number="2" />
                           

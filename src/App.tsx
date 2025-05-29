@@ -8,7 +8,7 @@ import PrivacyPolicy from './view/pages/privacy-policy';
 
 // Lazy load non-critical components and GSAP
 const LazyFooter = lazy(() => import('./view/components/footer/section'));
-const LazyGSAP = lazy(() => import('./lib/gsap').then(module => ({ default: module.default })));
+const LazyGSAP = lazy(() => import('./lib/gsap.tsx').then(module => ({ default: module.default })));
 
 function App() {
   const [pathname, setPathname] = useState<string>();
@@ -95,7 +95,7 @@ function App() {
           </Suspense>
         )}
         <Header />
-        <div className='mt-[6.25rem] lg:mt-[5rem] overflow-x-hidden'>
+        <div className='mt-[6.25rem] lg:mt-[5rem] '>
           {page}
           <Suspense fallback={<div style={{height: '200px'}} />}>
             <LazyFooter />
@@ -118,7 +118,7 @@ function App() {
         </Suspense>
       )}
       <Header />
-      <div className='mt-[6.25rem] lg:mt-[5rem] overflow-x-hidden'>
+      <div className='mt-[6.25rem] lg:mt-[5rem] '>
         {page}
         <Suspense fallback={<div style={{height: '200px'}} />}>
           <LazyFooter />

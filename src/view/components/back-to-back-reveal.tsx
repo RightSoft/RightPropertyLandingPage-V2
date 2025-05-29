@@ -17,13 +17,19 @@ export default function BackToBackReveal({
     useEffect(() => {
         if (!width || width < 1024) return;
         let timeline: gsap.core.Timeline | null = null;
+        let mm: gsap.MatchMedia | null = null;
         const handleRefresh = () => {
+            // timeline?.;
+            // timeline?.revert();
             // timeline?.scrollTrigger?.refresh();
-            timeline?.revert();
+            mm?.revert();
+            timeline?.scrollTrigger?.refresh();
+
+
         }
-        setTimeout(() => {
+        const buildAnimation = () => {
             const items = gsap.utils.toArray(".reveal-item");
-            const mm = gsap.matchMedia();
+            mm = gsap.matchMedia();
             mm.add("(min-width: 1024px)", () => {
                 if ($ref.current) {
                     timeline = gsap.timeline(
@@ -32,7 +38,7 @@ export default function BackToBackReveal({
                                 trigger: $ref.current,
                                 start: "center center",
                                 end: "+=1800px",
-                                pin: true,
+                                pin: $ref.current,
                                 scrub: true,
                             }
                         }
@@ -40,14 +46,17 @@ export default function BackToBackReveal({
                     items.forEach((item: any, index) => {
                         const itemTl = gsap.timeline();
                         const duration = 1;
-                        const fadeIn = gsap.from(item, {
+                        const fadeIn = gsap.fromTo(item, {
                             opacity: 0,
+                        }, {
+                            opacity: 1,
                             duration,
                         });
-                        const fadeOut = gsap.to(item, {
+                        const fadeOut = gsap.fromTo(item, {
+                            opacity: 1,
+                        }, {
                             opacity: 0,
                             duration,
-                            delay: 1.5,
                         });
                         if (index == 0) {
                             itemTl.add(fadeOut);
@@ -61,6 +70,9 @@ export default function BackToBackReveal({
                     });
                 }
             });
+        }
+        setTimeout(() => {
+            buildAnimation();
         }, 500);
         window.addEventListener("resize", handleRefresh);
         return () => {
@@ -68,7 +80,7 @@ export default function BackToBackReveal({
         };
     }, [width])
     return <div ref={$ref} className="relative h-[100vh] lg:hidden bg-[#F5F5F5]">
-         <RevealItem> <LevelUpYourMarketing /></RevealItem>
+        <RevealItem> <LevelUpYourMarketing /></RevealItem>
         <RevealItem> <InteractiveWebsiteSection /></RevealItem>
         <RevealItem>      <SwitchBetweenTemplates /></RevealItem>
         <RevealItem>   <PowerfulCMS /></RevealItem>
