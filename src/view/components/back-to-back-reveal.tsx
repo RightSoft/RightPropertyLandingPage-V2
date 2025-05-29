@@ -32,7 +32,6 @@ export default function BackToBackReveal({
                             start: "center center",
                             end: "+=1800",
                             pin: true,
-                           pinType:"transform",
                             scrub: true,
                         }
                     });
