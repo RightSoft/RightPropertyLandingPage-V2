@@ -10,7 +10,7 @@ export default function ChoosePresentationSection() {
                     Right Property offers two powerful ways to present
                 </h4>
                 <div className="flex gap-6 lg:flex-col lg:gap-1">
-                    <div className="p-[0.625rem] surface-gradient flex flex-col justify-center rounded-[24px] pt-[3rem] items-center lg:items-start">
+                    <div className="w-[40rem] p-[0.625rem] surface-gradient flex flex-col justify-center rounded-[24px] pt-[3rem] items-center lg:items-start">
                         <h5 className="mb-3 font-general-sans font-light text-46 lg:text-36 lg:px-[1.375rem] leading-[100%] text-white">
                             surface
                         </h5>
@@ -23,7 +23,7 @@ export default function ChoosePresentationSection() {
                             decoding="async"
                         />
                     </div>
-                    <div className="p-[0.625rem] space-gradient flex flex-col justify-center rounded-[24px] pt-[3rem] items-center lg:items-start">
+                    <div className="w-[40rem] p-[0.625rem] space-gradient flex flex-col justify-center rounded-[24px] pt-[3rem] items-center lg:items-start">
                         <h5 className="mb-3 font-general-sans font-light text-46 lg:text-36 lg:px-[1.375rem] leading-[100%] text-white">
                             space
                         </h5>

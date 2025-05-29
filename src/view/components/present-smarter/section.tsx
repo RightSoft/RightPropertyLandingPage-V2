@@ -21,8 +21,8 @@ export default function PresentSmarterSection() {
     ]
     return (
 
-        <div className="rp-container pt-[7rem] pb-[9.375rem] lg:pt-6 lg:pb-[4.5rem]">
-            <div className="flex gap-[6.875rem] lg:flex-col lg:gap-[2.25rem]">
+        <div className="rp-container pt-[4rem] pb-[2rem] lg:pt-6 lg:pb-[4.5rem]">
+            <div className="flex gap-[6.875rem] justify-center lg:flex-col lg:gap-[2.25rem]">
 
                 <div className="mt-[10rem] lg:mt-[0.625rem] flex gap-4 lg:justify-center">
                     <Parallax id="present-smarter-section" speed={1.3}>
@@ -42,7 +42,6 @@ export default function PresentSmarterSection() {
                 <Parallax id="present-smarter-section" speed={0.001}>
                     <div className="w-[33.75rem] lg:w-full">
                         <Accessibility title="Present smarter, your way" subHeading="Presentation" description="A property is more than floor plans and price lists— it’s an experience waiting to be brought to life. Our technology turns presentations into interactive journeys, tailored for any setting." items={items} />
-
                     </div>
                 </Parallax>
             </div>

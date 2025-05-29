@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 const imagesToOptimize = [
+  { input: 'src/assets/wall_desktop.jpg', output: 'src/assets/wall_desktop_optimized.webp' },
   { input: 'src/assets/enhanced.webp', output: 'src/assets/enhanced_optimized.webp' },
   { input: 'src/assets/gallery/laptop.webp', output: 'src/assets/gallery/laptop_optimized.webp' },
   { input: 'src/assets/gallery/lounge01.webp', output: 'src/assets/gallery/lounge01_optimized.webp' },

@@ -95,7 +95,7 @@ function App() {
           </Suspense>
         )}
         <Header />
-        <div className='mt-[6.25rem] lg:mt-[5rem] '>
+        <div className=''>
           {page}
           <Suspense fallback={<div style={{height: '200px'}} />}>
             <LazyFooter />
@@ -118,7 +118,7 @@ function App() {
         </Suspense>
       )}
       <Header />
-      <div className='mt-[6.25rem] lg:mt-[5rem] '>
+      <div className=''>
         {page}
         <Suspense fallback={<div style={{height: '200px'}} />}>
           <LazyFooter />

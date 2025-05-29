@@ -33,7 +33,7 @@ export default function MadeToFit() {
                     Made to fit,<br />wherever you work
                 </h3>
                 <div className="flex justify-between lg:px-6">
-                    <p className="mb-[6rem]  lg:mb-[3.5rem] w-[33.125rem] lg:w-full font-geist text-24 lg:text-18 font-normal leading-[140%] tracking-[0em]">
+                    <p className="mb-[1rem]  lg:mb-[3.5rem] w-[33.125rem] lg:w-full font-geist text-24 lg:text-18 font-normal leading-[140%] tracking-[0em]">
                         From boutique offices to full-scale lounges,Right Property works just as well in a sales suite as it does on a single laptop.
                     </p>
                     <div className="flex gap- items-center gap-[2rem] lg:gap-3">

@@ -20,7 +20,7 @@ export default function Header() {
         $prevProgress.current = $progress.current;
     }
     useLenis(lenisHandler, []);
-    const headerClass = cn('fixed top-0 left-0 right-0 z-50 bg-header-bg w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
+    const headerClass = cn('z-50 bg-header-bg w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
     return (
         <div className={headerClass}>
             <div className="rp-container flex items-center justify-between px-[11.75rem] lg:px-[1.875rem] ">

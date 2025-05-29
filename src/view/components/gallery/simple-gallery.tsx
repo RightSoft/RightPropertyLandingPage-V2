@@ -9,7 +9,7 @@ export default function SimpleGallery({
 }) {
     return (
        <FadeParent key={activeIndex}>
-           <img className="w-[81.25rem] h-[45rem] lg:w-full lg:h-[16.875rem] object-cover" src={images[activeIndex]} alt="gallery" />
+           <img className="w-[81.25rem] h-[40.625rem] lg:w-full lg:h-[16.875rem] object-cover" src={images[activeIndex]} alt="gallery" />
        </FadeParent>
     )
 }
