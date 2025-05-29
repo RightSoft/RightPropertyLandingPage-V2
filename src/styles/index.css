@@ -5,7 +5,7 @@
 
 @custom-variant 2xl (@media (max-width: 1535px));
 @custom-variant xl (@media (max-width: 1279px));
-@custom-variant lg (@media (max-width: 1023px));
+@custom-variant lg (@media (max-width: 767px));
 @custom-variant md (@media (max-width: 767px));
 @custom-variant sm (@media (max-width: 639px));
 
@@ -67,6 +67,12 @@ body {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 9px;
+  }
+}
+
 
 
 .rp-container {
@@ -75,7 +81,7 @@ body {
   margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .rp-container {
     max-width: 393px;
   }

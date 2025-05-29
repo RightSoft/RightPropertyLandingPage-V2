@@ -15,7 +15,7 @@ export default function BackToBackReveal({
     const $ref = useRef<HTMLDivElement>(null);
     const { width } = useWindowSize();
     useEffect(() => {
-        if (!width || width < 1024) return;
+        if (!width || width < 768) return;
         let timeline: gsap.core.Timeline | null = null;
         let mm: gsap.MatchMedia | null = null;
         const handleRefresh = () => {
@@ -23,50 +23,44 @@ export default function BackToBackReveal({
             // timeline?.revert();
             // timeline?.scrollTrigger?.refresh();
             mm?.revert();
-            timeline?.scrollTrigger?.refresh();
+            // timeline?.scrollTrigger?.refresh();
 
 
         }
         const buildAnimation = () => {
-            const items = gsap.utils.toArray(".reveal-item");
+            const items = gsap.utils.toArray<HTMLElement>(".reveal-item");
             mm = gsap.matchMedia();
-            mm.add("(min-width: 1024px)", () => {
+            mm.add("(min-width: 768px)", () => {
+                gsap.set(items.slice(1), { opacity: 0 });
                 if ($ref.current) {
-                    timeline = gsap.timeline(
-                        {
-                            scrollTrigger: {
-                                trigger: $ref.current,
-                                start: "center center",
-                                end: "+=1800px",
-                                pin: $ref.current,
-                                scrub: true,
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: $ref.current,
+                            start: "center center",
+                            end: "+=1800",
+                            pin: true,
+                           pinType:"transform",
+                            scrub: true,
+                        }
+                    });
+                    const D = 1;                           // tween duration
+
+                    items.forEach((item, i) => {
+                        const first = i === 0;
+                        const last = i === items.length - 1;
+
+                        if (first) {
+                            // 1️⃣ only fade OUT the first card
+                            tl.to(item, { opacity: 0, duration: D });
+                        } else {
+                            // 2️⃣ fade IN current card …
+                            tl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: D });
+
+                            // 3️⃣ … then fade it OUT again unless it’s the last one
+                            if (!last) {
+                                tl.to(item, { opacity: 0, duration: D });
                             }
                         }
-                    );
-                    items.forEach((item: any, index) => {
-                        const itemTl = gsap.timeline();
-                        const duration = 1;
-                        const fadeIn = gsap.fromTo(item, {
-                            opacity: 0,
-                        }, {
-                            opacity: 1,
-                            duration,
-                        });
-                        const fadeOut = gsap.fromTo(item, {
-                            opacity: 1,
-                        }, {
-                            opacity: 0,
-                            duration,
-                        });
-                        if (index == 0) {
-                            itemTl.add(fadeOut);
-                        } else if (index == items.length - 1) {
-                            itemTl.add(fadeIn);
-                        } else {
-                            itemTl.add(fadeIn, 0);
-                            itemTl.add(fadeOut, 1);
-                        }
-                        timeline?.add(itemTl);
                     });
                 }
             });

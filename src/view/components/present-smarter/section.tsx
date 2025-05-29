@@ -21,7 +21,7 @@ export default function PresentSmarterSection() {
     ]
     return (
 
-        <div className="rp-container pt-[4rem] pb-[2rem] lg:pt-6 lg:pb-[4.5rem]">
+        <div className="rp-container pt-[4rem] pb-[2rem] lg:pt-6 lg:pb-[4.5rem] px-[5.875rem] lg:px-0">
             <div className="flex gap-[6.875rem] justify-center lg:flex-col lg:gap-[2.25rem]">
 
                 <div className="mt-[10rem] lg:mt-[0.625rem] flex gap-4 lg:justify-center">
