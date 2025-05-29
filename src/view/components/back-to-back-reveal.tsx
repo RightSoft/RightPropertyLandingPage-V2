@@ -16,16 +16,9 @@ export default function BackToBackReveal({
     const { width } = useWindowSize();
     useEffect(() => {
         if (!width || width < 768) return;
-        let timeline: gsap.core.Timeline | null = null;
         let mm: gsap.MatchMedia | null = null;
         const handleRefresh = () => {
-            // timeline?.;
-            // timeline?.revert();
-            // timeline?.scrollTrigger?.refresh();
             mm?.revert();
-            // timeline?.scrollTrigger?.refresh();
-
-
         }
         const buildAnimation = () => {
             const items = gsap.utils.toArray<HTMLElement>(".reveal-item");
