@@ -11,30 +11,30 @@ export default function PresentSmarterSection() {
         {
             title: "Interactive and non-linear storytelling",
             description: "Break the limitations of traditional presentations. Let your audience explore freely, follow their curiosity, and experience your project in a way that fits the moment.",
-            icon: <img src={magicStick} alt="magic-stick" className="w-[1.5rem] h-auto object-contain" />
+            icon: <img src={magicStick} alt="interactive storytelling icon" className="w-[1.5rem] h-auto object-contain" />
         },
         {
             title: "Ready for every screen, every space",
             description: "Whether it’s a large-scale presentation in a sales suite or a one-on-one meeting on a tablet, Right Property adapts to the setting—without losing impact.",
-            icon: <img src={slider} alt="slider" className="w-[1.5rem] h-auto object-contain" />
+            icon: <img src={slider} alt="responsive design icon" className="w-[1.5rem] h-auto object-contain" />
         }
     ]
     return (
 
-        <div className="rp-container pt-[4rem] pb-[2rem] lg:pt-6 lg:pb-[4.5rem] px-[5.875rem] lg:px-0">
+        <section className="rp-container pt-[4rem] pb-[2rem] lg:pt-6 lg:pb-[4.5rem] px-[5.875rem] lg:px-0">
             <div className="flex gap-[6.875rem] justify-center lg:flex-col lg:gap-[2.25rem]">
 
                 <div className="mt-[10rem] lg:mt-[0.625rem] flex gap-4 lg:justify-center">
                     <Parallax id="present-smarter-section" speed={1.3}>
                         <div className="flex flex-col gap-4">
-                            <img src={presentSmarter1} alt="present-smarter-1" className="w-[23.375rem] lg:w-[11rem] h-auto" />
-                            <img src={presentSmarter2} alt="present-smarter-2" className="w-[23.375rem] lg:w-[11rem] h-auto" />
+                            <img src={presentSmarter1} alt="Right Property interactive presentation interface example" className="w-[23.375rem] lg:w-[11rem] h-auto" loading="lazy" decoding="async" />
+                            <img src={presentSmarter2} alt="Right Property presentation customization options" className="w-[23.375rem] lg:w-[11rem] h-auto" loading="lazy" decoding="async" />
                         </div>
                     </Parallax>
                     <Parallax id="present-smarter-section" speed={1.8}>
                         <div className="mt-120 flex flex-col gap-4">
-                            <img src={presentSmarter3} alt="present-smarter-3" className="w-[23.375rem] lg:w-[10.375rem] h-auto" />
-                            <img src={presentSmarter4} alt="present-smarter-4" className="w-[23.375rem] lg:w-[10.375rem] h-auto" />
+                            <img src={presentSmarter3} alt="Right Property interactive features showcase" className="w-[23.375rem] lg:w-[10.375rem] h-auto" loading="lazy" decoding="async" />
+                            <img src={presentSmarter4} alt="Right Property presentation analytics dashboard" className="w-[23.375rem] lg:w-[10.375rem] h-auto" loading="lazy" decoding="async" />
                         </div>
                     </Parallax>
                 </div>
@@ -45,7 +45,7 @@ export default function PresentSmarterSection() {
                     </div>
                 </Parallax>
             </div>
-        </div>
+        </section>
 
     )
 }

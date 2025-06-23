@@ -9,12 +9,12 @@ export default function BuiltInEmail() {
                     <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={builtInEmailMobile} alt="Fully interactive project website" />
 
                     <div className="flex flex-col">
-                        <h4 className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
-                            Powerful & intuitive CMS
-                        </h4>
-                        <h5 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
+                        <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
+                            Built-in Email Marketing
+                        </p>
+                        <h2 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
                             Built-in email creation and campaign management, reaching potential buyers has never been easier.
-                        </h5>
+                        </h2>
                     </div>
                 </div>
             </div>

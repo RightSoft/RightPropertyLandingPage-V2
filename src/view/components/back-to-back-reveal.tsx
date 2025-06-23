@@ -65,14 +65,14 @@ export default function BackToBackReveal({
             window.removeEventListener("resize", handleRefresh);
         };
     }, [width])
-    return <div ref={$ref} className="relative h-[100vh] lg:hidden bg-[#F5F5F5]">
+    return <section ref={$ref} className="relative h-[100vh] lg:hidden bg-[#F5F5F5]">
         <RevealItem> <LevelUpYourMarketing /></RevealItem>
         <RevealItem> <InteractiveWebsiteSection /></RevealItem>
         <RevealItem>      <SwitchBetweenTemplates /></RevealItem>
         <RevealItem>   <PowerfulCMS /></RevealItem>
         <RevealItem> <BuiltInEmail /></RevealItem>
         <RevealItem>  <SeoReady /></RevealItem>
-    </div>;
+    </section>;
 }
 
 const RevealItem = ({ children }: { children: React.ReactNode }) => {

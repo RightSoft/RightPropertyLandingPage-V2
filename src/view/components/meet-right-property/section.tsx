@@ -2,7 +2,7 @@ import wallApp from '../../../assets/wall_small.webp'
 import wallAppMobile from '@/assets/mobile-wall.png';
 export default function MeetRightPropertySection() {
     return (
-        <div id="meet-right-property" className="rp-container mb-35 flex gap-[3.25rem] lg:gap-0 lg:flex-col items-start justify-center py-[7.5rem] lg:py-0">
+        <section id="meet-right-property" className="rp-container mb-35 flex gap-[3.25rem] lg:gap-0 lg:flex-col items-start justify-center py-[7.5rem] lg:py-0" aria-label="Meet Right Property features">
             <img 
                 src={wallApp} 
                 alt="wall-app" 
@@ -53,7 +53,7 @@ export default function MeetRightPropertySection() {
                 </div>
 
             </div>
-        </div>
+        </section>
     );
 }
 

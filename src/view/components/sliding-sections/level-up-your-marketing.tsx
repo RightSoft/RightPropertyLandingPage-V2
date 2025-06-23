@@ -2,7 +2,7 @@ import levelUpYourMarketing from "@/assets/level-up-marketing.png"
 import BookADemoButton from "../book-a-demo-button";
 export default function LevelUpYourMarketing() {
     return (
-        <div className="bg-[#F5F5F5] lg:h-auto">
+        <section className="bg-[#F5F5F5] lg:h-auto">
             <div className="rp-container">
                 <div className="flex gap-[8.4375rem] items-center justify-center h-full lg:px-6 lg:py-[2.25rem]">
                     <img 
@@ -13,12 +13,12 @@ export default function LevelUpYourMarketing() {
                         decoding="async"
                     />
                     <div className="">
-                        <h4 className="mb-4 lg:mb-3 font-geist-mono text-base lg:text-14 font-normal leading-[150%] tracking-[0.04em] uppercase">
+                        <p className="mb-4 lg:mb-3 font-geist-mono text-base lg:text-14 font-normal leading-[150%] tracking-[0.04em] uppercase">
                             Marketing
-                        </h4>
-                        <h5 className="mb-[2.5rem] lg:mb-[1.125rem] font-general-sans text-56 lg:text-40 font-semibold leading-[100%] tracking-[0em] w-[28.625rem] lg:w-full">
+                        </p>
+                        <h2 className="mb-[2.5rem] lg:mb-[1.125rem] font-general-sans text-56 lg:text-40 font-semibold leading-[100%] tracking-[0em] w-[28.625rem] lg:w-full">
                             Level up your marketing instantly
-                        </h5>
+                        </h2>
                         <p className="mb-6 font-geist text-24 lg:text-18 font-normal leading-[140%] tracking-[0em] w-[28.625rem] lg:w-full">
                             Right Property extends your marketing beyond the sales office. Seamless digital marketing, connected to sales.
                         </p>
@@ -30,6 +30,6 @@ export default function LevelUpYourMarketing() {
 
 
             </div>
-        </div>
+        </section>
     )
 }

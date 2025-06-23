@@ -17,7 +17,7 @@ export default function ConvertMoreLeadsSection() {
         }
     ]
     return (
-        <div className="rp-container py-[7.5rem] px-[11.75rem] lg:px-0 lg:py-[2.25rem]">
+        <section className="rp-container py-[7.5rem] px-[11.75rem] lg:px-0 lg:py-[2.25rem]">
             <div className="lg:hidden flex gap-6 items-center justify-center lg:flex-col lg:gap-8">
                 <div className="flex-1 flex-shrink-0 basis-[50%]">
                     <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
@@ -36,6 +36,6 @@ export default function ConvertMoreLeadsSection() {
                     </div>
                 </AccessibilityRoot>
             </div>
-        </div>
+        </section>
     )
 }

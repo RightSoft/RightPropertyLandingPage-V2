@@ -8,12 +8,12 @@ export default function SwitchBetweenTemplates() {
                     <img className="lg:hidden w-[33.125rem] lg:w-full h-auto lg:px-2" src={switchTemplatesImage} alt="Fully interactive project website" />
                     <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={switchMobile} alt="Fully interactive project website" />
                     <div className="flex flex-col">
-                        <h4 className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
+                        <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
                             ready-to-use templates
-                        </h4>
-                        <h5 className="mb-[2.5rem] font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
+                        </p>
+                        <h2 className="mb-[2.5rem] font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
                             Switch between ready-to-use templates or customize campaign pages
-                        </h5>
+                        </h2>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ import SeoReady from "./sliding-sections/seo-ready";
 import { Pagination, Autoplay } from "swiper/modules";
 export default function FeaturesCarousel() {
     return (
-        <div className="hidden lg:block">
+        <section className="hidden lg:block">
             <Swiper
                 spaceBetween={0}
                 slidesPerView={1}
@@ -29,7 +29,7 @@ export default function FeaturesCarousel() {
                 <SwiperSlide><SeoReady /></SwiperSlide>
 
             </Swiper>
-        </div>
+        </section>
 
     )
 }

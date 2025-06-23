@@ -81,14 +81,14 @@ export default function FaqSection() {
             </ul>
         },
     ]
-    return <div className="rp-container py-[7.5rem] px-[11.75rem] lg:px-0 lg:py-[5rem]">
+    return <section className="rp-container py-[7.5rem] px-[11.75rem] lg:px-0 lg:py-[5rem]" aria-label="Frequently asked questions about Right Property platform">
         <div className="flex flex-col items-center lg:items-start">
-            <h3 className="mb-4 lg:mb-3 lg:px-6 font-geist-mono text-base lg:text-14 font-normal leading-[150%] tracking-[0.04em] uppercase">
+            <p className="mb-4 lg:mb-3 lg:px-6 font-geist-mono text-base lg:text-14 font-normal leading-[150%] tracking-[0.04em] uppercase">
                 Have a question?
-            </h3>
-            <h4 className="text-center mb-[6rem] lg:text-left lg:mb-[3.5rem] lg:px-6 font-general-sans text-80 lg:text-40 font-semibold leading-[100%] tracking-[0em]">
+            </p>
+            <h2 className="text-center mb-[6rem] lg:text-left lg:mb-[3.5rem] lg:px-6 font-general-sans text-80 lg:text-40 font-semibold leading-[100%] tracking-[0em]">
                 Most frequent questions<br />and answers
-            </h4>
+            </h2>
             <div className="flex gap-6 lg:flex-col lg:gap-2">
                 <div className="flex-1 space-y-6 lg:space-y-2">
                     {faqData.slice(0, 5).map((item, index) => (
@@ -106,5 +106,5 @@ export default function FaqSection() {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 }
