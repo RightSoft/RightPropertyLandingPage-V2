@@ -23,9 +23,9 @@ export default function MeetRightPropertySection() {
             />
             <div className="pr-16 flex flex-col justify-start  lg:p-6 lg:justify-start lg:h-auto min-h-[30rem] lg:min-h-0">
                 <div className="mt-[0] lg:mt-3 flex flex-col w-full lg:w-full">
-                    <h2 className="mb-[0.625rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
-                        Meet Right Property
-                    </h2>
+                                    <h2 className="mb-[0.625rem] font-geist-mono font-normal text-16 leading-[150%] tracking-[4%] uppercase text-squid-ink lg:text-14 lg:mb-[1.25rem]">
+                    Meet Right Property
+                </h2>
                     <p className="mb-[2.125rem] font-geist font-normal text-40 leading-[120%] -tracking-[0.04em] text-squid-ink lg:text-30 lg:mb-[1.25rem]">
                         Property sales require more than just listings, 3D models, and brochures—it's about
                         <span className="inline-flex items-center ml-3">

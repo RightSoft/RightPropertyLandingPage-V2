@@ -12,9 +12,9 @@ export default function BuiltInEmail() {
                         <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
                             Built-in Email Marketing
                         </p>
-                        <h2 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
+                        <h3 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
                             Built-in email creation and campaign management, reaching potential buyers has never been easier.
-                        </h2>
+                        </h3>
                     </div>
                 </div>
             </div>

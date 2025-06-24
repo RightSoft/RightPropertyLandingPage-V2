@@ -9,9 +9,9 @@ export default function SeoReady() {
                         <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
                             SEO Optimization
                         </p>   
-                        <h2 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
-                            SEO-ready out of the box, ensuring your project ranks higher and attracts the right audience.
-                        </h2>
+                                    <h3 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
+                SEO-ready out of the box, ensuring your project ranks higher and attracts the right audience.
+            </h3>
                     </div>
                     <img className="lg:hidden w-[33.125rem] lg:w-full h-auto lg:px-2" src={seoReadyImage} alt="SEO optimization dashboard showing search engine rankings" loading="lazy" decoding="async" />
                     <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={seoReadyMobile} alt="SEO optimization dashboard showing search engine rankings" loading="lazy" decoding="async" />

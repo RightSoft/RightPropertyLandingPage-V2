@@ -7,9 +7,9 @@ export default function BinarySection({subHeader, title, description}: {subHeade
                 <p className='mb-2 font-geist-mono font-normal text-12 leading-[150%] tracking-[0.04em] uppercase text-[#8D98A5]'>
                     {subHeader}
                 </p>
-                <h2 className='mb-6 lg:mb-4 font-general-sans font-semibold text-32 lg:text-24 leading-[100%] text-squid-ink'>
+                <h3 className='mb-6 lg:mb-4 font-general-sans font-semibold text-32 lg:text-24 leading-[100%] text-squid-ink'>
                     {title}
-                </h2>
+                </h3>
                 <p className='font-geist font-normal text-18 leading-[140%] text-squid-ink'>
                     {description}
                 </p>

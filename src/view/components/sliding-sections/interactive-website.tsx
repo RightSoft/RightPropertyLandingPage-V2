@@ -10,9 +10,9 @@ export default function InteractiveWebsiteSection() {
                         <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
                             Interactive website
                         </p>
-                        <h2 className="mb-[2.5rem] font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
+                        <h3 className="mb-[2.5rem] font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
                             Providing a fully interactive project website that mirrors<br />the in-person experience
-                        </h2>
+                        </h3>
                     </div>
                     <img className="w-[33.125rem] h-auto lg:hidden" src={fullyInteractiveImage} alt="Fully interactive project website" />
                 </div>
