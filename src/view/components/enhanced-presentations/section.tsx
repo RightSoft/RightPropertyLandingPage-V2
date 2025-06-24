@@ -10,7 +10,7 @@ export default function EnhancedPresentationsSection() {
             <div className="rp-container relative flex lg:flex-col lg:items-start items-center">
                 <div className="pl-[8.625rem] lg:px-6 lg:w-full flex flex-col items-start justify-center font-general-sans min-h-[40rem] lg:min-h-0 lg:order-2">
                     <h1 className="mb-22 lg:mb-[0.875rem] font-general-sans font-semibold text-60 lg:text-40 leading-[100%] tracking-0% text-azure">
-                        Enhanced<br />Presentations.<br />
+                        Enhanced <br />Presentations. <br />
                         Smarter Sales.
                     </h1>
                     <h2 className="mb-22 lg:mb-[0.75rem] font-general-sans font-semibold text-30 lg:text-20 leading-[100%] tracking-0% text-azure">
