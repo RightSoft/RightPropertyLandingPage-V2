@@ -79,7 +79,7 @@ export default function FooterSection() {
                             <ul className="mb-1 font-geist text-14 font-normal leading-[1.7em] tracking-[0%] text-[#48515B]">
                                 {
                                     item.items.map((item) => (
-                                        <li key={item.label}><a target="_blank" href={item.href}>{item.label}</a></li>
+                                        <li key={item.label}><a target="_blank" rel="noopener" href={item.href}>{item.label}</a></li>
                                     ))
                                 }
                             </ul>

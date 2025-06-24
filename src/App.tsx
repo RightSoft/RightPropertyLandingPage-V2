@@ -5,6 +5,7 @@ import HomePage from './view/pages/home-page';
 import Header from './view/components/header';
 import { useEffect, useState, Suspense, lazy } from 'react';
 import PrivacyPolicy from './view/pages/privacy-policy';
+import NotFoundPage from './view/pages/404';
 
 // Lazy load non-critical components and GSAP
 const LazyFooter = lazy(() => import('./view/components/footer/section'));
@@ -83,7 +84,17 @@ function App() {
     };
   }, []);
   
-  const page = pathname === "/privacy-policy" ? <PrivacyPolicy /> : <HomePage />;
+  const getPage = () => {
+    if (pathname === "/") {
+      return <HomePage />;
+    } else if (pathname === "/privacy-policy") {
+      return <PrivacyPolicy />;
+    } else {
+      return <NotFoundPage />;
+    }
+  };
+
+  const page = getPage();
 
   if (!lenisEnabled) {
     // Render without Lenis initially for faster LCP
