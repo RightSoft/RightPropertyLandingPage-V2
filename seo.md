@@ -7,7 +7,7 @@ This document outlines the SEO optimizations implemented on the Right Property l
 
 ### Current Heading Counts
 - **H1**: 1 (✅ Optimal)
-- **H2**: 10 (✅ Within SEO guidelines of ≤10)
+- **H2**: 9 (✅ Within SEO guidelines of ≤10)
 - **H3**: Multiple (✅ Proper sub-content)
 - **H4**: Multiple (✅ Footer navigation)
 
@@ -74,7 +74,7 @@ H3: "Automated where it matters"
 
 #### 10. Marketing - `LevelUpYourMarketing`
 ```
-H2: "Level up your marketing instantly"
+H3: "Level up your marketing instantly"
 ```
 
 #### 11. Features Carousel/Reveal - Multiple Sections
@@ -107,7 +107,7 @@ H2: "Most frequent questions and answers"
 
 #### 14. Call-to-Action - `ScheduleADemoSection`
 ```
-H2: "Schedule a demo meeting"
+H3: "Schedule a demo meeting"
 ```
 
 #### 15. Footer Navigation

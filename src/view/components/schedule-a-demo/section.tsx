@@ -8,7 +8,7 @@ export default function ScheduleADemoSection() {
                     Let's take a seat
                 </p>
                 <h2 className="mb-10 font-general-sans text-80 lg:text-40 font-semibold leading-[100%] tracking-[0%]">
-                    Schedule<br />a demo meeting
+                    Schedule <br />a demo meeting
                 </h2>
                 <p className="mb-6 font-geist text-24 lg:text-18 font-normal leading-[140%] tracking-[0] w-[26.25rem] lg:w-full">
                     We'd be happy to meet and discuss how we can transform your business.
