@@ -38,7 +38,7 @@ export default function EnhancedPresentationsSection() {
                             className="max-w-[1200px] w-full h-auto lg:max-w-full" 
                             alt="Right Property enhanced presentations platform showcasing interactive real estate sales tools"
                             loading="eager"
-                            decoding="sync"
+                            decoding="async"
                             fetchPriority="high"
                             width="1200"
                             height="800"
