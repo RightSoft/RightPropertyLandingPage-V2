@@ -4,8 +4,6 @@ import './styles/index.css'
 import HomePage from './view/pages/home-page';
 import Header from './view/components/header';
 import { useEffect, useState, Suspense, lazy, useCallback } from 'react';
-import PrivacyPolicy from './view/pages/privacy-policy';
-import NotFoundPage from './view/pages/404';
 
 // Lazy load non-critical components and GSAP
 const LazyFooter = lazy(() => import('./view/components/footer/section'));
