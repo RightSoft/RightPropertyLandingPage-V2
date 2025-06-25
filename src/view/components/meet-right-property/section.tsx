@@ -18,8 +18,8 @@ export default function MeetRightPropertySection() {
                 className="lg:block hidden w-full h-auto"
                 loading="lazy" 
                 decoding="async"
-                width="393"
-                height="300"
+                width="590"
+                height="404"
             />
             <div className="pr-16 flex flex-col justify-start  lg:p-6 lg:justify-start lg:h-auto min-h-[30rem] lg:min-h-0">
                 <div className="mt-[0] lg:mt-3 flex flex-col w-full lg:w-full">
