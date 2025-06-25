@@ -1,4 +1,4 @@
-import whiteLogo from "@/assets/white_rp_logo.png";
+import whiteLogo from "@/assets/white_rp_logo.webp";
 import { useRef, useState } from "react";
 import type Lenis from "lenis";
 import { useLenis } from 'lenis/react'
@@ -24,7 +24,7 @@ export default function Header() {
     return (
         <div className={headerClass}>
             <div className="rp-container flex items-center justify-between px-[11.75rem] lg:px-[1.875rem] ">
-                <img className="w-[6rem] h-auto lg:w-[4.25rem]" src={whiteLogo} alt="Right Property Logo" />
+                                        <img className="w-[6rem] h-auto lg:w-[4.25rem]" src={whiteLogo} alt="Right Property Logo" width="96" height="24" />
                 {/* <NavigationItems /> */}
             </div>
         </div>

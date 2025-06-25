@@ -1,6 +1,6 @@
 import Accessibility, { AccessibilityHeaderInformation, AccessibilityItems, AccessibilityRoot } from "@/view/components/accessiblity";
 import magicStick from "@/assets/icons/magic_stick.png"
-import mobileInsights from "@/assets/mobile_insights.png";
+import mobileInsights from "@/assets/mobile_insights.webp";
 import Button from "../button";
 import ShowBookingHoc from "../show-booking-hoc";
 export default function ConvertMoreLeadsSection() {
@@ -22,12 +22,12 @@ export default function ConvertMoreLeadsSection() {
                 <div className="flex-1 flex-shrink-0 basis-[50%]">
                     <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
                 </div>
-                <img src={mobileInsights} alt="sales insights" className="w-[40rem] h-auto lg:hidden" />
+                <img src={mobileInsights} alt="sales insights" className="w-[40rem] h-auto lg:hidden" width="640" height="480" />
             </div>
             <div className="hidden lg:flex gap-6 items-center justify-center lg:flex-col lg:gap-8">
                 <AccessibilityRoot>
                     <AccessibilityHeaderInformation subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." />
-                    <img src={mobileInsights} alt="sales insights" className="flex-1 h-auto mb-[2.25rem]" />
+                    <img src={mobileInsights} alt="sales insights" className="flex-1 h-auto mb-[2.25rem]" width="400" height="300" />
                     <AccessibilityItems items={items} />
                     <div className="hidden lg:block lg:mt-[2.25rem] ">
                         <ShowBookingHoc>

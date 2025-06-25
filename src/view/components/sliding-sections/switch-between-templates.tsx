@@ -1,5 +1,5 @@
 import switchTemplatesImage from "@/assets/switch_templates.webp";
-import switchMobile from "@/assets/switch_mobile.png";
+import switchMobile from "@/assets/switch_mobile.webp";
 export default function SwitchBetweenTemplates() {
     return (
         <div className="lg:bg-[#F5F5F5] lg:h-[42rem]">

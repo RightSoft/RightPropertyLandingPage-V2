@@ -1,5 +1,5 @@
-import innerCircle from "@/assets/inner-circle.png";
-import innerCircleMobile from "@/assets/powerful_mobile.png";
+import innerCircle from "@/assets/inner-circle.webp";
+import innerCircleMobile from "@/assets/powerful_mobile.webp";
 export default function PowerfulCMS() {
     return (
 

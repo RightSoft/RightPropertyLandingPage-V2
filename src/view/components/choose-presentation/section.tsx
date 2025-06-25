@@ -1,5 +1,5 @@
-import surfaceImage from '@/assets/surface.png'
-import spaceImage from '@/assets/space.png'
+import surfaceImage from '@/assets/surface.webp'
+import spaceImage from '@/assets/space.webp'
 
 export default function ChoosePresentationSection() {
     return (
@@ -21,6 +21,8 @@ export default function ChoosePresentationSection() {
                             src={surfaceImage} 
                             alt="Right Property Surface 2D presentation mode interface"
                             decoding="async"
+                            width="620"
+                            height="400"
                         />
                     </div>
                     <div className="w-[40rem] lg:w-full p-[0.625rem] space-gradient flex flex-col justify-center rounded-[24px] pt-[3rem] items-center lg:items-start">
@@ -34,6 +36,8 @@ export default function ChoosePresentationSection() {
                             src={spaceImage} 
                             alt="Right Property Space 3D immersive presentation mode"
                             decoding="async"
+                            width="620"
+                            height="400"
                         />
                     </div>
                 </div>

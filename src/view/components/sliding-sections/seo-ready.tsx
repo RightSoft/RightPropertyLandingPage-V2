@@ -1,5 +1,5 @@
-import seoReadyImage from "@/assets/seo-ready.png";
-import seoReadyMobile from "@/assets/cms_mobile.png";   
+import seoReadyImage from "@/assets/seo-ready.webp";
+import seoReadyMobile from "@/assets/cms_mobile.webp";   
 export default function SeoReady() {
     return (
         <div className="lg:bg-[#F5F5F5] lg:h-[42rem]">
@@ -13,8 +13,8 @@ export default function SeoReady() {
                 SEO-ready out of the box, ensuring your project ranks higher and attracts the right audience.
             </h3>
                     </div>
-                    <img className="lg:hidden w-[33.125rem] lg:w-full h-auto lg:px-2" src={seoReadyImage} alt="SEO optimization dashboard showing search engine rankings" loading="lazy" decoding="async" />
-                    <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={seoReadyMobile} alt="SEO optimization dashboard showing search engine rankings" loading="lazy" decoding="async" />
+                    <img className="lg:hidden w-[33.125rem] lg:w-full h-auto lg:px-2" src={seoReadyImage} alt="SEO optimization dashboard showing search engine rankings" loading="lazy" decoding="async" width="530" height="400" />
+                    <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={seoReadyMobile} alt="SEO optimization dashboard showing search engine rankings" loading="lazy" decoding="async" width="350" height="600" />
 
                 </div>
             </div>

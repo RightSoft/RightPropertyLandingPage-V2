@@ -75,7 +75,70 @@ aws cloudfront update-distribution \
   --if-match ETAG_VALUE
 ```
 
-### 4. Testing the Setup
+### 4. Security Headers Configuration
+
+Add response headers to protect against clickjacking and other security vulnerabilities:
+
+#### Option A: CloudFront Response Headers Policy (Recommended)
+
+1. Go to **CloudFront Console**
+2. Select **Policies** → **Response headers**
+3. Click **Create response headers policy**
+4. Configure:
+   - **Policy name**: `security-headers`
+   - **Security headers**:
+     - ✅ `X-Frame-Options`: `DENY`
+     - ✅ `X-Content-Type-Options`: `nosniff`  
+     - ✅ `Referrer-Policy`: `strict-origin-when-cross-origin`
+     - ✅ `X-XSS-Protection`: `1; mode=block`
+   - **Custom headers**:
+     - `Content-Security-Policy`: `frame-ancestors 'none'; default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;`
+
+5. Go to your distribution **Behaviors**
+6. Edit the default behavior (`*`)
+7. Associate the **Response headers policy**
+8. Save and deploy
+
+#### Option B: AWS CLI Configuration
+
+```bash
+# Create response headers policy
+cat > security-headers-policy.json << EOF
+{
+  "ResponseHeadersPolicyConfig": {
+    "Name": "security-headers",
+    "SecurityHeadersConfig": {
+      "FrameOptions": {
+        "FrameOption": "DENY",
+        "Override": true
+      },
+      "ContentTypeOptions": {
+        "Override": true
+      },
+      "ReferrerPolicy": {
+        "ReferrerPolicy": "strict-origin-when-cross-origin",
+        "Override": true
+      }
+    },
+    "CustomHeadersConfig": {
+      "Quantity": 1,
+      "Items": [
+        {
+          "Header": "Content-Security-Policy",
+          "Value": "frame-ancestors 'none'; default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;",
+          "Override": true
+        }
+      ]
+    }
+  }
+}
+EOF
+
+# Create the policy
+aws cloudfront create-response-headers-policy --response-headers-policy-config file://security-headers-policy.json
+```
+
+### 5. Testing the Setup
 
 #### Test Valid Routes (should return 200)
 ```bash
@@ -89,7 +152,12 @@ curl -I https://yourdomain.com/non-existent-page
 curl -I https://yourdomain.com/random/path
 ```
 
-### 5. S3 Bucket Configuration
+#### Test Security Headers
+```bash
+curl -I https://yourdomain.com/ | grep -E "(X-Frame-Options|Content-Security-Policy)"
+```
+
+### 6. S3 Bucket Configuration
 
 Ensure your S3 bucket has:
 

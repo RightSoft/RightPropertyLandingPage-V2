@@ -1,4 +1,4 @@
-import levelUpYourMarketing from "@/assets/level-up-marketing.png"
+import levelUpYourMarketing from "@/assets/level-up-marketing.webp"
 import BookADemoButton from "../book-a-demo-button";
 export default function LevelUpYourMarketing() {
     return (

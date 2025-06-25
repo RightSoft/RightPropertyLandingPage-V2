@@ -1,4 +1,4 @@
-import darkLogo from "@/assets/dark_logo.png"
+import darkLogo from "@/assets/dark_logo.webp"
 export default function FooterSection() {
     const year = new Date().getFullYear()
     const footerItems = [
@@ -87,7 +87,7 @@ export default function FooterSection() {
                     ))
                 }
                  <div className="flex flex-[0.5_1_30%] lg:flex-[1_0_100%] lg:items-start flex-col gap-2">
-                    <img src={darkLogo} alt="Right Property" className="w-[4.5rem] h-auto mr-4" />
+                    <img src={darkLogo} alt="Right Property" className="w-[4.5rem] h-auto mr-4" width="72" height="18" />
                     <span className="font-geist text-14 font-normal leading-[24px] tracking-[0] text-[#8D98A5]" >
                         © {year} Right Property Ltd
                     </span>

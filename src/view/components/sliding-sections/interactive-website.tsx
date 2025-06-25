@@ -1,5 +1,5 @@
-import fullyInteractiveImage from "@/assets/fully-interactive.png";
-import fullyInteractiveMobile from "@/assets/interactive_mobile.png";
+import fullyInteractiveImage from "@/assets/fully-interactive.webp";
+import fullyInteractiveMobile from "@/assets/interactive_mobile.webp";
 export default function InteractiveWebsiteSection() {
     return (
         <div className="lg:bg-[#F5F5F5] lg:h-[42rem]">

@@ -1,4 +1,4 @@
-import binaryImage from '@/assets/binary.png'
+import binaryImage from '@/assets/binary.webp'
 export default function BinarySection({subHeader, title, description}: {subHeader: string, title: string, description: string}) {
     return (
         <section className="rp-container py-[7.5rem] gap-16 lg:gap-8 flex items-center justify-center lg:flex-col lg:py-[5rem] lg:px-6" aria-label="Company values and technology focus">
@@ -21,7 +21,7 @@ export default function BinarySection({subHeader, title, description}: {subHeade
 const BinaryBlock = () => {
     return (
         <div className="w-[12.5rem] h-[12.5rem] rounded-[16px] border border-[#E8EAED] flex flex-col items-center justify-center">
-            <img src={binaryImage} className='w-[5.625rem] h-auto' alt="binary code icon representing software development" loading="lazy" decoding="async" />
+                            <img src={binaryImage} className='w-[5.625rem] h-auto' alt="binary code icon representing software development" loading="lazy" decoding="async" width="90" height="90" />
         </div>
     )
 }
