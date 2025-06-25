@@ -5,8 +5,8 @@ export default function BuiltInEmail() {
         <div className="lg:bg-[#F5F5F5] lg:h-[42rem]">
             <div className="rp-container lg:pb-[2.25rem]">
                 <div className="flex lg:flex-col gap-[8.4375rem] items-center justify-center lg:gap-[2.25rem]">
-                    <img className="lg:hidden w-[33.125rem] lg:w-full h-auto lg:px-2" src={builtInEmail} alt="Fully interactive project website" width="530" height="400" />
-                    <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={builtInEmailMobile} alt="Fully interactive project website" width="350" height="600" />
+                    <img className="lg:hidden w-[33.125rem] lg:w-full h-auto lg:px-2" src={builtInEmail} alt="Fully interactive project website" width="529" height="529" />
+                    <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={builtInEmailMobile} alt="Fully interactive project website" width="377" height="285" />
 
                     <div className="flex flex-col">
                         <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">

@@ -22,7 +22,7 @@ export default function ConvertMoreLeadsSection() {
                 <div className="flex-1 flex-shrink-0 basis-[50%]">
                     <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
                 </div>
-                <img src={mobileInsights} alt="sales insights" className="w-[40rem] h-auto lg:hidden" width="640" height="480" />
+                <img src={mobileInsights} alt="sales insights" className="w-[40rem] h-auto lg:hidden" width="640" height="786" />
             </div>
             <div className="hidden lg:flex gap-6 items-center justify-center lg:flex-col lg:gap-8">
                 <AccessibilityRoot>

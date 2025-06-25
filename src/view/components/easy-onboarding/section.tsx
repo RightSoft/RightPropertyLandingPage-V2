@@ -22,7 +22,7 @@ export default function EasyOnboardingSection() {
          <section className="bg-[#EEFEE1]">
             <div className="rp-container py-[7.5rem] lg:py-[2.25rem] lg:px-6">
                 <div className="flex items-center justify-center space-x-[13.75rem]">
-                    <img src={easyOnboardingImage} alt="easy onboarding" className="w-[35.3125rem] h-auto lg:hidden" width="565" height="400" />
+                    <img src={easyOnboardingImage} alt="easy onboarding" className="w-[35.3125rem] h-auto lg:hidden" width="567" height="476" />
                     <div className="w-[33.125rem] lg:w-full">
                         <h2 className="mb-3 font-general-sans font-semibold text-48 lg:text-40 leading-[100%] text-squid-ink">
                             Easy onboarding
