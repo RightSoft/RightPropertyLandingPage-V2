@@ -1,4 +1,12 @@
-/* Font imports moved to HTML head for better performance */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap');
+
+/* Optimize font fallbacks for faster render */
+@font-face {
+  font-family: 'General Sans';
+  font-display: swap;
+  /* Other font properties will be loaded from CSS */
+}
 
 .qxCTlb {
     display: inline-block;
