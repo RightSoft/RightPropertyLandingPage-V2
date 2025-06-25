@@ -10,7 +10,6 @@ export default function NotFoundPage() {
             <Helmet>
                 <title>404 - Page Not Found | Right Property</title>
                 <meta name="robots" content="noindex, nofollow" />
-                <link rel="canonical" href="https://rightproperty.app/" />
             </Helmet>
             <main className="rp-container min-h-screen flex flex-col items-center justify-center py-[7.5rem] lg:py-[5rem] lg:px-6">
                 <div className="text-center max-w-[600px]">
