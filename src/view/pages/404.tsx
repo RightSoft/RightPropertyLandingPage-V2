@@ -5,7 +5,6 @@ export default function NotFoundPage() {
     const handleGoHome = () => {
         window.location.href = "/";
     };
-
     return (
         <>
             <Helmet>

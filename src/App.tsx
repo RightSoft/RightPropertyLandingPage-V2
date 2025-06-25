@@ -3,14 +3,15 @@ import './styles/index.css'
 
 import HomePage from './view/pages/home-page';
 import Header from './view/components/header';
-import { useEffect, useState, Suspense, lazy } from 'react';
+import { useEffect, useState, Suspense, lazy, useCallback } from 'react';
 import PrivacyPolicy from './view/pages/privacy-policy';
 import NotFoundPage from './view/pages/404';
 
 // Lazy load non-critical components and GSAP
 const LazyFooter = lazy(() => import('./view/components/footer/section'));
 const LazyGSAP = lazy(() => import('./lib/gsap.tsx').then(module => ({ default: module.default })));
-
+const LazyNotFoundPage = lazy(() => import('./view/pages/404'));
+const LazyPrivacyPolicy = lazy(() => import('./view/pages/privacy-policy'));
 function App() {
   const [pathname, setPathname] = useState<string>();
   const [gsapLoaded, setGsapLoaded] = useState(false);
@@ -84,15 +85,15 @@ function App() {
     };
   }, []);
   
-  const getPage = () => {
-    if (pathname === "/") {
+  const getPage = useCallback(() => {
+    if (pathname === "/" || pathname === undefined) {
       return <HomePage />;
     } else if (pathname === "/privacy-policy") {
-      return <PrivacyPolicy />;
+      return <LazyPrivacyPolicy />;
     } else {
-      return <NotFoundPage />;
+      return <LazyNotFoundPage />;
     }
-  };
+  }, [pathname]);
 
   const page = getPage();
 
