@@ -17,7 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Preload critical Google Fonts to avoid render blocking -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/geist/v3/gyByhwUxIdAAAEIiOV3f1jqqsJ4xpHJTPBJ-7mGYCWg.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="https://fonts.gstatic.com/s/geist/v3/or3nQ6H-1wjkm6OOVvKH6zMn9D4NqM_z7VYePYOWlw.woff2" as="font" type="font/woff2" crossorigin />
     <style>
       /* Inline critical font fallbacks to prevent FOUT */
       @font-face {
@@ -32,23 +34,45 @@
       }
       /* Critical render optimization */
       .enhanced-bg { 
-        background: linear-gradient(135deg, #ffffff 0%, #eef7fc 100%);
+        background: radial-gradient(71.62% 185.6% at 86.17% 30.43%, #ffffff 0%, rgba(251, 226, 215, 0.44) 44.23%, rgba(239, 245, 248, 0.946897) 72.6%, #eef7fc 100%);
         contain: layout style paint;
         will-change: auto;
       }
       /* Prevent layout shifts */
       .rp-container {
+        max-width: 1680px;
+        height: 100%;
+        margin: 0 auto;
         contain: layout;
+      }
+      @media (max-width: 767px) {
+        .rp-container {
+          max-width: 393px;
+        }
       }
       /* LCP optimization */
       img[fetchpriority="high"] {
         image-rendering: auto;
         contain: layout style;
       }
+      /* Critical typography styles */
+      .font-general-sans { font-family: 'General Sans', 'General Sans Fallback', Arial, sans-serif; }
+      .font-geist { font-family: 'Geist', 'Geist Fallback', Arial, sans-serif; }
+      .font-geist-mono { font-family: 'Geist Mono', 'Monaco', 'Courier New', monospace; }
+      /* Critical colors */
+      .text-azure { color: #274d66; }
+      .text-squid-ink { color: #1f3147; }
     </style>
     <link rel="preload" href="/src/assets/enhanced-lcp.webp" as="image" type="image/webp" />
     <link rel="preload" href="/src/assets/enhanced-lcp-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)" />
     <link rel="preload" href="/src/main.tsx" as="script" />
+    <!-- Load Google Fonts asynchronously to avoid blocking rendering -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap">
+    </noscript>
     <title>Right Property – Marketing Suite for Real Estate Developers</title>
     <meta property="og:title" content="Right Property – Marketing Suite for Real Estate Developers" />
     <meta
