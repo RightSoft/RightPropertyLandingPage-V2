@@ -24,13 +24,13 @@ export default function SimpleSetupSection() {
         <section className="bg-blue-soft" aria-label="Simple setup process for Right Property platform">
             <div className="rp-container py-[7.5rem] lg:py-[2.5rem] lg:px-6">
                 <div className="flex justify-center gap-[8.4375rem]">
-                    <img className='w-[36.875rem] h-auto lg:hidden' src={rBlockImage} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="590" height="400" />
+                    <img className='w-[36.875rem] h-auto lg:hidden' src={rBlockImage} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="592" height="391" />
                     <div>
                         <h2 className='mb-3 font-general-sans font-semibold  text-48 lg:text-40 leading-[100%] text-squid-ink'>Simple Setup</h2>
                         <p className='mb-16 lg:mb-[2.5rem] font-geist font-normal text-18 leading-[140%] text-squid-ink'>
                             The process is straightforward, flexible, and built to get you moving fast.
                         </p>
-                        <img className='w-full h-auto lg:block hidden mb-[2.5rem]' src={rBlockImage} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="590" height="400" />
+                        <img className='w-full h-auto lg:block hidden mb-[2.5rem]' src={rBlockImage} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="592" height="391" />
 
                         <div className="flex flex-col gap-8">
                             {items.map((item) => (
