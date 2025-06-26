@@ -23,7 +23,7 @@ export default function Header() {
     const headerClass = cn('z-50 bg-header-bg w-full h-[6.25rem] lg:h-[5rem] transition-all duration-[500ms] ease-out', hideHeader ? '-translate-y-full' : '');
     return (
         <div className={headerClass}>
-            <div className="rp-container flex items-center justify-between px-[11.75rem] lg:px-[1.875rem] ">
+            <div className="rp-container flex items-center justify-between pl-[8.625rem]  px-[11.75rem] lg:px-6">
                                         <img className="w-[6rem] h-auto lg:w-[4.25rem]" src={whiteLogo} alt="Right Property Logo" width="96" height="24" />
                 {/* <NavigationItems /> */}
             </div>
