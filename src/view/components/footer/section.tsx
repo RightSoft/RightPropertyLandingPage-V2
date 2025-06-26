@@ -6,8 +6,9 @@ export default function FooterSection() {
             label: "Contact",
             items: [
                 {
-                    label: "hello@rightproperty.app",
-                    href: "mailto:hello@rightproperty.app"
+                    label: "hello[at]rightproperty.app",
+                    href: "mailto:hello[at]rightproperty.app",
+                    type: "email"
                 },
                 {
                     label: "+44 20 8050 2733",
@@ -68,6 +69,16 @@ export default function FooterSection() {
             ]
         }
     ]
+    function emailClickHandler(item: { label: string; href: string; type: string } | { label: string; href: string; type?: undefined }): void {
+        if (item.type === "email") {
+            const emailLink = document.getElementById("email-link") as HTMLAnchorElement;
+            if (emailLink) {
+                emailLink.href = `mailto:hello@rightproperty.app`;
+                emailLink.click();
+            }
+        }
+    }
+
     return <div className="rp-container py-16 lg:py-[2.5rem] lg:px-6">
         <div className="w-[640px] mx-auto lg:w-full">
             <div className="flex flex-row-reverse gap-6 mb-[2.5rem] lg:flex-wrap ">
@@ -79,7 +90,7 @@ export default function FooterSection() {
                             <ul className="mb-1 font-geist text-14 font-normal leading-[1.7em] tracking-[0%] text-[#48515B]">
                                 {
                                     item.items.map((item) => (
-                                        <li key={item.label}><a target="_blank" rel="noopener" href={item.href}>{item.label}</a></li>
+                                        <li key={item.label}><a target="_blank" id={item.type === "email" ? "email-link" : ""} onTouchStart={()=>emailClickHandler(item)} onMouseDown={()=>emailClickHandler(item)} rel="noopener" href={item.href}>{item.label}</a></li>
                                     ))
                                 }
                             </ul>
