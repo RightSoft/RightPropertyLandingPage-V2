@@ -63,7 +63,7 @@ export default function FooterSection() {
             items: [
                 {
                     label: "Privacy Policy",
-                    href: "/"
+                    href: "/privacy-policy"
                 },
             ]
         }
