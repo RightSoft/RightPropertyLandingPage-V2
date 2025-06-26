@@ -30,7 +30,7 @@ export default function SimpleSetupSection() {
                         <p className='mb-16 lg:mb-[2.5rem] font-geist font-normal text-18 leading-[140%] text-squid-ink'>
                             The process is straightforward, flexible, and built to get you moving fast.
                         </p>
-                        <img className='w-full h-auto lg:block hidden mb-[2.5rem]' src={rBlockImage} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="400" height="300" />
+                        <img className='w-full h-auto lg:block hidden mb-[2.5rem]' src={rBlockImage} alt="Right Property simple setup interface demonstration" loading="lazy" decoding="async" width="590" height="400" />
 
                         <div className="flex flex-col gap-8">
                             {items.map((item) => (

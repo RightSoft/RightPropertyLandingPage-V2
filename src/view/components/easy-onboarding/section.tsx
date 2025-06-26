@@ -30,7 +30,7 @@ export default function EasyOnboardingSection() {
                         <p className="mb-12 lg:mb-[1.75rem] font-geist font-normal text-18 leading-[140%] text-squid-ink">
                             Get started in hours, scale on your terms, and pay only for what you need—no surprises.
                         </p>
-                        <img src={easyOnboardingImage} alt="easy onboarding" className="w-full h-auto hidden lg:block lg:mb-[1.75rem]" width="400" height="300" />
+                        <img src={easyOnboardingImage} alt="easy onboarding" className="w-full h-auto hidden lg:block lg:mb-[1.75rem]" width="567" height="476" />
                         <div className="flex flex-col gap-[2rem]">
                             {items.map((item) => (
                                 <div className="flex gap-5 items-start">
