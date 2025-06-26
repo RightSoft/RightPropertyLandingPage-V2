@@ -1,6 +1,4 @@
 import ReactLenis from 'lenis/react';
-import './styles/index.css'
-
 import HomePage from './view/pages/home-page';
 import Header from './view/components/header';
 import { useEffect, useState, Suspense, lazy, useCallback } from 'react';
@@ -25,10 +23,11 @@ function App() {
     
    
     
-    // Defer non-critical CSS
-    const loadSwiper = () => {
+    // Load CSS asynchronously to avoid blocking LCP
+    const loadCSS = () => {
       // Use dynamic imports with proper typing
       Promise.all([
+        import('./styles/index.css'),
         import('swiper/css' as any),
         import('swiper/css/pagination' as any),
         import('./styles/index.scss')
@@ -68,7 +67,7 @@ function App() {
     // Fallback: load after 5 seconds regardless
     const analyticsTimer = setTimeout(loadAnalyticsOnce, 5000);
     
-    loadSwiper();
+    loadCSS();
     
     // Enable smooth scrolling after load
     setTimeout(() => {

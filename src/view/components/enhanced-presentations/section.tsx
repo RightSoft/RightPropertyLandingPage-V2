@@ -3,8 +3,24 @@ import enhancedMobile from '../../../assets/enhanced-lcp-mobile.webp';
 import Button from '../button';
 import BookADemoButton from '../book-a-demo-button';
 import AnchorLink from '../anchor-link';
+import { useEffect } from 'react';
 
 export default function EnhancedPresentationsSection() {
+    // Preload LCP images with correct paths
+    useEffect(() => {
+        const preloadImage = (href: string, media?: string) => {
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = href;
+            if (media) link.media = media;
+            document.head.appendChild(link);
+        };
+        
+        preloadImage(enhancedIllustration);
+        preloadImage(enhancedMobile, '(max-width: 768px)');
+    }, []);
+
     return (
         <section className="enhanced-bg w-full h-[auto] lg:pb-35" aria-label="Enhanced presentations hero section">
             <div className="rp-container relative flex lg:flex-col lg:items-start items-center">
@@ -27,30 +43,42 @@ export default function EnhancedPresentationsSection() {
                     </div>
                 </div>
                 <div className="flex-shrink-1 lg:order-1 lg:mb-[2.25rem]" style={{ contain: 'layout' }}>
-                    <picture>
-                        <source 
-                            media="(max-width: 768px)" 
-                            srcSet={enhancedMobile} 
-                            type="image/webp"
-                        />
-                        <img 
-                            src={enhancedIllustration} 
-                            className="max-w-[1200px] w-full h-auto lg:max-w-full" 
-                            alt="Right Property enhanced presentations platform showcasing interactive real estate sales tools"
-                            loading="eager"
-                            decoding="async"
-                            fetchPriority="high"
-                            width="1200"
-                            height="800"
-                            style={{
-                                contentVisibility: 'visible',
-                                contain: 'layout style paint',
-                                imageRendering: 'auto',
-                                backfaceVisibility: 'hidden',
-                                transform: 'translateZ(0)'
-                            }}
-                        />
-                    </picture>
+                    {/* Desktop image */}
+                    <img 
+                        src={enhancedIllustration} 
+                        className="max-w-[1200px] w-full h-auto lg:hidden" 
+                        alt="Right Property enhanced presentations platform showcasing interactive real estate sales tools"
+                        loading="eager"
+                        decoding="async"
+                        fetchPriority="high"
+                        width="1200"
+                        height="800"
+                        style={{
+                            contentVisibility: 'visible',
+                            contain: 'layout style paint',
+                            imageRendering: 'auto',
+                            backfaceVisibility: 'hidden',
+                            transform: 'translateZ(0)'
+                        }}
+                    />
+                    {/* Mobile image */}
+                    <img 
+                        src={enhancedMobile} 
+                        className="hidden lg:block w-full h-auto" 
+                        alt="Right Property enhanced presentations platform showcasing interactive real estate sales tools"
+                        loading="eager"
+                        decoding="async"
+                        fetchPriority="high"
+                        width="800"
+                        height="600"
+                        style={{
+                            contentVisibility: 'visible',
+                            contain: 'layout style paint',
+                            imageRendering: 'auto',
+                            backfaceVisibility: 'hidden',
+                            transform: 'translateZ(0)'
+                        }}
+                    />
                 </div>
             </div>
         </section>
