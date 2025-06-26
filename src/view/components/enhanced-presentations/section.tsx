@@ -1,5 +1,6 @@
-import enhancedIllustration from '../../../assets/enhanced-lcp.webp';
-import enhancedMobile from '../../../assets/enhanced-lcp-mobile.webp';
+// Use public URLs for LCP images to match preloads
+const enhancedIllustration = '/enhanced-lcp.webp';
+const enhancedMobile = '/enhanced-lcp-mobile.webp';
 import Button from '../button';
 import BookADemoButton from '../book-a-demo-button';
 import AnchorLink from '../anchor-link';
