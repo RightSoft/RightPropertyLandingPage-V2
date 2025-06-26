@@ -9,8 +9,8 @@ export default function MeetRightPropertySection() {
                 className="pl-16 flex-shrink-0 lg:hidden w-[46.75rem] h-auto"
                 loading="lazy"
                 decoding="async"
-                width="700"
-                height="500"
+                width="1200"
+                height="736"
             />
             <img 
                 src={wallAppMobile} 
