@@ -13,7 +13,7 @@ const LazyPrivacyPolicy = lazy(() => import('./view/pages/privacy-policy'));
 function App() {
   const [pathname, setPathname] = useState<string>();
   const [gsapLoaded, setGsapLoaded] = useState(false);
-  const [lenisEnabled, setLenisEnabled] = useState(false);
+  const [lenisOptions, setLenisOptions] = useState({ lerp: 0, duration: 0 });
   
   useEffect(() => {
     setPathname(window.location.pathname);
@@ -23,10 +23,7 @@ function App() {
       setGsapLoaded(true);
     }, 100);
     
-    // Defer Lenis until after LCP
-    const lenisTimer = setTimeout(() => {
-      setLenisEnabled(true);
-    }, 1000);
+   
     
     // Defer non-critical CSS
     const loadSwiper = () => {
@@ -73,9 +70,13 @@ function App() {
     
     loadSwiper();
     
+    // Enable smooth scrolling after load
+    setTimeout(() => {
+      setLenisOptions({ lerp: 0.08, duration: 1.2 });
+    }, 1000);
+    
     return () => {
       clearTimeout(gsapTimer);
-      clearTimeout(lenisTimer);
       clearTimeout(analyticsTimer);
       events.forEach(event => {
         document.removeEventListener(event, loadAnalyticsOnce, true);
@@ -95,33 +96,8 @@ function App() {
 
   const page = getPage();
 
-  if (!lenisEnabled) {
-    // Render without Lenis initially for faster LCP
-    return (
-      <div>
-        {gsapLoaded && (
-          <Suspense fallback={null}>
-            <LazyGSAP />
-          </Suspense>
-        )}
-        <Header />
-        <div className=''>
-          {page}
-          <Suspense fallback={<div style={{height: '200px'}} />}>
-            <LazyFooter />
-          </Suspense>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <ReactLenis
-      options={{
-        lerp: 0.08,
-      }}
-      root
-    >
+    <ReactLenis options={lenisOptions} root>
       {gsapLoaded && (
         <Suspense fallback={null}>
           <LazyGSAP />
