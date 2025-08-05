@@ -2,9 +2,9 @@ import ReactLenis from 'lenis/react';
 import './styles/index.css'
 
 import HomePage from './view/pages/home-page';
-import Header from './view/components/header';
 import { useEffect, useState, Suspense, lazy, useCallback } from 'react';
 import ReactGA from 'react-ga4';
+import Header from './view/components/header/header.tsx';
 
 
 // Lazy load non-critical components and GSAP
@@ -48,7 +48,7 @@ function App() {
     
     // Enable smooth scrolling after load
     setTimeout(() => {
-      setLenisOptions({ lerp: 0.08, duration: 1.2 });
+      setLenisOptions({ lerp: 1.08, duration: 12 });
     }, 1000);
     
     return () => {
@@ -69,7 +69,7 @@ function App() {
   const page = getPage();
 
   return (
-    <ReactLenis options={lenisOptions} root>
+    <ReactLenis  root>
       {gsapLoaded && (
         <Suspense fallback={null}>
           <LazyGSAP />

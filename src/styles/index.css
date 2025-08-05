@@ -33,6 +33,8 @@
   --text-64: 4rem;
   --text-80: 5rem;
   --color-azure: #274d66;
+  --color-raisin-black: #232323;
+  --color-tundora: #434343;
   --color-azure-light: #88c3e7;
   --color-squid-ink: #1f3147;
   --color-blue-light: #7fd6f0;
@@ -72,8 +74,65 @@ body {
     font-size: 9px;
   }
 }
+.mask {
+  position: absolute;
+  width: 100%; /* match your artboard */
+  height: auto;
 
+  /* — circle mask parameters from your Figma MASK layer — */
+  --mask-x: 448px; /* Figma’s left */
+  --mask-y: -50px; /* Figma’s top */
+  --mask-r: 320.5px; /* half of your 641 px diameter */
 
+  /* === recreate that exact circle as an alpha mask === */
+  mask-image: radial-gradient(
+    circle var(--mask-r) at var(--mask-x) var(--mask-y),
+    rgba(0, 0, 0, 1) 70.9%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-mode: alpha;
+  mask-repeat: no-repeat;
+
+  /* WebKit / Safari */
+  -webkit-mask-image: radial-gradient(
+    circle var(--mask-r) at var(--mask-x) var(--mask-y),
+    rgba(0, 0, 0, 1) 70.9%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-mode: alpha;
+  -webkit-mask-repeat: no-repeat;
+}
+.mask .highlight {
+  z-index: -1;
+  position: absolute;
+  width: 641px;
+  height: 641px;
+  left: var(--mask-x);
+  top: var(--mask-y);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #dbe8ff 0%,
+    #d5ebfe 25.96%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.photo-mask {
+  position: relative; /* establish a positioning context */
+  display: inline-block; /* shrink-wrap to the image */
+  --mask-pos: 50% 50%; /* default center position */
+
+  /* apply your exported PNG-alpha mask via a CSS variable */
+  mask: url("mask.png") var(--mask-pos) / contain no-repeat;
+  -webkit-mask: url("mask.png") var(--mask-pos) / contain no-repeat;
+}
+
+.photo-mask img {
+  display: block; /* remove inline-img gaps */
+  width: 100%; /* fill the container */
+  height: auto;
+}
 
 .rp-container {
   max-width: 1680px;
@@ -125,14 +184,13 @@ body {
   text-stroke: 0.1rem var(--text-stroke-color);
 }
 
-
-.swiper-pagination-bullet{
-  background : #7FD6F033;
+.swiper-pagination-bullet {
+  background: #7fd6f033;
   width: 20px;
   height: 20px;
-  border: 2px solid #7FD6F0;
+  border: 2px solid #7fd6f0;
 }
-.swiper-pagination-bullet.swiper-pagination-bullet-active{
-  background : #174B8C;
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #174b8c;
   border: none;
 }
