@@ -6,18 +6,28 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function MeetRightPropertySection() {
     useEffect(() => {
+        let tl: gsap.core.Timeline;
+        
         const splitAnimation = () => {
             const splitText = new SplitText(".meet-right-property-text", {
                 type: "chars",
                 linesClass: "line"
             })
-            const tl = gsap.timeline({
+            
+            tl = gsap.timeline({
+                onComplete: () => {
+                    // Refresh other ScrollTriggers after this completes
+                    ScrollTrigger.refresh();
+                },
                 scrollTrigger: {
                     trigger: "#meet-right-property",
                     start: "center center",
                     end: "+=1800",
-                    pin: 'body',
+                    pin: '#first-two',
                     scrub: true,
+                    id: "meet-right-property",
+                    refreshPriority: 10, // Highest priority
+                    
                 }
             }).set(
                 splitText.chars,
@@ -28,9 +38,20 @@ export default function MeetRightPropertySection() {
                 0.1
             );
         }
-        setTimeout(() => {
-            splitAnimation()
-        }, 300);
+        
+        splitAnimation();
+
+        return () => {
+            if (tl) {
+                tl.kill();
+            }
+            // Clean up ScrollTrigger
+            ScrollTrigger.getAll().forEach(trigger => {
+                if (trigger.vars.id === "meet-right-property") {
+                    trigger.kill();
+                }
+            });
+        };
         
     }, [])
     return (

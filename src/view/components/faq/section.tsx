@@ -81,13 +81,13 @@ export default function FaqSection() {
             </ul>
         },
     ]
-    return <section className="rp-container py-[7.5rem] px-[11.75rem] lg:px-0 lg:py-[5rem]" aria-label="Frequently asked questions about Right Property platform">
-        <div className="flex flex-col items-center lg:items-start">
-            <p className="mb-4 lg:mb-3 lg:px-6 font-geist-mono text-base lg:text-14 font-normal leading-[150%] tracking-[0.04em] uppercase">
-                Have a question?
-            </p>
-            <h2 className="text-center mb-[6rem] lg:text-left lg:mb-[3.5rem] lg:px-6 font-general-sans text-80 lg:text-40 font-semibold leading-[100%] tracking-[0em]">
-                Most frequent questions<br />and answers
+    return <div className="bg-[#000000]">
+        <section className="rp-container py-[7.5rem] px-[11.75rem] lg:px-0 lg:py-[5rem]" aria-label="Frequently asked questions about Right Property platform">
+            <p className="mb-8 font-geist-mono text-base font-medium leading-[140%] text-[#E2E2E2] tracking-[0.02em] uppercase">
+            Have a question?            </p>
+            <h2 className="mb-[3.75rem] text-[#E2E2E2] lg:mb-6 font-general-sans text-40 lg:text-40 font-semibold leading-[140%] tracking-[0.01em]">
+            Most Frequent<br/>
+            Questions and Answers
             </h2>
             <div className="flex gap-6 lg:flex-col lg:gap-2">
                 <div className="flex-1 space-y-6 lg:space-y-2">
@@ -105,6 +105,8 @@ export default function FaqSection() {
                     ))}
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div >
+
+
 }

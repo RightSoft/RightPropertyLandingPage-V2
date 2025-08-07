@@ -6,45 +6,28 @@ import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
 import BinarySection, { BinaryBlockImage } from "../binary-section";
 import softwareMinds from "@/assets/v3/software_minds.png"
+import { interpolateColor } from "@/lib/utils";
+import purpleCheck from "@/assets/v3/purple_check.png";
+
 // Helper function to interpolate between two colors
-function interpolateColor(color1: string, color2: string, progress: number): string {
-    // Simple hex color interpolation
-    if (color1.startsWith('#') && color2.startsWith('#')) {
-        const r1 = parseInt(color1.slice(1, 3), 16)
-        const g1 = parseInt(color1.slice(3, 5), 16)
-        const b1 = parseInt(color1.slice(5, 7), 16)
 
-        const r2 = parseInt(color2.slice(1, 3), 16)
-        const g2 = parseInt(color2.slice(3, 5), 16)
-        const b2 = parseInt(color2.slice(5, 7), 16)
-
-        const r = Math.round(r1 + (r2 - r1) * progress)
-        const g = Math.round(g1 + (g2 - g1) * progress)
-        const b = Math.round(b1 + (b2 - b1) * progress)
-
-        return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
-    }
-
-    // For rgba colors, return the target color
-    return color2
-}
 export default function SimpleSetupSection() {
     const pathRef = useRef<SVGPathElement>(null)
     const gradientRef = useRef<HTMLDivElement>(null)
     const motionTimeline = useRef<GSAPTimeline>(null)
     const items: { icon: React.ReactNode, title: string, description: string }[] = [
         {
-            icon: <img src={checkCircleBlue} alt="checkmark icon for simple setup feature" className="w-[2.5rem] h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="checkmark icon for simple setup feature" className="w-[2.5rem] h-auto object-contain" />,
             title: "Plug in your content",
             description: "Upload floor plans, renders, brochures, videos, and even 3D tour.",
         },
         {
-            icon: <img src={checkCircleBlue} alt="checkmark icon for support feature" className="w-[2.5rem] h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="checkmark icon for support feature" className="w-[2.5rem] h-auto object-contain" />,
             title: "We’ve got you covered",
             description: "No visuals or assets? Our team can produce what’s needed.",
         },
         {
-            icon: <img src={checkCircleBlue} alt="checkmark icon for easy updates feature" className="w-[2.5rem] h-auto object-contain" />,
+            icon: <img src={purpleCheck} alt="checkmark icon for easy updates feature" className="w-[2.5rem] h-auto object-contain" />,
             title: "Easy to update anytime",
             description: "Need to make changes?Just a few clicks. No waiting, no developers.",
         }

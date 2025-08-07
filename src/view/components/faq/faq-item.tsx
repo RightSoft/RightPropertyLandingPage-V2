@@ -5,6 +5,7 @@ export default function FaqItem({ question, answer }: { question: string | React
     const [isOpen, setIsOpen] = useState(false);
     const answerRef = useRef<HTMLDivElement>(null);
     const iconRef = useRef<SVGSVGElement>(null);
+    const horizontalRef = useRef<SVGPathElement>(null);
     const handleClick = () => {
         setIsOpen(!isOpen);
     }
@@ -18,26 +19,39 @@ export default function FaqItem({ question, answer }: { question: string | React
                 rotate: 0,
                 duration: 0.5,
             });
+            gsap.to(horizontalRef.current, {
+                opacity: 0,
+                duration: 0.5,
+            });
         } else {
             gsap.to(answerRef.current, {
                 height: 0,
                 duration: 0.5,
             });
             gsap.to(iconRef.current, {
-                rotate: -90,
+                rotate: 90,
+            });
+            gsap.to(horizontalRef.current, {
+                opacity: 1,
+                duration: 0.5,
             });
         }
     }, [isOpen])
-    return <div onClick={handleClick} className="cursor-pointer bg-[#F4F4F4] rounded-[24px] p-[1.5rem] lg:p-4 flex gap-[0.625rem]">
-        <svg ref={iconRef} className="flex-shrink-0" width="24" height="34" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="17" r="10" stroke="#1F3147" stroke-width="1.5" />
-            <path d="M12 13L12 21M12 21L15 18M12 21L9 18" stroke="#1F3147" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <div>
-            <h3 className="font-geist text-24 lg:text-18 font-medium leading-[140%] tracking-[0%]">{question}</h3>
-            {/* {isOpen && <div className="mb-[0.75rem]"></div>} */}
-            {<div ref={answerRef} className="h-0 mt-[0.75rem] overflow-hidden font-geist text-18 lg:text-base font-normal leading-[140%] tracking-[0%]">{answer}</div>}
+
+
+    return <div onClick={handleClick} className="text-[#E2E2E2] p-[2.5rem] cursor-pointer  flex flex-col " style={{ background: 'rgba(187, 135, 255, 0.1)' }}>
+
+        <div className="flex items-center gap-[5.625rem] justify-between">
+            <h3 className="font-geist text-24 lg:text-18 font-medium leading-[140%] tracking-[0.02em]">{question}</h3>
+            <span className="w-[4rem] h-[4rem] rounded-full border border-[#FF947E] p-[1.25rem]">
+                <svg ref={iconRef} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path  d="M0 12.0039L24 12.0039" stroke="#EF716E" stroke-width="2" />
+                    <path ref={horizontalRef} d="M12.0078 23.998L12.0078 -0.00195441" stroke="#EF716E" stroke-width="2" />
+                </svg>
+            </span>
         </div>
+        <div ref={answerRef} className="h-0 mt-[0.75rem] overflow-hidden font-geist text-18 lg:text-base font-normal leading-[140%] tracking-[0%]">{answer}</div>
+
 
     </div>
 }

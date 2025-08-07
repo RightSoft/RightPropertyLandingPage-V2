@@ -3,10 +3,7 @@ import lounge01 from "@/assets/gallery/lounge01_optimized.webp";
 import lounge02 from "@/assets/gallery/lounge02_optimized.webp";
 import lounge03 from "@/assets/gallery/lounge03_optimized.webp";
 import lounge04 from "@/assets/gallery/lounge04_optimized.webp";
-import chevronLeft from "@/assets/icons/chevron_left.png";
-import chevronRight from "@/assets/icons/chevron_right.png";
-import { useState } from "react";
-import SimpleGallery from "../gallery/simple-gallery";
+import HorizontalGallery from "./horizontal-gallery";
 export default function MadeToFit() {
 
     const imagesSources = [
@@ -17,36 +14,19 @@ export default function MadeToFit() {
         lounge04
     ]
 
-    const [activeIndex, setActiveIndex] = useState(0);
 
-    const handleNextIndex = () => {
-        setActiveIndex((activeIndex + 1) % imagesSources.length);
-    }
-
-    const handlePreviousIndex = () => {
-        setActiveIndex((activeIndex - 1 + imagesSources.length) % imagesSources.length);
-    }
     return (
-        <section className="bg-[#0F0F0F] text-white" aria-label="Right Property platform adaptability showcase">
-            <div className="rp-container py-[7.5rem] px-[11.75rem] lg:px-0 lg:py-[5rem]">
-                <h2 className="mb-[2rem] lg:px-6 lg:mb-6 font-general-sans text-80 lg:text-40 font-semibold leading-[100%] tracking-[0em]">
-                    Made to fit,<br />wherever you work
+        <section id="made-to-fit" className="bg-[#0F0F0F] h-[100vh] text-white pt-[7.5rem] px-[5rem] pb-[9rem]" aria-label="Right Property platform adaptability showcase">
+            <div className="rp-container lg:px-0 lg:py-[5rem]" style={{ height: "auto" }}>
+                <p className="mb-8 font-geist-mono text-base font-medium leading-[140%] text-[#E2E2E2] tracking-[0.02em] uppercase">
+                    An experience that matters
+                </p>
+                <h2 className="mb-[3.75rem] text-[#E2E2E2] lg:mb-6 font-general-sans text-40 lg:text-40 font-semibold leading-[140%] tracking-[0.01em]">
+                    Made to Fit, Wherever<br />You Work
                 </h2>
-                <div className="flex justify-between lg:px-6">
-                    <p className="mb-[1rem]  lg:mb-[3.5rem] w-[33.125rem] lg:w-full font-geist text-24 lg:text-18 font-normal leading-[140%] tracking-[0em]">
-                        From boutique offices to full-scale lounges,Right Property works just as well in a sales suite as it does on a single laptop.
-                    </p>
-                    <div className="flex gap- items-center gap-[2rem] lg:gap-3">
-                        <button onClick={handlePreviousIndex} aria-label="Previous gallery image">
-                            <img src={chevronLeft} className="w-16 lg:w-8 h-auto object-contain cursor-pointer" alt="previous button" />
-                        </button>
-                        <button onClick={handleNextIndex} aria-label="Next gallery image">
-                            <img src={chevronRight} className="w-16 lg:w-8 h-auto object-contain cursor-pointer" alt="next button" />
-                        </button>
-                    </div>
-                </div>
-                <SimpleGallery images={imagesSources} activeIndex={activeIndex} />
             </div>
+            <HorizontalGallery images={imagesSources} />
         </section>
+
     )
 }

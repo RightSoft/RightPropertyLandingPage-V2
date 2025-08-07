@@ -1,5 +1,11 @@
 import darkLogo from "@/assets/dark_logo.webp"
+import footerBg from "@/assets/v3/footer_bg.png"
+import footerLevitate from "@/assets/v3/footer_levitate.png"
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
 export default function FooterSection() {
+    const $levitateItem = useRef<HTMLImageElement>(null)
+    const $footerContainer = useRef<HTMLDivElement>(null)
     const year = new Date().getFullYear()
     const footerItems = [
         {
@@ -78,27 +84,30 @@ export default function FooterSection() {
             }
         }
     }
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: $footerContainer.current,
+                start: "bottom-=20% bottom",
+                end: "bottom-=20% bottom-=5%",
+                scrub: false,
+                toggleActions: "play none none reset",
+            }
+        },)
+        tl.to($levitateItem.current, {
+            y: -100,
+            duration: 1,
+            ease: "power2.inOut"
+        })
+    }, [])
+    return <div ref={$footerContainer} className="rp-container lg:py-[2.5rem] lg:px-6">
+        <div className="relative h-[45.3125rem] px-[5rem] pt-[7.125rem] lg:w-full">
+            <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[468px] w-[21.25rem] h-auto object-contain z-[0]" alt="" />
 
-    return <div className="rp-container py-16 lg:py-[2.5rem] lg:px-6">
-        <div className="w-[640px] mx-auto lg:w-full">
-            <div className="flex flex-row-reverse gap-6 mb-[2.5rem] lg:flex-wrap ">
-               
-                {
-                    footerItems.map((item) => (
-                        <div key={item.label} className="flex-[1_1_auto] lg:flex-[1_0_auto]">
-                            <h4 className="mb-3 text-[#48515B] font-geist text-14 font-semibold leading-[150%] tracking-[0.04em] uppercase">{item.label}</h4>
-                            <ul className="mb-1 font-geist text-14 font-normal leading-[1.7em] tracking-[0%] text-[#48515B]">
-                                {
-                                    item.items.map((item) => (
-                                        <li key={item.label}><a target="_blank" id={item.type === "email" ? "email-link" : ""} onTouchStart={()=>emailClickHandler(item)} onMouseDown={()=>emailClickHandler(item)} rel="noopener" href={item.href}>{item.label}</a></li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    ))
-                }
-                 <div className="flex flex-[0.5_1_30%] lg:flex-[1_0_100%] lg:items-start flex-col gap-2">
-                    <img src={darkLogo} alt="Right Property" className="w-[4.5rem] h-auto mr-4" width="72" height="18" />
+            <img src={footerBg} className="absolute bottom-0 left-0 w-full h-full object-cover z-[-1]" alt="" />
+            <div className="flex justify-between">
+                <div className="flex flex-[0.5_1_30%] lg:flex-[1_0_100%] lg:items-start flex-col gap-2">
+                    <img src={darkLogo} alt="Right Property" className="w-[8.25rem] h-auto mb-[7.125rem]" width="72" height="18" />
                     <span className="font-geist text-14 font-normal leading-[24px] tracking-[0] text-[#8D98A5]" >
                         © {year} Right Property Ltd
                     </span>
@@ -106,7 +115,26 @@ export default function FooterSection() {
                         House 401, Highland, 165 The Broadway, London SW19 1NE, United Kingdom
                     </span>
                 </div>
+                <div className="flex flex-row-reverse gap-[3.75rem] mb-[5rem] lg:flex-wrap ">
+
+                    {
+                        footerItems.map((item) => (
+                            <div key={item.label} className="">
+                                <h4 className="mb-6 text-[#48515B] font-geist-mono text-16 font-medium leading-[122%] tracking-[0em] uppercase">{item.label}</h4>
+                                <ul className="mb-[0.5rem] font-geist text-20 font-medium leading-[1.4em] tracking-[0%] text-[#48515B]">
+                                    {
+                                        item.items.map((item) => (
+                                            <li key={item.label}><a target="_blank" id={item.type === "email" ? "email-link" : ""} onTouchStart={() => emailClickHandler(item)} onMouseDown={() => emailClickHandler(item)} rel="noopener" href={item.href}>{item.label}</a></li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        ))
+                    }
+
+                </div>
             </div>
+
 
         </div>
     </div>

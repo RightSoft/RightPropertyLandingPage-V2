@@ -47,11 +47,34 @@ export const subscribeToCampaign = async (email: string) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const responseData = await response.json(); 
+    const responseData = await response.json();
     console.log("Subscription successful:", responseData);
-    return responseData; 
+    return responseData;
   } catch (error) {
     console.error("Error subscribing to campaign:", error);
-    throw error; 
+    throw error;
   }
 };
+
+
+export const interpolateColor = (color1: string, color2: string, progress: number): string => {
+  // Simple hex color interpolation
+  if (color1.startsWith('#') && color2.startsWith('#')) {
+    const r1 = parseInt(color1.slice(1, 3), 16)
+    const g1 = parseInt(color1.slice(3, 5), 16)
+    const b1 = parseInt(color1.slice(5, 7), 16)
+
+    const r2 = parseInt(color2.slice(1, 3), 16)
+    const g2 = parseInt(color2.slice(3, 5), 16)
+    const b2 = parseInt(color2.slice(5, 7), 16)
+
+    const r = Math.round(r1 + (r2 - r1) * progress)
+    const g = Math.round(g1 + (g2 - g1) * progress)
+    const b = Math.round(b1 + (b2 - b1) * progress)
+
+    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`
+  }
+
+  // For rgba colors, return the target color
+  return color2
+}
