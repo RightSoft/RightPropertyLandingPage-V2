@@ -87,26 +87,26 @@ body {
   /* === recreate that exact circle as an alpha mask === */
   mask-image: radial-gradient(
     circle var(--mask-r) at var(--mask-x) var(--mask-y),
-    rgba(0, 0, 0, 1) 70.9%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0) 90%
   );
   mask-mode: alpha;
   mask-repeat: no-repeat;
 
   /* WebKit / Safari */
-  -webkit-mask-image: radial-gradient(
+  /* -webkit-mask-image: radial-gradient(
     circle var(--mask-r) at var(--mask-x) var(--mask-y),
     rgba(0, 0, 0, 1) 70.9%,
     rgba(0, 0, 0, 0) 100%
-  );
+  ); */
   -webkit-mask-mode: alpha;
   -webkit-mask-repeat: no-repeat;
 }
 .mask .highlight {
   z-index: -1;
   position: absolute;
-  width: 641px;
-  height: 641px;
+  width: 1200px;
+  height: 1200px;
   left: var(--mask-x);
   top: var(--mask-y);
   transform: translate(-50%, -50%);
