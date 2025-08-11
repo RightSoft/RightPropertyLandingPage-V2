@@ -86,7 +86,7 @@ export default function HorizontalGallery({
             });
         };
     }, [images])
-    return <div className="gallery relative h-[100vh] overflow-hidden">
+    return <div className="gallery relative h-[100vh] overflow-hidden max-w-[100vw]">
         <div className="max-w-[1680px] mx-auto w-full">
             <div className="gallery__inner flex h-full gap-[3.75rem]">
                 {images.map((image, index) => (

@@ -1,7 +1,7 @@
-import Button from "./button";
+
 import ShowBookingHoc from "./show-booking-hoc";
 
-export default function BookADemoButton({ className }: { className?: string }) {
+export default function BookADemoButton({  }: { className?: string }) {
 
     return (
         <ShowBookingHoc>

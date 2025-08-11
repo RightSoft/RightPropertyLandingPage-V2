@@ -16,7 +16,7 @@ const LazyPrivacyPolicy = lazy(() => import('./view/pages/privacy-policy'));
 function App() {
   const [pathname, setPathname] = useState<string>();
   const [gsapLoaded, setGsapLoaded] = useState(false);
-  const [lenisOptions, setLenisOptions] = useState({ lerp: 0, duration: 0 });
+  const [_, setLenisOptions] = useState({ lerp: 0, duration: 0 });
   useEffect(() => {
     ReactGA.initialize('G-D169WBQW9L');
     // Send pageview with a custom path

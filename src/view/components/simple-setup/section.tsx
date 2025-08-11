@@ -1,5 +1,4 @@
 import rBlockImage from "@/assets/r-block.webp"
-import checkCircleBlue from "@/assets/icons/check_circle_blue.png";
 import gRoad from "@/assets/v3/g_road.png";
 import SimpleSetupGradientPath from "./simple-setup-gradient-path";
 import { useCallback, useEffect, useRef } from "react";

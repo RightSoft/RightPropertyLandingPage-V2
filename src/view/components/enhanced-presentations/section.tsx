@@ -1,13 +1,12 @@
 // Use public URLs for LCP images to match preloads
-const enhancedIllustration = '/enhanced-lcp.webp';
-const enhancedMobile = '/enhanced-lcp-mobile.webp';
-import emptyWall from "../../../assets/v3/empty_wall.png"
+
 import BookADemoButton from '@/view/components/book-a-demo-button'
 import AnchorLink from '../anchor-link';
+import heroVideo from "@/assets/v3/hero.webm"
 export default function EnhancedPresentationsSection() {
     return (
-        <section className=" w-full h-[auto] lg:pb-35 relative" aria-label="Enhanced presentations hero section">
-            <div className="rp-container relative flex items-center justify-between lg:flex-col lg:items-start pt-[8.5rem]">
+        <section className=" w-full h-[auto] lg:pb-35 relative max-w-[100vw] overflow-hidden" aria-label="Enhanced presentations hero section">
+            <div className="rp-container relative flex items-center justify-between lg:flex-col lg:items-start pt-[8.5rem] ">
                 <div className="pl-[5rem] lg:px-6 lg:w-full flex flex-col items-start justify-center  font-general-sans min-h-[40rem] lg:min-h-0 lg:order-2">
                     <h1 className="mb-[2.0625rem] lg:mb-[0.875rem] font-general-sans font-semibold text-60 lg:text-40 leading-[100%] tracking-[0%] text-raisin-black">
                         Enhanced <br />Presentations. <br />
@@ -24,31 +23,20 @@ export default function EnhancedPresentationsSection() {
                         <BookADemoButton className="lg:w-full" />
                     </div>
                 </div>
-                <div className="flex-shrink-1 lg:order-1 lg:mb-[2.25rem]" style={{ contain: 'layout' }}>
-                    <picture>
-                        <source
-                            media="(max-width: 768px)"
-                            srcSet={enhancedMobile}
-                            type="image/webp"
-                        />
-                        <img
-                            src={emptyWall}
-                            className="max-w-[1200px] w-full h-auto lg:max-w-full"
-                            alt="Right Property enhanced presentations platform showcasing interactive real estate sales tools"
-                            loading="eager"
-                            decoding="async"
-                            fetchPriority="high"
+                <div className="flex-shrink-1 lg:order-1 lg:mb-[2.25rem] -mr-[21.3125rem] ">
+                     
+                        <video
+                            src={heroVideo}
+                            className="max-w-[1200px] w-full h-auto lg:max-w-full "
                             width="1200"
                             height="800"
-                            style={{
-                                contentVisibility: 'visible',
-                                contain: 'layout style paint',
-                                imageRendering: 'auto',
-                                backfaceVisibility: 'hidden',
-                                transform: 'translateZ(0)'
-                            }}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="auto"
+                           
                         />
-                    </picture>
                 </div>
             </div>
         </section>

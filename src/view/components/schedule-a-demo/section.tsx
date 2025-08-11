@@ -1,7 +1,7 @@
 import BookADemoButton from "../book-a-demo-button";
 import representive from "@/assets/v3/representive.png";
 export default function ScheduleADemoSection() {
-    return <section className="relative h-[100vh] flex items-center justify-center py-[7.5rem] lg:py-[5rem]" aria-label="Schedule a demo meeting with Right Property team">
+    return <section className="relative h-[100vh] flex items-center justify-center py-[7.5rem] lg:py-[5rem] max-w-[100vw] overflow-hidden" aria-label="Schedule a demo meeting with Right Property team">
         <div className="relative w-[1011px] overflow-hidden bg-white p-[3.75rem] lg:w-full lg:px-6" style={{boxShadow: '3px 32px 58.5px rgba(134, 101, 177, 0.1)'}}>
             <div className="inline-block">
                 <p className="mb-8 font-geist text-base lg:text-14 font-medium leading-[150%] tracking-[0.02em] uppercase">

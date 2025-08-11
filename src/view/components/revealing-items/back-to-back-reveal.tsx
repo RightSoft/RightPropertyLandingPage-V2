@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { flippingCardContents } from "./flipping-card-contents";
 import FlippingCardContent from "./flipping-card-content";
@@ -15,7 +15,12 @@ import revealItem1Road from "@/assets/v3/reveal_item_1_road.png"
 import revealItem2Road from "@/assets/v3/reveal_item_2_road.png"
 import revealItem3Road from "@/assets/v3/reveal_item_3_road.png"
 import revealItem5Road from "@/assets/v3/reveal_item_5_road.png"
-
+import cmsVideo from "@/assets/v3/cms.webm"
+import emailMarketingVideo from "@/assets/v3/email_marketing.webm"
+import interactiveVideo from "@/assets/v3/interactive_website.webm"
+import marketingOption1 from "@/assets/v3/marketing_option1.webm"
+import websiteTemplates from "@/assets/v3/website_templates.webm";
+import seoVideo from "@/assets/v3/seo.webm";
 gsap.registerPlugin(ScrollTrigger, Flip);
 export default function BackToBackReveal({
 }: {
@@ -166,31 +171,31 @@ export default function BackToBackReveal({
             </div>
         </div>
         <div className="rp-container">
-            <VideoContainer road={revealItem1Road}>
+            <VideoContainer videoUrl={marketingOption1} road={revealItem1Road}>
                 <img src={revealItem1Overlay} className=" absolute -top-[7.375rem] left-[3rem] w-[41.9375rem] h-auto object-contain" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer road={revealItem2Road}>
+            <VideoContainer videoUrl={interactiveVideo} road={revealItem2Road}>
                 <img src={revealItem2Overlay} className="absolute -top-[13.625rem] left-[5.625rem] w-[41rem] h-auto object-contain" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer road={revealItem3Road}>
+            <VideoContainer videoUrl={websiteTemplates} road={revealItem3Road}>
                 <img src={revealItem3Overlay} className="absolute left-[13.75rem] -top-[1.25rem] -translate-y-full w-[24.375rem] h-auto object-contain" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer>
+            <VideoContainer videoUrl={cmsVideo}>
                 <img src={revealItem4Overlay} className="absolute top-[15.75rem] left-[3.75rem] w-[11.5625rem] h-auto object-contain" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer road={revealItem5Road}>
+            <VideoContainer videoUrl={emailMarketingVideo} road={revealItem5Road}>
                 <img src={revealItem5Overlay} className="absolute -top-[21.25rem] left-[13.75rem] w-[24.0625rem] h-auto object-contain`" />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer>
+            <VideoContainer videoUrl={seoVideo}>
                 <img src={revealItem6Overlay} className="absolute top-[20.75rem] left-[3.75rem] w-[33.375rem] h-auto object-contain" />
                 <BlueGradient />
             </VideoContainer>
@@ -210,8 +215,10 @@ export const BlueGradient = () => {
 }
 export const VideoContainer = ({
     children,
-    road
+    road,
+    videoUrl
 }: {
+    videoUrl: string
     children: React.ReactNode,
     road?: string
 }) => {
@@ -219,7 +226,7 @@ export const VideoContainer = ({
         <img src={road} className="absolute left-0 top-0 w-full h-auto object-contain" />
 
         <div className="relative">
-            <img src={"https://picsum.photos/id/237/643/428"} className=" w-[40.1875rem] h-[26.75rem] object-cover" />
+            <video src={videoUrl} autoPlay muted loop playsInline className=" w-[40.1875rem] h-[26.75rem] object-cover" />
             {children}
         </div>
 

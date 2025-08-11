@@ -1,7 +1,5 @@
 import presentSmarterBg from "@/assets/v3/present_smarter_section.webp"
 import Accessibility from "@/view/components/accessiblity"
-import magicStick from "@/assets/icons/magic_stick.png"
-import slider from "@/assets/icons/slider.png"
 import { Parallax } from "../parallax"
 import startIcon from '@/assets/v3/star_icon.png';
 import spaceIcon from '@/assets/v3/space_icon.png';

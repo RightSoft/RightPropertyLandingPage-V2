@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet"
 import { useCallback, useEffect, useRef } from "react"
 import BackToBackReveal from "../components/revealing-items/back-to-back-reveal"
-import BinarySection from "../components/binary-section"
 import ChoosePresentationSection from "../components/choose-presentation/section"
 import ConvertMoreLeadsSection from "../components/convert-more-leads/section"
 import EasyOnboardingSection from "../components/easy-onboarding/section"
