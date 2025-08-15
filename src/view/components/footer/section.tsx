@@ -95,16 +95,16 @@ export default function FooterSection() {
             }
         },)
         tl.to($levitateItem.current, {
-            y: -100,
+            y: '-6.25rem',
             duration: 1,
             ease: "power2.inOut"
         })
     }, [])
     return <div ref={$footerContainer} className="rp-container lg:py-[2.5rem] lg:px-6">
         <div className="relative h-[45.3125rem] px-[5rem] pt-[7.125rem] lg:w-full">
-            <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[468px] w-[21.25rem] h-auto object-contain z-[0]" alt="" />
+            <img ref={$levitateItem} src={footerLevitate} className="absolute left-[36.25rem] top-[29.25rem] w-[21.25rem] h-auto object-contain z-[0]" alt="" />
 
-            <img src={footerBg} className="absolute bottom-0 left-0 w-full h-full object-cover z-[-1]" alt="" />
+            <img src={footerBg} className="absolute bottom-0 left-0 w-[105rem] h-full object-cover z-[-1]" alt="" />
             <div className="flex justify-between">
                 <div className="flex flex-[0.5_1_30%] lg:flex-[1_0_100%] lg:items-start flex-col gap-2">
                     <img src={darkLogo} alt="Right Property" className="w-[8.25rem] h-auto mb-[7.125rem]" width="72" height="18" />
@@ -116,7 +116,6 @@ export default function FooterSection() {
                     </span>
                 </div>
                 <div className="flex flex-row-reverse gap-[3.75rem] mb-[5rem] lg:flex-wrap ">
-
                     {
                         footerItems.map((item) => (
                             <div key={item.label} className="">
@@ -131,11 +130,8 @@ export default function FooterSection() {
                             </div>
                         ))
                     }
-
                 </div>
             </div>
-
-
         </div>
     </div>
 }

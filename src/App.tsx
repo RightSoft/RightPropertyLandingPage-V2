@@ -5,6 +5,7 @@ import HomePage from './view/pages/home-page';
 import { useEffect, useState, Suspense, lazy, useCallback } from 'react';
 import ReactGA from 'react-ga4';
 import Header from './view/components/header/header.tsx';
+import WindowSizeProvider from './view/components/providers/window-size-provider.tsx';
 
 
 // Lazy load non-critical components and GSAP
@@ -21,17 +22,17 @@ function App() {
     ReactGA.initialize('G-D169WBQW9L');
     // Send pageview with a custom path
     ReactGA.send({ hitType: "pageview", page: location.pathname });
-}, [])
+  }, [])
   useEffect(() => {
     setPathname(window.location.pathname);
-    
+
     // Defer GSAP loading until after initial render
     const gsapTimer = setTimeout(() => {
       setGsapLoaded(true);
     }, 100);
-    
-   
-    
+
+
+
     // Defer non-critical CSS
     const loadSwiper = () => {
       // Use dynamic imports with proper typing
@@ -41,21 +42,21 @@ function App() {
         import('./styles/index.scss')
       ]);
     };
-    
 
-   
+
+
     loadSwiper();
-    
+
     // Enable smooth scrolling after load
     setTimeout(() => {
       setLenisOptions({ lerp: 1.08, duration: 12 });
     }, 1000);
-    
+
     return () => {
       clearTimeout(gsapTimer);
     };
   }, []);
-  
+
   const getPage = useCallback(() => {
     if (pathname === "/" || pathname === undefined) {
       return <HomePage />;
@@ -69,20 +70,22 @@ function App() {
   const page = getPage();
 
   return (
-    <ReactLenis  root>
-      {gsapLoaded && (
-        <Suspense fallback={null}>
-          <LazyGSAP />
-        </Suspense>
-      )}
-      <Header />
-      <div className=''>
-        {page}
-        <Suspense fallback={<div style={{height: '200px'}} />}>
-          <LazyFooter />
-        </Suspense>
-      </div>
-    </ReactLenis>
+    <WindowSizeProvider>
+      <ReactLenis root>
+        {gsapLoaded && (
+          <Suspense fallback={null}>
+            <LazyGSAP />
+          </Suspense>
+        )}
+        <Header />
+        <div className=''>
+          {page}
+          <Suspense fallback={<div style={{ height: '200px' }} />}>
+            <LazyFooter />
+          </Suspense>
+        </div>
+      </ReactLenis>
+    </WindowSizeProvider>
   )
 }
 

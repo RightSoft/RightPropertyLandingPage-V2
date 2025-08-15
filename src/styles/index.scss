@@ -1,66 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap");
 
 /* Optimize font fallbacks for faster render */
 @font-face {
-  font-family: 'General Sans';
+  font-family: "General Sans";
   font-display: swap;
   /* Other font properties will be loaded from CSS */
 }
 
 .qxCTlb {
-    display: inline-block;
-    font-family: "Geist", sans-serif;
-    font-weight:600;
-    font-size: 1.1875rem;
-    letter-spacing: 0em;
-    color:#274D66;
-    background-color: #88C3E7;
-    border-radius:calc(infinity * 1px);
-    &:active{
-      scale: 0.95;
-    }
-    line-height:1.875rem;
-    padding:0.9375rem 1.875rem;
-    @media screen and (max-width: 800px) {    
-      font-size:1.125rem;
-      width: 100%;
-    }
+  display: inline-block;
+  font-family: "Geist", sans-serif;
+  font-weight: 600;
+  font-size: 1.1875rem;
+  letter-spacing: 0em;
+  color: #274d66;
+  background-color: #88c3e7;
+  border-radius: calc(infinity * 1px);
+  &:active {
+    scale: 0.95;
   }
-  
-  .mmGMM{
-    pointer-events: all!important;
+  line-height: 1.875rem;
+  padding: 0.9375rem 1.875rem;
+  @media screen and (max-width: 800px) {
+    font-size: 1.125rem;
+    width: 100%;
   }
-  .Xfsokf{
-    top: 16px;
-    right: 16px;
+}
+
+.mmGMM {
+  pointer-events: all !important;
+}
+.Xfsokf {
+  top: 16px;
+  right: 16px;
+}
+.hur54b {
+  padding: 12px;
+}
+
+.privacy {
+  ul {
+    list-style: disc;
+    list-style-position: inside;
   }
-  .hur54b{
-    padding:12px;
+  p {
+    display: inline;
+    margin: 12px 0;
+  }
+  h3 + div {
+    margin-top: 12px;
+  }
+  ul + h3 {
+    margin-top: 12px;
+  }
+  p + p {
+    margin-top: 0;
+  }
+  .privacy-text-small {
+    font-size: 11pt;
+  }
+  .privacy-text-medium {
+    font-size: 13pt;
+  }
+}
+
+:root {
+  --factor: 1;
+}
+
+@media (min-width: 2000px) {
+  :root {
+    --factor: 1;
+  }
+}
+
+@media (min-width: 1240px) and (max-width: 1680px) {
+  :root {
+    --factor: 1.05;
+  }
+}
+
+@function w($value, $idealViewportWidth: 1680, $factor: 1, $clamp: true) {
+  // Allow CSS custom properties with fallbacks to the Sass args
+  $vw: var(--window-width, 100vw);
+  $fv: var(--factor, #{$factor});
+
+  // Preferred fluid value (in px)
+  $preferred: calc(#{$value} * #{$vw} / (#{$idealViewportWidth} * #{$fv}) * 1px);
+
+  @if $clamp {
+    // Define min/max bounds (in px)
+    $min: calc(#{$value} * #{$fv} / 2 * 1px);
+    $max: calc(#{$value} * #{$fv} * 1px);
+    @return clamp($min, $preferred, $max);
+  } @else {
+    @return $preferred;
+  }
+}
+
+@function sp($value) {
+  @return w($value);
+}
+
+@function user-if($condition, $true-statement, $false-statement) {
+  $output: $false-statement;
+
+  @if ($condition) {
+    $output: $true-statement;
   }
 
-  .privacy {
-    ul {
-      list-style: disc;
-      list-style-position: inside;
-    }
-    p {
-      display: inline;
-      margin: 12px 0;
-    }
-    h3 + div {
-      margin-top: 12px;
-    }
-    ul + h3 {
-      margin-top: 12px;
-    }
-    p + p {
-      margin-top: 0;
-    }
-    .privacy-text-small{
-      font-size: 11pt;
-    }
-    .privacy-text-medium{
-      font-size: 13pt;
-    }
-  }
+  @return $output;
+}
+
+@function clampValue($value, $calculated) {
+  @return clamp($value/2, $calculated, $value * 1);
+}
+
+
+
+html {
+  font-size: w(16, 1680, var(--factor), true);
+}

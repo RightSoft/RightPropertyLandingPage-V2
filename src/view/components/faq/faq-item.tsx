@@ -43,12 +43,12 @@ export default function FaqItem({ question, answer }: { question: string | React
 
         <div className="flex items-center gap-[5.625rem] justify-between">
             <h3 className="font-geist text-24 lg:text-18 font-medium leading-[140%] tracking-[0.02em]">{question}</h3>
-            <span className="w-[4rem] h-[4rem] rounded-full border border-[#FF947E] p-[1.25rem]">
-                <svg ref={iconRef} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="shrink-0 w-[64px] h-[64px] rounded-full border border-[#FF947E] flex items-center justify-center">
+                <svg ref={iconRef} className="w-[1.5rem] h-[1.5rem]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path  d="M0 12.0039L24 12.0039" stroke="#EF716E" stroke-width="2" />
                     <path ref={horizontalRef} d="M12.0078 23.998L12.0078 -0.00195441" stroke="#EF716E" stroke-width="2" />
                 </svg>
-            </span>
+            </div>
         </div>
         <div ref={answerRef} className="h-0 mt-[0.75rem] overflow-hidden font-geist text-18 lg:text-base font-normal leading-[140%] tracking-[0%]">{answer}</div>
 

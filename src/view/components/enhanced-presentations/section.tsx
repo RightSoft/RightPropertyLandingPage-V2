@@ -27,7 +27,7 @@ export default function EnhancedPresentationsSection() {
                      
                         <video
                             src={heroVideo}
-                            className="max-w-[1200px] w-full h-auto lg:max-w-full "
+                            className="max-w-[1200px] w-[75.25rem] h-auto lg:max-w-full "
                             width="1200"
                             height="800"
                             autoPlay

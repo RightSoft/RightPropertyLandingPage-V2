@@ -27,7 +27,6 @@ export default function MeetRightPropertySection() {
                     scrub: true,
                     id: "meet-right-property",
                     refreshPriority: 10, // Highest priority
-                    
                 }
             }).set(
                 splitText.chars,
