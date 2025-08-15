@@ -41,7 +41,7 @@ export default function HorizontalGallery({
 
         // Clear any existing ScrollTriggers for this element
         ScrollTrigger.getAll().forEach(trigger => {
-            if (trigger.trigger === gallery) {
+            if (trigger.trigger === inner) {
                 trigger.kill();
             }
         });
