@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useLayoutEffect, useRef } from "react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +10,6 @@ export default function HorizontalGallery({
 }) {
     const horizontalPinTl = useRef<gsap.core.Timeline>(null);
     useEffect(() => {
-        
         // Wait for DOM to be ready
         const timeoutId = setTimeout(() => {
             horizontalPin();
@@ -19,18 +18,16 @@ export default function HorizontalGallery({
 
         return () => {
             clearTimeout(timeoutId);
-            if (horizontalPinTl.current) {
+          
+            // Clean up any ScrollTriggers for this component
+            if(horizontalPinTl.current) {
+                horizontalPinTl.current?.scrollTrigger?.kill();
                 horizontalPinTl.current.kill();
             }
-            // Clean up any ScrollTriggers for this component
-            ScrollTrigger.getAll().forEach(trigger => {
-                if (trigger.vars.id === "horizontal-gallery") {
-                    trigger.kill();
-                }
-            });
         };
     }, [images])
     const horizontalPin = () => {
+        console.log("horizontalPin");
         const gallery = document.querySelector("#made-to-fit");
         const inner = gallery?.querySelector(".gallery__inner");
         const items = gsap.utils.toArray(inner?.querySelectorAll(".item") || []) as HTMLElement[];
@@ -39,13 +36,7 @@ export default function HorizontalGallery({
 
         const offsetStep = 96; // pixels each one starts lower than the last
 
-        // Clear any existing ScrollTriggers for this element
-        ScrollTrigger.getAll().forEach(trigger => {
-            if (trigger.trigger === inner) {
-                trigger.kill();
-            }
-        });
-
+      
         // 1) set up initial vertical offsets
         items.forEach((el, i) => {
             gsap.set(el, { y: offsetStep * i });
@@ -88,10 +79,11 @@ export default function HorizontalGallery({
             }, i == 0 ? '<' : '>');
         });
     }
-    useEffect(() => {
+    useLayoutEffect(() => {
         const handleResize = () => {
             // Debounce resize to avoid excessive recalculations
-            horizontalPin();
+            horizontalPinTl.current?.refresh();
+            horizontalPinTl.current?.scrollTrigger?.refresh();
         }
 
         window.addEventListener('resize', handleResize)
