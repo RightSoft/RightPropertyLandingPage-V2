@@ -33,8 +33,8 @@ export default function HorizontalGallery({
         const items = gsap.utils.toArray(inner?.querySelectorAll(".item") || []) as HTMLElement[];
         
         if (!gallery || !inner || items.length === 0) return;
-
-        const offsetStep = 96; // pixels each one starts lower than the last
+        
+        const offsetStep = window.innerWidth <= 768 ? 36 : 96; // pixels each one starts lower than the last
 
       
         // 1) set up initial vertical offsets
@@ -63,7 +63,8 @@ export default function HorizontalGallery({
         
         // Horizontal movement with precise calculation
         horizontalPinTl.current.to(inner, {
-            x: () => -(inner?.scrollWidth ?? 0) * 0.6,
+            x: () => `-${scrollDistance}px`,
+            // x: () => -(inner?.scrollWidth ?? 0) * 0.6,
             ease: "none",
             duration: totalDuration
         }, 'start+=0');
@@ -92,11 +93,11 @@ export default function HorizontalGallery({
             window.removeEventListener('resize', handleResize)
         }
     }, [horizontalPin])
-    return <div className="gallery relative min-h-[100vh] overflow-hidden max-w-[100vw]">
+    return <div className="gallery relative min-h-[100vh] lg:min-h-[60vh] overflow-hidden max-w-[100vw]">
         <div className="max-w-[1680px] mx-auto w-full">
             <div className="gallery__inner flex h-full gap-[3.75rem]">
                 {images.map((image, index) => (
-                    <img src={image} key={index} className="item w-[42.375rem] h-[42.375rem] object-cover relative" />
+                    <img src={image} key={index} className="item w-[42.375rem] h-[42.375rem] lg:w-[13.875rem] lg:h-[13.875rem] object-cover relative" />
                 ))}
             </div>
         </div>

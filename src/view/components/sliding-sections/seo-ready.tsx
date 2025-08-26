@@ -6,10 +6,10 @@ export default function SeoReady() {
             <div className="rp-container lg:pb-[2.25rem]">
                 <div className="flex lg:flex-col-reverse gap-[8.4375rem] lg:gap-[2.25rem] items-center justify-center">
                     <div className="flex flex-col">
-                        <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
+                        <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-4">
                             SEO Optimization
                         </p>   
-                                    <h3 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
+                                    <h3 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-4">
                 SEO-ready out of the box, ensuring your project ranks higher and attracts the right audience.
             </h3>
                     </div>

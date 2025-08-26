@@ -10,8 +10,12 @@ export default defineConfig({
       "@": "/src",
     },
   },
+
+  server: {
+    host: true
+  },
   plugins: [
-    react(), 
+    react(),
     tailwindcss(),
     viteImagemin({
       gifsicle: { optimizationLevel: 7 },
@@ -25,9 +29,9 @@ export default defineConfig({
       external: (id) => {
         // Exclude development tools from production
         if (process.env.NODE_ENV === 'production') {
-          return id.includes('react-devtools') || 
-                 id.includes('__react_devtools') ||
-                 id.includes('chrome-extension://');
+          return id.includes('react-devtools') ||
+            id.includes('__react_devtools') ||
+            id.includes('chrome-extension://');
         }
         return false;
       },

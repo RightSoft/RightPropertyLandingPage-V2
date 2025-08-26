@@ -4,7 +4,7 @@ export default function LevelUpYourMarketing() {
     return (
         <section className="bg-[#F5F5F5] lg:h-auto">
             <div className="rp-container">
-                <div className="flex gap-[8.4375rem] items-center justify-center h-full lg:px-6 lg:py-[2.25rem]">
+                <div className="flex gap-[8.4375rem] items-center justify-center h-full lg:px-4 lg:py-[2.25rem]">
                     <img 
                         src={levelUpYourMarketing} 
                         className="w-[44.375rem] lg:w-full object-contain h-auto lg:hidden" 

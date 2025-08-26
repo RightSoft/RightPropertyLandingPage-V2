@@ -11,7 +11,7 @@ export default function NotFoundPage() {
                 <title>404 - Page Not Found | Right Property</title>
                 <meta name="robots" content="noindex, nofollow" />
             </Helmet>
-            <main className="rp-container min-h-screen flex flex-col items-center justify-center py-[7.5rem] lg:py-[5rem] lg:px-6">
+            <main className="rp-container min-h-screen flex flex-col items-center justify-center py-[7.5rem] lg:py-[5rem] lg:px-4">
                 <div className="text-center max-w-[600px]">
                     <h1 className="mb-6 font-general-sans font-semibold text-80 lg:text-60 leading-[100%] tracking-[0em] text-squid-ink">
                         404

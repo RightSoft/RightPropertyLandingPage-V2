@@ -1,8 +1,6 @@
-import Accessibility, { AccessibilityHeaderInformation, AccessibilityItems, AccessibilityRoot } from "@/view/components/accessiblity";
-import mobileInsights from "@/assets/mobile_insights.webp";
-import Button from "../button";
-import ShowBookingHoc from "../show-booking-hoc";
+import Accessibility from "@/view/components/accessiblity";
 import convertMoreLeads from "@/assets/v3/convert_more_leads_desktop.png"
+import convertMoreLeadsMobile from "@/assets/v3/mobile_insights.png"
 import startIcon from '@/assets/v3/star_icon.png';
 import spaceIcon from '@/assets/v3/space_icon.png';
 import { Parallax } from "../parallax";
@@ -20,26 +18,19 @@ export default function ConvertMoreLeadsSection() {
         }
     ]
     return (
-        <section className="rp-container px-[7.5rem] pt-[7.5rem] lg:px-0 lg:py-[2.25rem]">
-            <img src={convertMoreLeads} alt="convert more leads" className="z-[-1] absolute top-0 left-0 w-full h-auto" />
-            <div className="w-[49.375rem] lg:w-full">
+        <section className="rp-container px-[7.5rem] pt-[7.5rem] lg:pt-0 lg:px-0 lg:py-[2.25rem] lg:pb-[0] lg:bg-[#EEF1F7] relative">
+            <img src={convertMoreLeadsMobile} alt="convert more leads" className="z-[-1] w-full h-auto hidden lg:block" />
+            <img src={convertMoreLeads} alt="convert more leads" className="z-[-1] absolute top-0 left-0 w-full h-auto lg:hidden" />
+            <div className="w-[49.375rem] lg:w-full lg:p-4 relative lg:-mt-[4rem]">
+                <div className="absolute left-[7.6rem] top-[0] w-[375px] h-[68px]" style={{ background: "linear-gradient(180deg, rgba(238, 241, 247, 0) 0%, #EEF1F7 100%)" }} />
+
                 <Parallax id="convert-more-leads-section" speed={1.3}>
                     <Accessibility subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." items={items} />
                 </Parallax>
             </div>
+            <div className="hidden lg:block absolute bottom-0 w-full h-[13rem] bg-white z-[-1]">
 
-            <div className="hidden lg:flex gap-6 items-center justify-center lg:flex-col lg:gap-8">
-                <AccessibilityRoot>
-                    <AccessibilityHeaderInformation subHeading="SALES" title="Convert more leads with smarter sales insights" description="Track what matters, follow up smarter, and close with confidence—powered by a CRM made for property sales." />
-                    <img src={mobileInsights} alt="sales insights" className="flex-1 h-auto mb-[2.25rem]" width="640" height="786" />
-                    <AccessibilityItems items={items} />
-                    <div className="hidden lg:block lg:mt-[2.25rem] ">
-                        <ShowBookingHoc>
-                            <Button label="Book a Demo" variant="primaryLight" className="lg:w-full" />
-                        </ShowBookingHoc>
-                    </div>
-                </AccessibilityRoot>
-            </div>
+</div>
         </section>
     )
 }

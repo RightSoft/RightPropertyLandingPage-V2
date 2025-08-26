@@ -82,10 +82,10 @@ export default function FaqSection() {
         },
     ]
     return <div className="bg-[#000000]">
-        <section className="rp-container py-[7.5rem] px-[11.75rem] lg:px-0 lg:py-[5rem]" aria-label="Frequently asked questions about Right Property platform">
-            <p className="mb-8 font-geist-mono text-base font-medium leading-[140%] text-[#E2E2E2] tracking-[0.02em] uppercase">
+        <section className="rp-container py-[7.5rem] px-[11.75rem] lg:px-4 lg:pb-[5rem] lg:pt-0" aria-label="Frequently asked questions about Right Property platform">
+            <p className="mb-8 lg:mb-6 font-geist-mono text-base lg:text-sm font-medium leading-[140%] lg:leading-[148%] text-[#E2E2E2] tracking-[0.02em] uppercase">
             Have a question?            </p>
-            <h2 className="mb-[3.75rem] text-[#E2E2E2] lg:mb-6 font-general-sans text-40 lg:text-40 font-semibold leading-[140%] tracking-[0.01em]">
+            <h2 className="mb-[3.75rem] lg:mb-[2.5rem] text-[#E2E2E2] font-general-sans text-40 lg:text-[2rem]  font-semibold leading-[140%] lg:leading-[130%] -tracking-[0.01em] lg:-tracking-[0.04em]">
             Most Frequent<br/>
             Questions and Answers
             </h2>

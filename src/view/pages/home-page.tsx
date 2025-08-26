@@ -71,7 +71,6 @@ export default function HomePage() {
                     <SimpleSetupSection />
                     <ConvertMoreLeadsSection />
                     <EasyOnboardingSection />
-                    <div className="hidden lg:block"><LevelUpYourMarketing /></div>
                     <FeaturesCarousel />
                     <BackToBackReveal />
                     <MadeToFit />

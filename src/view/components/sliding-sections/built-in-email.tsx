@@ -9,10 +9,10 @@ export default function BuiltInEmail() {
                     <img className="hidden lg:block lg:w-full h-auto lg:px-2" src={builtInEmailMobile} alt="Fully interactive project website" width="377" height="285" />
 
                     <div className="flex flex-col">
-                        <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-6">
+                        <p className="mb-4 font-geist-mono text-base font-normal leading-[150%] tracking-[0.04em] uppercase lg:px-4">
                             Built-in Email Marketing
                         </p>
-                        <h3 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-6">
+                        <h3 className="mb-10 font-general-sans text-56 lg:text-36 font-semibold leading-[100%] tracking-[0em] w-[40rem] lg:w-full lg:px-4">
                             Built-in email creation and campaign management, reaching potential buyers has never been easier.
                         </h3>
                     </div>

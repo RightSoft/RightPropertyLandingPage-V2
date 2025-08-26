@@ -121,4 +121,7 @@
 
 html {
   font-size: w(16, 1680, var(--factor), true);
+  @media screen and (max-width: 768px) {
+    font-size: w(16, 375, var(--factor), true);
+  }
 }
