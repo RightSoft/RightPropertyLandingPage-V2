@@ -1,4 +1,3 @@
-import darkLogo from "@/assets/dark_logo.webp";
 import { useRef, useState } from "react";
 import type Lenis from "lenis";
 import { useLenis } from 'lenis/react'
@@ -6,6 +5,7 @@ import { cn } from "@/lib/utils";
 import BuiltForDevelopers from "./built-for-developers";
 import NavigationItems from "./navigation-items";
 import gsap from "gsap";
+import Logo from "./logo";
 export default function Header() {
     const [hideHeader, setHideHeader] = useState(false);
     const $progress = useRef(0);
@@ -34,7 +34,7 @@ export default function Header() {
         <div id="header-parent" className={headerClass}>
             <div className="rp-container flex items-center justify-between pl-[5.875rem]  pr-[5.1875rem] lg:px-4">
                 <div className="flex items-center gap-[5.52rem]">
-                    <img className="w-[6rem] h-auto lg:w-[4.25rem]" src={darkLogo} alt="Right Property Logo" width="96" height="24" />
+                    <Logo className="w-[6rem] h-auto lg:w-[4.25rem]" />
                     <BuiltForDevelopers />
                 </div>
                 <NavigationItems />

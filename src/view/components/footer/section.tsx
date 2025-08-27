@@ -1,10 +1,10 @@
-import darkLogo from "@/assets/dark_logo.webp"
 import footerBg from "@/assets/v3/footer_bg.png"
 import footerLevitate from "@/assets/v3/footer_levitate.png"
 import mobileFooterBg from "@/assets/v3/mobile_right_footer.png"
 import mobileFooterLevitate from "@/assets/v3/mobile_right_footer_circle.png"
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
+import Logo from "../header/logo"
 export default function FooterSection() {
     const $levitateItem = useRef<HTMLImageElement>(null)
     const $mobileFooterLevitate = useRef<HTMLImageElement>(null)
@@ -128,7 +128,7 @@ export default function FooterSection() {
 
             <div className="flex justify-between lg:flex-col">
                 <div className="flex flex-[0.5_1_30%] lg:flex-[1_0_100%] lg:items-start flex-col gap-2">
-                    <img src={darkLogo} alt="Right Property" className="w-[8.25rem] lg:w-[7.875rem] h-auto mb-[7.125rem] lg:mb-[4rem] lg:px-4" width="72" height="18" />
+                    <Logo className="w-[8.25rem] lg:w-[7.875rem] h-auto mb-[7.125rem] lg:mb-[4rem] lg:px-4" />
                     <CopyRight className="lg:hidden" />
                 </div>
                 <div className="flex flex-row-reverse lg:flex-col gap-[3.75rem] lg:gap-[2.5rem] mb-[5rem] lg:mb-[2rem] lg:px-4 lg:flex-wrap ">
