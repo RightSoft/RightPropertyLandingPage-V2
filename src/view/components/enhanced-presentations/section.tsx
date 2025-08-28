@@ -1,7 +1,6 @@
 // Use public URLs for LCP images to match preloads
 
 import BookADemoButton from '@/view/components/book-a-demo-button'
-import heroVideo from "@/assets/v3/hero.webm"
 import BlueExploreButton from '../blue-explore-button';
 import mobileRoad1 from '@/assets/v3/mobile_road_1.png';
 import HeroVideoContainer from './hero-video-container';
