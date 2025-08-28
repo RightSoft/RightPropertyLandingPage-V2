@@ -4,6 +4,7 @@ import BookADemoButton from '@/view/components/book-a-demo-button'
 import heroVideo from "@/assets/v3/hero.webm"
 import BlueExploreButton from '../blue-explore-button';
 import mobileRoad1 from '@/assets/v3/mobile_road_1.png';
+import HeroVideoContainer from './hero-video-container';
 
 export default function EnhancedPresentationsSection() {
     return (
@@ -24,8 +25,9 @@ export default function EnhancedPresentationsSection() {
                     </div>
                 </div>
                 <div className="flex-shrink-1 lg:order-1 lg:mb-0 -mr-[21.3125rem] lg:-mr-[7rem] ">
-                     
-                        <video
+
+                       <HeroVideoContainer/>
+                       {/* <video
                             src={heroVideo}
                             className="max-w-[1200px] w-[75.25rem] h-auto lg:max-w-full lg:w-auto lg:h-[20.25rem]"
                             width="1200"
@@ -36,7 +38,7 @@ export default function EnhancedPresentationsSection() {
                             playsInline
                             preload="auto"
                            
-                        />
+                        /> */}
                 </div>
             </div>
             <img src={mobileRoad1} className="hidden lg:block -mb-[7.5rem]" alt="" />
