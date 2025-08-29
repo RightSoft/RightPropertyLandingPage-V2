@@ -81,7 +81,7 @@ export default function FaqSection() {
             </ul>
         },
     ]
-    return <div className="bg-[#000000]">
+    return <div id="faqs" className="bg-[#000000]">
         <section className="rp-container py-[7.5rem] px-[11.75rem] lg:px-4 lg:pb-[5rem] lg:pt-0" aria-label="Frequently asked questions about Right Property platform">
             <p className="mb-8 lg:mb-6 font-geist-mono text-base lg:text-sm font-medium leading-[140%] lg:leading-[148%] text-[#E2E2E2] tracking-[0.02em] uppercase">
             Have a question?            </p>

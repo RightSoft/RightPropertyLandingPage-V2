@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import ShowBookingHoc from "./show-booking-hoc";
 
 export default function BookADemoButton({ className }: { className?: string }) {
-    const cnClass = cn('text-left pl-[2.25rem] w-[14.5625rem] lg:w-full lg:pl-0 lg:flex lg:items-center lg:justify-center h-[4rem] lg:h-[3rem] lg:text-sm rounded-[65px] bg-[#FF9985] font-geist font-semibold text-base leading-[130%] tracking-[0%] uppercase relative', className)
+    const cnClass = cn('cursor-pointer text-left pl-[2.25rem] w-[14.5625rem] lg:w-full lg:pl-0 lg:flex lg:items-center lg:justify-center h-[4rem] lg:h-[3rem] lg:text-sm rounded-[65px] bg-[#FF9985] font-geist font-semibold text-base leading-[130%] tracking-[0%] uppercase relative', className)
     return (
         <ShowBookingHoc>
             <button onClick={() => { }} className={cnClass}>

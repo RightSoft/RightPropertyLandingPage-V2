@@ -153,7 +153,7 @@ export default function BackToBackReveal({
             }
         };
     }, [])
-    return <section ref={$ref} className="relative h-[600vh] mt-[13.4375rem] lg:hidden" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)" }}>
+    return <section id="why-right-property" ref={$ref} className="relative h-[600vh] mt-[13.4375rem] lg:hidden" style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EDF7FC 20.67%)" }}>
         <div className="max-w-[1680px] mx-auto w-full relative z-[50]">
             <div ref={$pinRef} className="absolute top-[215px] left-[109px]" >
                 <div ref={$cardRef} className="card quickflip relative w-[48.9375rem] h-[561px]" style={{ perspective: "800px", transformStyle: "preserve-3d" }}>
