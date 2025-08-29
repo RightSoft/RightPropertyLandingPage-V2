@@ -89,20 +89,20 @@ export default function FooterSection() {
     useEffect(() => {
         const mm = gsap.matchMedia();
         mm.add('(min-width: 769px)', () => {
-            // const tl = gsap.timeline({
-            //     scrollTrigger: {
-            //         trigger: $footerContainer.current,
-            //         start: "bottom-=20% bottom",
-            //         end: "bottom-=20% bottom-=5%",
-            //         scrub: false,
-            //         toggleActions: "play none none reset",
-            //     }
-            // },)
-            // tl.to($levitateItem.current, {
-            //     y: '-6.25rem',
-            //     duration: 1,
-            //     ease: "power2.inOut"
-            // })
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: $footerContainer.current,
+                    start: "bottom-=20% bottom",
+                    end: "bottom-=20% bottom-=5%",
+                    scrub: false,
+                    toggleActions: "play none none reset",
+                }
+            },)
+            tl.to($levitateItem.current, {
+                y: '-6.25rem',
+                duration: 1,
+                ease: "power2.inOut"
+            })
         })
         mm.add('(max-width: 768px)', () => {
             const tl = gsap.timeline({
