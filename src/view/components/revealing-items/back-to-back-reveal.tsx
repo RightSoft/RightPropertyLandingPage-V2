@@ -37,8 +37,20 @@ export default function BackToBackReveal({
     const $direction = useRef<1 | -1>(null);
     const animationQueue = useRef<Array<{ direction: 1 | -1, index: number }>>([]);
     const isAnimating = useRef(false);
-
-
+    const $cardSectionRef1 = useRef<HTMLDivElement>(null);
+    const $cardSectionRef2 = useRef<HTMLDivElement>(null);
+    const $cardSectionRef3 = useRef<HTMLDivElement>(null);
+    const $cardSectionRef4 = useRef<HTMLDivElement>(null);
+    const $cardSectionRef5 = useRef<HTMLDivElement>(null);
+    const $cardSectionRef6 = useRef<HTMLDivElement>(null);
+    const refList = [
+        $cardSectionRef1,
+        $cardSectionRef2,
+        $cardSectionRef3,
+        $cardSectionRef4,
+        $cardSectionRef5,
+        $cardSectionRef6
+    ];
     const processAnimationQueue = () => {
         if (isAnimating.current || animationQueue.current.length === 0) return;
 
@@ -63,45 +75,54 @@ export default function BackToBackReveal({
         const rotationX = direction === 1 ? "-=180" : "+=180";
 
         $flipTl.current = gsap.timeline({
-            onComplete: () => {
+            onStart: () => {
                 const totalCards = cardContents.length;
-
                 if (direction === 1) {
                     if (targetIndex == totalCards - 1) {
                         if (targetIndex % 2 != 0) {
-                            setFrontFaceContent(cardContents[targetIndex - 1]);
+                            setBackFaceContent(cardContents[targetIndex]);
+
                         } else {
-                            setBackFaceContent(cardContents[targetIndex - 1]);
+                            setFrontFaceContent(cardContents[targetIndex]);
+
                         }
                     } else {
                         if (targetIndex % 2 != 0) {
-                            setFrontFaceContent(cardContents[((targetIndex + 1) % totalCards)]);
+                            setBackFaceContent(cardContents[(targetIndex)]);
+
                         } else {
-                            setBackFaceContent(cardContents[(targetIndex + 1) % totalCards]);
+                            setFrontFaceContent(cardContents[((targetIndex))]);
+
                         }
                     }
                 } else {
+
                     if (targetIndex == 0) {
                         if (targetIndex % 2 != 0) {
-                            setFrontFaceContent(cardContents[(targetIndex - 1) % totalCards + (totalCards - 1)]);
+                            setBackFaceContent(cardContents[(targetIndex)]);
+
                         } else {
-                            setBackFaceContent(cardContents[(targetIndex - 1) % totalCards + (totalCards - 1)]);
+                            setFrontFaceContent(cardContents[(targetIndex)]);
+
                         }
                     } else {
                         if (targetIndex % 2 != 0) {
-                            setFrontFaceContent(cardContents[targetIndex - 1]);
+                            setBackFaceContent(cardContents[targetIndex]);
+
                         } else {
-                            setBackFaceContent(cardContents[targetIndex - 1]);
+                            setFrontFaceContent(cardContents[targetIndex]);
+
                         }
                     }
                 }
 
+            },
+            onComplete: () => {
                 isAnimating.current = false;
                 // Process next animation in queue
                 setTimeout(() => processAnimationQueue(), 0);
             }
         });
-
         $flipTl.current.to(".qf-card", { rotationX, duration: timing });
         $flipTl.current.to(".quickflip", { z: 50, duration: timing / 2, yoyo: true, repeat: 1 }, 0);
     };
@@ -111,39 +132,58 @@ export default function BackToBackReveal({
         }
     }, [currentItem])
     useEffect(() => {
-        let tl: gsap.core.Timeline;
-        setTimeout(() => {
-            tl = gsap.timeline({
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '#why-right-property',
+                start: "top top",
+                pin: $pinRef.current,
+                end: "bottom bottom",
+                scrub: true,
+                id: "back-to-back-reveal",
+            },
+        })
+        const tlList = Array.from({ length: 6 }, (_, index) => {
+            const use_index = index + 0;
+            return gsap.timeline({
                 scrollTrigger: {
-                    trigger: $ref.current,
-                    start: "top top",
+                    trigger: refList[use_index].current,
+                    start: "top top+=25%",
                     end: "bottom bottom",
-                    pin: $pinRef.current,
+                    id: `back-to-back-reveal-${use_index}`,
+                    refreshPriority: 5 + index,
                     scrub: true,
-                    id: "back-to-back-reveal", // Add unique ID
-                    refreshPriority: 5, // Medium priority, after meet-right-property
-                    invalidateOnRefresh: true, // Recalculate on refresh
+                    invalidateOnRefresh: true,
                     anticipatePin: 1,
-                    onUpdate: (self) => {
-                        const progress = self.progress;
-                        const totalCards = cardContents.length;
-                        const newIndex = Math.floor(progress * totalCards);
-                        const clampedIndex = Math.min(newIndex, totalCards - 1);
-                        console.log(clampedIndex);
-                        if (clampedIndex !== $previousIndexRef.current) {
-                            $direction.current = self.direction as 1 | -1;
-                            setCurrentItem(clampedIndex);
-                            $previousIndexRef.current = clampedIndex;
-                        }
-                    }
+                    onEnter: (self) => {
+                        $direction.current = self.direction as 1 | -1;
+                        setCurrentItem(use_index);
+                        $previousIndexRef.current = index;
+                    },
+                    onLeaveBack: () => {
+                        if (use_index == 0) return;
+                        $direction.current = -1;
+                        setCurrentItem(use_index - 1);
+                        $previousIndexRef.current = index;
+                    },
+                    // onUpdate: (self) => {
+                    //     console.log(clampedIndex);
+                    //     if (clampedIndex !== $previousIndexRef.current) {
+                    //         console.log(progress)
+                    //         $direction.current = self.direction as 1 | -1;
+                    //         setCurrentItem(clampedIndex);
+
+                    //     }
+                    // }
                 }
             });
-        }, 100);
+        })
 
 
         return () => {
             // Clean up timeline and ScrollTrigger
-            tl.kill();
+            tlList.forEach(tl => {
+                tl.kill();
+            });
             // Clear animation queue
             animationQueue.current = [];
             isAnimating.current = false;
@@ -171,31 +211,31 @@ export default function BackToBackReveal({
             </div>
         </div>
         <div className="rp-container">
-            <VideoContainer videoUrl={marketingOption1} road={revealItem1Road}>
+            <VideoContainer sectionRef={$cardSectionRef1} videoUrl={marketingOption1} road={revealItem1Road}>
                 <img src={revealItem1Overlay} className=" absolute -top-[7.375rem] left-[3rem] w-[41.9375rem] h-auto object-contain" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer videoUrl={interactiveVideo} road={revealItem2Road}>
+            <VideoContainer sectionRef={$cardSectionRef2} videoUrl={interactiveVideo} road={revealItem2Road}>
                 <img src={revealItem2Overlay} className="absolute -top-[13.625rem] left-[5.625rem] w-[41rem] h-auto object-contain" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer videoUrl={websiteTemplates} road={revealItem3Road}>
+            <VideoContainer sectionRef={$cardSectionRef3} videoUrl={websiteTemplates} road={revealItem3Road}>
                 <img src={revealItem3Overlay} className="absolute left-[13.75rem] -top-[1.25rem] -translate-y-full w-[24.375rem] h-auto object-contain" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer videoUrl={cmsVideo}>
+            <VideoContainer sectionRef={$cardSectionRef4} videoUrl={cmsVideo}>
                 <img src={revealItem4Overlay} className="absolute top-[15.75rem] left-[3.75rem] w-[11.5625rem] h-auto object-contain" />
                 <GreenGradient />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer videoUrl={emailMarketingVideo} road={revealItem5Road}>
+            <VideoContainer sectionRef={$cardSectionRef5} videoUrl={emailMarketingVideo} road={revealItem5Road}>
                 <img src={revealItem5Overlay} className="absolute -top-[21.25rem] left-[13.75rem] w-[24.0625rem] h-auto object-contain`" />
                 <BlueGradient />
             </VideoContainer>
-            <VideoContainer videoUrl={seoVideo}>
+            <VideoContainer sectionRef={$cardSectionRef6} videoUrl={seoVideo}>
                 <img src={revealItem6Overlay} className="absolute top-[20.75rem] left-[3.75rem] w-[33.375rem] h-auto object-contain" />
                 <BlueGradient />
             </VideoContainer>
@@ -216,13 +256,15 @@ export const BlueGradient = () => {
 export const VideoContainer = ({
     children,
     road,
-    videoUrl
+    videoUrl,
+    sectionRef
 }: {
+    sectionRef: React.RefObject<HTMLDivElement | null>,
     videoUrl: string
     children: React.ReactNode,
     road?: string
 }) => {
-    return <div className="relative w-full h-[100vh] flex items-center justify-end pr-[6.875rem]">
+    return <div ref={sectionRef} className="relative w-full h-[100vh] flex items-center justify-end pr-[6.875rem]">
         <img src={road} className="absolute left-0 top-0 w-full h-auto object-contain" />
 
         <div className="relative">

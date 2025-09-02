@@ -32,7 +32,12 @@ export default function MeetRightPropertySection() {
             }).set(
                 splitText.chars,
                 {
-                    color: "#232323",
+                    color: (index,_)=>{
+                        if(index == 72){
+                            return "#232323"
+                        }
+                      return "#232323"
+                    },
                     stagger: 0.1
                 },
                 0.1
@@ -72,12 +77,11 @@ export default function MeetRightPropertySection() {
                             Meet Right Property
                         </h2>
                         <p className="mb-[2.125rem] font-general-sans font-medium text-40 leading-[120%] -tracking-[0.01em] text-[#D7D7D7] lg:text-black lg:text-28 lg:mb-[2rem] meet-right-property-text">
-                            Property sales require more than just listings, 3D models, and brochures—it's about
+                            Property sales require more than just listings, 3D models, and brochures — it's about
                             <span className="inline-flex items-center lg:items-end ml-3 lg:ml-1">
                                 <NumberIndicator number="1" />
-                                <span className="ml-2">connecting</span>
+                                <span className="ml-2">connecting with buyers,</span>
                             </span>
-                            <span className='inline-flex ml-2'> with buyers,</span>
                             <span className="inline-flex items-center lg:items-end ml-3 lg:ml-1">
                                 <NumberIndicator number="2" />
                             </span>

@@ -92,8 +92,8 @@ export default function FooterSection() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: $footerContainer.current,
-                    start: "bottom-=20% bottom",
-                    end: "bottom-=20% bottom-=5%",
+                    start: "bottom-=15% bottom",
+                    end: "bottom-=15% bottom-=5%",
                     scrub: false,
                     toggleActions: "play none none reset",
                 }
@@ -101,6 +101,7 @@ export default function FooterSection() {
             tl.to($levitateItem.current, {
                 y: '-6.25rem',
                 duration: 1,
+                delay:0.5,
                 ease: "power2.inOut"
             })
         })

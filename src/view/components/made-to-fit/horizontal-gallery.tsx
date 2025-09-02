@@ -39,11 +39,11 @@ export default function HorizontalGallery({
       
         // 1) set up initial vertical offsets
         items.forEach((el, i) => {
-            gsap.set(el, { y: offsetStep * i });
+            gsap.set(el, { y: offsetStep * (i)});
         });
 
         // Calculate scroll distance more precisely
-        const scrollDistance = inner.scrollWidth - window.innerWidth;
+        const scrollDistance = inner.scrollWidth - Math.min(window.innerWidth, 1680);
         const slideDuration = 1
         // timeline length = one chunk per slide
         const totalDuration = slideDuration * (items.length + 1)
@@ -93,7 +93,7 @@ export default function HorizontalGallery({
             window.removeEventListener('resize', handleResize)
         }
     }, [horizontalPin])
-    return <div className="gallery relative min-h-[100vh] lg:min-h-[60vh] overflow-hidden max-w-[100vw]">
+    return <div className="gallery relative min-h-full lg:min-h-[60vh] overflow-hidden max-w-[100vw]">
         <div className="max-w-[1680px] mx-auto w-full">
             <div className="gallery__inner flex h-full gap-[3.75rem]">
                 {images.map((image, index) => (

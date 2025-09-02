@@ -18,7 +18,7 @@ interface UseMotionPathProps {
 
 export const useMotionPath = ({
     trigger = ".trigger",
-    startOffset = "top+=250px top",
+    startOffset = "top+=50px top",
     endOffset = "+=100%",
     scrollScrub = true,
     markers = false
@@ -68,40 +68,46 @@ export const useMotionPath = ({
             }
             
             // Calculate responsive offsets
-            const { offsetX, offsetY } = calculateOffsets()
+            // const { offsetX, offsetY } = calculateOffsets()
             
-            motionTimeline.current = gsap.timeline({
-                paused: true,
-                scrollTrigger: {
-                    trigger: trigger,
-                    start: startOffset,
-                    end: endOffset,
-                    scrub: scrollScrub,
-                    markers: markers,
-                    invalidateOnRefresh: true // This helps with responsiveness
-                }
-            })
+            // motionTimeline.current = gsap.timeline({
+            //     paused: true,
+            //     scrollTrigger: {
+            //         trigger: trigger,
+            //         start: startOffset,
+            //         end: endOffset,
+            //         scrub: false,
+            //         markers: markers,
+            //         invalidateOnRefresh: true,
+            //         onEnter: () => {
+            //             followPath(offsetX, offsetY)
+            //         }
+            //     }
+            // })
             
             // Create a dummy object to animate along the path
-            const follower = { x: 0, y: 0 }
-            motionTimeline.current.to(follower, {
-                ease: "power3.out",
-                motionPath: {
-                    path: pathRef.current,
-                    offsetX: offsetX,
-                    offsetY: offsetY-80,
-                    autoRotate: false
-                },
-                onUpdate: function () {
-                    if (divRef.current) {
-                        divRef.current.style.setProperty('--mask-x', `${follower.x}px`)
-                        divRef.current.style.setProperty('--mask-y', `${follower.y}px`)
-                    }
-                }
-            })
+          
         }
     }, [trigger, startOffset, endOffset, scrollScrub, markers, calculateOffsets])
-
+    const followPath = useCallback((tl: gsap.core.Timeline,offsetX: number, offsetY: number) => {
+        const follower = { x: 0, y: 0 }
+        tl.to(follower, {
+            ease: "power3.out",
+            duration: 2,
+            motionPath: {
+                path: pathRef.current!,
+                offsetX: offsetX,
+                offsetY: offsetY-80,
+                autoRotate: false,
+            },
+            onUpdate: function () {
+                if (divRef.current) {
+                    divRef.current.style.setProperty('--mask-x', `${follower.x}px`)
+                    divRef.current.style.setProperty('--mask-y', `${follower.y}px`)
+                }
+            }
+        },"<=0.25")
+    }, [])
     // Move to initial position
     const moveToInitialPosition = useCallback(() => {
         if (divRef.current && pathRef.current) {
@@ -116,9 +122,11 @@ export const useMotionPath = ({
             const initialY = initialPoint.y + offsetY
 
             // Animate mask to initial position
-            gsap.to({}, {
+            const tl = gsap.timeline()
+
+            tl.to({}, {
                 duration: 1,
-                ease: "power2.out",
+                // ease: "power3.out",
                 onUpdate: function () {
                     const progress = this.progress()
                     if (divRef.current) {
@@ -133,8 +141,9 @@ export const useMotionPath = ({
                         divRef.current.style.setProperty('--mask-x', `${x}px`)
                         divRef.current.style.setProperty('--mask-y', `${y}px`)
                     }
-                }
+                },
             })
+            followPath(tl,offsetX, offsetY)
         }
     }, [handleMouseMove, calculateOffsets])
 

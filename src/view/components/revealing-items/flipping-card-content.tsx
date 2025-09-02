@@ -1,4 +1,5 @@
 import BookADemoButton from "../book-a-demo-button";
+import ShowBookingHoc from "../show-booking-hoc";
 import LearnMoreButton from "./learn-more-button";
 
 
@@ -22,7 +23,7 @@ export default function FlippingCardContent({ subHeading, title, description, us
             </p>
             <div className="lg:hidden">
                 {useBookButton && <BookADemoButton />}
-                {!useBookButton && <LearnMoreButton />}
+                {!useBookButton && <ShowBookingHoc> <LearnMoreButton /></ShowBookingHoc>}
             </div>
         </div>
 

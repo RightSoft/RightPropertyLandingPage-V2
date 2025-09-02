@@ -133,7 +133,7 @@ export default function EasyOnboardingSection() {
                             ))}
                         </div>
                         <div className="hidden lg:block py-[7.5rem] ">
-                            <BinarySection subHeader="Did you know?" title="Built by software minds" description="No visuals or assets? Our team can produce what’s needed." image={<BinaryBlockImage path={automated} />} />
+                            <BinarySection subHeader="Did you know?" title="Automated where it matters" description="We simplify the complex. Many steps you'd expect to handle manually are fully automated behind the scenes." image={<BinaryBlockImage path={automated} />} />
                         </div>
                     </div>
                 </div>
