@@ -26,7 +26,7 @@ export default function PresentSmarterSection() {
                 <div className="flex p-[7.5rem] justify-end lg:p-4">
                     <Parallax id="present-smarter-section" speed={1.3}>
                         <div className="w-[49.375rem] lg:w-full">
-                            <Accessibility title="Present smarter, your way" subHeading="Presentation" description="A property is more than floor plans and price lists— it’s an experience waiting to be brought to life. Our technology turns presentations into interactive journeys, tailored for any setting." items={items} />
+                            <Accessibility title="Present smarter, your way" subHeading="Presentation" description="A property is more than floor plans and price lists - it’s an experience waiting to be brought to life. Our technology turns presentations into interactive journeys, tailored for any setting." items={items} />
                         </div>
                     </Parallax>
                 </div>
